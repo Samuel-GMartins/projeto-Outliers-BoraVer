@@ -1,0 +1,106 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+    margin-left: 25%;
+    margin-top: 5em;
+    margin-right:25%;
+    text-align: justify;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    padding: 10px;
+    color: brown;
+}
+h2 {
+    padding: 10px;
+    color: rgb(0, 0, 131);
+}
+.logo{
+display: flex;
+}
+
+section {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px ;
+}
+
+
+.form {
+    padding: 15px;
+    border-radius: 10px;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);    
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.436);
+    border: none;
+}
+
+.comentario {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;    
+}
+
+.pesq {
+    padding: 20px;
+}
+
+.logg {
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.botao {
+    margin-top: 10px;
+    height:30px;
+    width: 80px;
+    cursor: pointer;
+    background-color: rgb(231, 14, 14);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 12pt;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.55);
+
+}
+.botao:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+div a {
+    text-decoration: none;
+}
+footer {
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: red;
+}
+
+.patrocinio p {
+    font-weight: bold;
+    margin: -10px;
+}
+
+.patrocinio {
+    display: flex;
+    justify-content: space-around;
+
+}
