@@ -1,49 +1,20 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    background-color: black;
-    margin-left: 25%;
-    margin-top: 5em;
-    margin-right:25%;
-    text-align: justify;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
 h1 {
-    padding: 10px;
-    color: brown;
+    color: rgb(212, 26, 26);
 }
+
 h2 {
-    padding: 10px;
-    color: rgb(0, 0, 131);
+    color: rgb(165, 108, 42);
 }
-.logo{
-display: flex;
-}
-
-section {
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 20px ;
-}
-
 
 .form {
     padding: 15px;
     border-radius: 10px;
-    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);    
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.436);
-    border: none;
 }
 
 .comentario {
     text-align: center;
     padding: 20px;
-    border-radius: 10px;    
+    border-radius: 10px;
 }
 
 .pesq {
@@ -53,13 +24,12 @@ section {
 .logg {
     padding: 10px;
     margin-top: 20px;
-    border: none;
     border-radius: 10px;
 }
 
 .botao {
     margin-top: 10px;
-    height:30px;
+    height: 30px;
     width: 80px;
     cursor: pointer;
     background-color: rgb(231, 14, 14);
@@ -70,6 +40,7 @@ section {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.55);
 
 }
+
 .botao:hover {
     background-color: rgb(255, 0, 0);
 }
@@ -77,30 +48,18 @@ section {
 div a {
     text-decoration: none;
 }
+
 footer {
-    color: #fff;
-    padding: 25px;
     text-align: center;
     font-weight: bold;
 }
+
 footer a {
-    color: #fff;
     text-decoration: none;
     text-align: center;
 }
 
-footer a:hover{
+footer a:hover {
     text-decoration: underline;
     color: red;
-}
-
-.patrocinio p {
-    font-weight: bold;
-    margin: -10px;
-}
-
-.patrocinio {
-    display: flex;
-    justify-content: space-around;
-
 }
