@@ -13,3 +13,4 @@ Projeto do Grupo 3 (Outliers) Do programa Impulso Tecc
 - Priscila
 - Samuel Martins
 - Thais Fernanda
+Fazendo push pro github
