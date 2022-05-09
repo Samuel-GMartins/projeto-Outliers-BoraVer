@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="cssLogin/estiloLogin.css" type="text/css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <header class="flex-row d-flex justify-content-center">
+        <a href="login.html">
+            <img src="imagensLogin/loglogogo.jpeg" width="200"> </a>
+    </header>
+    <section class="container text-center">
+        <h1>Login</h1>
+        <!--Formulário de login-->
+        <form id="formLogin" action="projetoGrupo3-Outliers/index.html">
+            <fieldset>
+                <legend class="formulario"> Dados </legend>
+
+                <div>
+                    <input placeholder="Nome" name="nomeLogin" maxlength="50">
+                </div>
+
+                <div>
+                    </br> <input placeholder="Senha" name="senhaLogin" type="password">
+                </div>
+
+                <div>
+                    </br> <button id="btLogin" type="button">Confirmar </button>
+                </div>
+            </fieldset>
+        </form>
+        <a href="cadastro.html">
+            </br>
+            <h2> Não possui cadastro? Cadastre-se!</h2>
+        </a>
+    </section>
+    </hr>
+    <footer class=text-center>
+        <p class="copy">&copy; 2022 - Projeto Vídeos - Outliers</p>
+    </footer>
+
+</body>
+<script src="jsLogin/controleLogin.js"></script>
+
+</html>
