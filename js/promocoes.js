@@ -1,50 +1,41 @@
-console.log("testando Js")
-
-var filmes = [
+var filmes =[
     ["A Freira",
-        "afreira.jpeg",
-        "[CATEGORIA]",
-        "[ANO LANÇAMENTO]",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam inventore excepturi necessitatibus, iure iusto, odio ullam nihil id maxime reprehenderit sequi pariatur perspiciatis. Aspernatur blanditiis voluptatum provident labore natus repudiandae!"
-    ],
-
-    ["A hora Do Rush",
-        "bateroucorrer.jpeg",
-        "[CATEGORIA]",
-        "[ANO LANÇAMENTO]",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam inventore excepturi necessitatibus, iure iusto, odio ullam nihil id maxime reprehenderit sequi pariatur perspiciatis. Aspernatur blanditiis voluptatum provident labore natus repudiandae!"
-    ],
+    "afreira.jpeg",
+    "Terror",
+    "2018",
+    "Presa em um convento na Romênia, uma freira comete suicídio. Para investigar o caso, o Vaticano envia um padre assombrado e uma noviça prestes a se tornar freira."],
 
     ["Corra",
-        "corra.jpeg",
-        "[CATEGORIA]",
-        "[ANO LANÇAMENTO]",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam inventore excepturi necessitatibus, iure iusto, odio ullam nihil id maxime reprehenderit sequi pariatur perspiciatis. Aspernatur blanditiis voluptatum provident labore natus repudiandae!",
-    ],
+    "corra.jpeg",
+    "Terror",
+    "2017",
+    "Chris é um jovem fotógrafo negro que está prestes a conhecer os pais de Rose, sua namorada caucasiana. Com o tempo, ele percebe que a família dela esconde algo muito perturbador."],
+
+    ["A Hora do Rush",
+    "bateroucorrer.jpeg",
+    "Ação/Comédia",
+    "1998",
+    "A filha de um diplomata chinês é sequestrada em Los Angeles e o cônsul chama o inspetor Lee em Hong Kong para ajudar o FBI com o caso."],
 
     ["Em Defesa de Cristo",
-        "cristo.jpeg",
-        "[CATEGORIA]",
-        "[ANO LANÇAMENTO]",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam inventore excepturi necessitatibus, iure iusto, odio ullam nihil id maxime reprehenderit sequi pariatur perspiciatis. Aspernatur blanditiis voluptatum provident labore natus repudiandae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam inventore excepturi necessitatibus, iure iusto, odio ullam nihil id maxime reprehenderit sequi pariatur perspiciatis. Aspernatur blanditiis voluptatum provident labore natus repudiandae!",
-    ],
+    "cristo.jpeg",
+    "Drama/História",
+    "2017",
+    "Um jornalista investigativo, ateu convicto, parte em uma investida para desmentir a existência de Deus após sua esposa tornar-se cristã."],
 
-    ["Homem Aranha: Sem volta para Casa",
-        "semvoltapracasa.jpeg",
-        "[CATEGORIA]",
-        "[ANO LANÇAMENTO]",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam inventore excepturi necessitatibus, iure iusto, odio ullam nihil id maxime reprehenderit sequi pariatur perspiciatis. Aspernatur blanditiis voluptatum provident labore natus repudiandae!",
-    ],
+    ["Homem Aranha: Sem Volta para Casa",
+    "semvoltapracasa.jpeg",
+    "Ação/Aventura",
+    "2021",
+    "O Homem-Aranha precisa lidar com as consequências da sua verdadeira identidade ter sido descoberta."],
 
     ["Shrek",
-        "sherek.jpeg",
-        "[CATEGORIA]",
-        "[ANO LANÇAMENTO]",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam inventore excepturi necessitatibus, iure iusto, odio ullam nihil id maxime reprehenderit sequi pariatur perspiciatis. Aspernatur blanditiis voluptatum provident labore natus repudiandae",
+    "sherek.jpeg",
+    "Comédia/Fantasia",
+    "2001",
+    "Era uma vez um pântano distante, onde vivia um ogro chamado Shrek. De repente, seu sossego é interrompido pela invasão de personagens de contos de fadas que foram banidos de seu reino pelo maldoso Lorde Farquaad."],
 
-    ],
 ]
-
 console.log(filmes)
 // Galeria Faz acesso ao elemento div com id=Galeria
 var galeria = document.querySelector('#galeria')
@@ -56,7 +47,7 @@ for (var i = 0; i < filmes.length; i++){
     var div = document.createElement('div');
 
     // Adiciona a classe com espaço 6
-    div.classList.add('col-sm-6')
+    div.classList.add('col-sm-4')
     div.classList.add('mt-5')
 
     // Cria um Elemento div para o conteudo
@@ -78,7 +69,7 @@ for (var i = 0; i < filmes.length; i++){
     //xxxxxxxxxxxxxxx
 
     // Insere um parágrafo com a sinopse dentro de uma div espaço X
-    conteudo.innerHTML += '<div class="col-sm-6"><p>' + filmes[i][4] + '</p></div>'
+    conteudo.innerHTML += '<div class="col-sm-6"><p>' + filmes[i][2] +'<br>' + filmes[i][3] + '<br>' + filmes[i][4] + '</p></div>'
 
 
 
