@@ -1,14 +1,12 @@
-document.querySelector("h1").innerHTML = "Login"
-//atribuindo o acesso ao formLogin para a variavel formC
-var formC = document.forms.formLogin
+var formL = document.forms.formLogin
 
 //Evento de clique do botão confirmar
-document.querySelector("#btLogin").onclick=function() {
-    if (formC.nomeLogin.value == ""){
-        alert("Preencha o nome")
-    } else if (formC.senhaLogin.value == "") {
-        alert("Preencha a senha")
+document.querySelector("#btLogin").onclick = function () {
+    if (formL.email.value == "") {
+        alert("Preencha o e-mail!")
+    } else if (formL.senha.value == "") {
+        alert("Preencha o senha!")
     } else {
-        formC.submit();
+        formL.submit();
     }
 }
