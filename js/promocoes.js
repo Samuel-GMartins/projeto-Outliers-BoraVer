@@ -69,7 +69,7 @@ for (var i = 0; i < filmes.length; i++){
     //xxxxxxxxxxxxxxx
 
     // Insere um parágrafo com a sinopse dentro de uma div espaço X
-    conteudo.innerHTML += '<div class="col-sm-6"><p>' + filmes[i][2] +'<br>' + filmes[i][3] + '<br>' + filmes[i][4] + '</p></div>'
+    conteudo.innerHTML += '<div class="col-sm-6"><p>' + filmes[i][2] +'<p>' + filmes[i][3] + '<p>' + filmes[i][4] + '</p></p></p></div>'
 
 
 
