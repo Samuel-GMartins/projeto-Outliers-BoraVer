@@ -62,12 +62,6 @@ for (var i = 0; i < filmes.length; i++){
     // Insere uma Imagem com 100% dentro de uma div espaço 3
     conteudo.innerHTML += '<div class="col-sm-6"><img src="imagens/' + filmes[i][1] + '"class="w-100" /></div>'
 
-    // Insere um parágrafo com a Categoria dentro de uma div espaço X
-    //xxxxxxxxxxxxxxx
-
-    // Insere um parágrafo com a Ano dentro de uma div espaço X
-    //xxxxxxxxxxxxxxx
-
     // Insere um parágrafo com a sinopse dentro de uma div espaço X
     conteudo.innerHTML += '<div class="col-sm-6"><h5>' + filmes[i][2] +'</h5><h5>' + filmes[i][3] + '</h5><p>' + filmes[i][4] + '</p></div>'
 
