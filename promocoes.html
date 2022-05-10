@@ -5,59 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos</title>
-    <!-- Latest compiled and minified CSS -->
+
+    <title>Promoções</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header class="flex-row d-flex justify-content-center">
-        <div class="col-sm-4 mt-3">
-            <img src="imagens/logo.jpg" height="100" />
-        </div>
-        <div class="col-sm-8 mt-5">
-            <h4 class="col-sm-6">O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em
-                família.</h4>
+    <header>
+        <div class="row">
+            <div class="col-sm-2 mt-2">
+                <a href="index.html"><img src="imagens/logo.jpg" class="w-100"></a>
+            </div>
+            <div class="col-sm-10 mt-5">
+                <h1>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em família.</h1>
+            </div>
         </div>
     </header>
 
+
     <nav class="text-center">
         <a href="contato.html">Contato</a>
-        <a href="produtod.html">Produtos</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="promocoes.html">Promoções</a>
+
     </nav>
-
     <hr>
-    <section class="container">
-        <article>
-            <h1>Conheça nossas promoções</h1>
-            <div id="galeria" class="row"></div>
-        </article>
 
-            <div class="col-sm-12 mt-5">
-                <div class="flex-row d-flex justify-content-around">
-                    <div class=" col-sm-4">
-                        <a href="single-produto.html"><img src="imagens/semvoltapracasa.jpeg" alt="Imagem1"
-                                class="w-85"></a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="single-produto.html"><img src="imagens/cristo.jpeg" alt="Imagem2" class="w-85"></a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="single-produto.html"><img src="imagens/velosesefuriosos.jpeg" alt="Imagem3"
-                                class="w-85"></a>
-                    </div>
-                </div>
-            </div>
+    <article class="container mb-5 mt-5">
+        <div id="galeria" class="row"></div>
+    </article>
 
-            </div>
-            </div>
-            </div>
-    </section>
-    <footer>
-        <p class="copy">&copy; 2022 - Projeto Vídeos - Outliers</p>
+
+
+    <footer class="bg-dark p-4 text-white text-center mt-4">
+        <p>&copy; 2022 - Todos os direitos Reservados </p>
+
     </footer>
 </body>
 <script src="js/promocoes.js"></script>
-
 </html>
