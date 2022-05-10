@@ -23,7 +23,7 @@ var filmes =[
     "2017",
     "Um jornalista investigativo, ateu convicto, parte em uma investida para desmentir a existência de Deus após sua esposa tornar-se cristã."],
 
-    ["Homem Aranha: Sem Volta para Casa",
+    ["Homem Aranha",
     "semvoltapracasa.jpeg",
     "Ação/Aventura",
     "2021",
@@ -57,7 +57,7 @@ for (var i = 0; i < filmes.length; i++){
     conteudo.className = 'row'
 
     //Insere um h3 com Título
-    conteudo.innerHTML += '<h3 class="col-sm-12">' + filmes[i][0] + '</h3>'
+    conteudo.innerHTML += '<h3 class="col-sm-12 mb-3">' + filmes[i][0] + '</h3>'
 
     // Insere uma Imagem com 100% dentro de uma div espaço 3
     conteudo.innerHTML += '<div class="col-sm-5"><img src="imagens/' + filmes[i][1] + '"class="w-100" /></div>'
@@ -69,7 +69,7 @@ for (var i = 0; i < filmes.length; i++){
     //xxxxxxxxxxxxxxx
 
     // Insere um parágrafo com a sinopse dentro de uma div espaço X
-    conteudo.innerHTML += '<div class="col-sm-6"><p>' + filmes[i][2] +'<p>' + filmes[i][3] + '<p>' + filmes[i][4] + '</p></p></p></div>'
+    conteudo.innerHTML += '<div class="col-sm-6"><h5>' + filmes[i][2] +'</h5><h5>' + filmes[i][3] + '</h5><p>' + filmes[i][4] + '</p></div>'
 
 
 
