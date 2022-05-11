@@ -3,8 +3,8 @@ let cliente = '{"nome": "Allan Turing", "imagem": "fotoCliente.jpeg", "idade":"2
 
 let clienteJson = JSON.parse(cliente)
 
-console.log(cliente)
-console.log(clienteJson)
+console.log(cliente.nome)
+console.log(clienteJson.nome)
 
 let imagem = document.querySelector("#imagem")
 let conteudo = document.querySelector("#conteudo")
