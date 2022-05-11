@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Faça seu Cadastro!</title>
+          <meta charset="utf-8"/>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" type="text/css" />
+          </head>
+          <style>
+            /*CSS Styles*/
+            h1 {
+                color: brown
+            }
+        
+            h2 {
+                color: black
+            }
+        </style>
+          <body>
+            <header class="text-center">
+                <a href="index.html">
+                    <img src="../projeto-videos/Imagens/logo.jpg" width="200" />
+                </a>
+               </header>
+               <div class="text-center mt-3">
+               <a href="index.html">PÁGINA INICIAL |</a>
+               <a href="produtos.html">PRODUTOS |</a>
+               <a href="contato.html">CONTATO</a>
+            </div>
+               </nav>
+           
+               <section class="container">
+                <h1 class="text-center mt-5 mb-5"> Bem-vindo à sua home de vídeos on-line!</h1> 
+                    <h2 class="text-center mt-5 mb-5"> Faça seu cadastro!</h2> 
+
+                    <article>
+                        <form id="formCadastro" method="post" action="index.html" class="w-50 mx-auto p-3 mt-5 mb-5" 
+                        style="border:1px solid #ccc; border-radius: 12px;">
+                        
+                                          
+                       <fieldset>
+                          <legend>Entre com os seus dados:</legend>
+                           <div class="form-group">
+                              <label>Nome :<br /></label> 
+                              <input class="form-control" name="nomeCadastro" maxlength="100" required>
+                           </div>
+                            <div class="form-group">
+                                <label>Email :<br /></label>
+                                <input class="form-control" name="emailCadastro" type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone :<br /></label>
+                                <input class="form-control w-50" name="telefoneCadastro" id="cel" maxlength="11" minlength="11" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Senha :<br /></label>
+                                <input class="form-control w-50" name="senha" id="senha" type="password" maxlength="8" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirme a senha :<br /></label>
+                                <input class="form-control w-50" name="senhaC" id="senhac" type="password" maxlength="8" required>
+                            </div>
+                            <div>
+                                <nav>
+                                <button id="btCadastro" type="button"  class="btn btn-danger"  >Confirmar</button>        
+                                <a href="../projeto-videos/login.html">
+                                </nav>
+                            </div>
+                        </fieldset>
+                    </form>
+                    </article>
+                   
+                </section>
+                <!-- Setor de rodapé-->
+                <br/>
+                <br/>
+                <br/>
+                <footer class="bg-dark p-4 text-white text-center mt-4">
+                    <p>&copy; 2022 - Todos os direitos reservados.</p>
+                </footer>
+            </body>
+            <script src="cadastro.js"></script>
+        </html>
