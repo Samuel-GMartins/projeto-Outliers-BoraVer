@@ -19,19 +19,19 @@ var filmes =[
 
     ["Em Defesa de Cristo",
     "cristo.jpeg",
-    "Drama/História",
+    "Drama",
     "2017",
     "Um jornalista investigativo, ateu convicto, parte em uma investida para desmentir a existência de Deus após sua esposa tornar-se cristã."],
 
     ["Homem Aranha",
     "semvoltapracasa.jpeg",
-    "Ação/Aventura",
+    "Ação",
     "2021",
     "O Homem-Aranha precisa lidar com as consequências da sua verdadeira identidade ter sido descoberta."],
 
     ["Shrek",
     "sherek.jpeg",
-    "Comédia/Fantasia",
+    "Comédia",
     "2001",
     "Era uma vez um pântano distante, onde vivia um ogro chamado Shrek. De repente, seu sossego é interrompido pela invasão de personagens de contos de fadas que foram banidos de seu reino pelo maldoso Lorde Farquaad."],
 
@@ -56,14 +56,21 @@ for (var i = 0; i < filmes.length; i++){
     // Cria uma classe pra div conteudo com nome row
     conteudo.className = 'row'
 
+    var descr = (filmes[i][4]).substring(0,100) + '...'
+
+    var categoria = '<p class = "text-uppercase"> Categoria: ' + filmes[i][2] + '</p>'
+    var anoPub = '<p>Ano: ' + filmes[i][3] + '</p>'
+    var resenha = '<div class="col-sm-8">' + categoria + anoPub + '<p>' + descr + '</p></div>'
+
+
     //Insere um h3 com Título
     conteudo.innerHTML += '<h3 class="col-sm-12 mb-3">' + filmes[i][0] + '</h3>'
 
     // Insere uma Imagem com 100% dentro de uma div espaço 3
-    conteudo.innerHTML += '<div class="col-sm-6"><img src="imagens/' + filmes[i][1] + '"class="w-100" /></div>'
+    conteudo.innerHTML += '<div class="col-sm-4"><img src="imagens/' + filmes[i][1] + '"class="w-100" /></div>'
 
     // Insere um parágrafo com a sinopse dentro de uma div espaço X
-    conteudo.innerHTML += '<div class="col-sm-6"><h5>' + filmes[i][2] +'</h5><h5>' + filmes[i][3] + '</h5><p>' + filmes[i][4] + '</p></div>'
+    conteudo.innerHTML += resenha
 
 
     // Div Recebe um conteudo
