@@ -8,13 +8,16 @@ console.log(livros)
 var galeria = document.querySelector("#galeria")
 for(var i = 0; i<livros.length;i++){
 var div=document.createElement('div');
-div.classList.add('col-sm-6')
+div.classList.add('col-sm-4')
 div.classList.add('mt-3')
 var conteudo=document.createElement('div')
 conteudo.className='row'
+var descricao = '<p>' + (livros[i][2]).substring(0,80) + '...' + '</p>'
+var categoria = '<p><strong>' + livros[i][3] + '</strong></p>'
+var ano = '<p><strong>' + livros[i][4] + '</strong></p>'
     conteudo.innerHTML+='<h3 class="col-sm-12">'+livros[i][0]+'</h3>'
     conteudo.innerHTML+='<div class="col-sm-6"><img src="imagens/' + livros[i][1] + '" class="w-100" /></div>'
-    conteudo.innerHTML+='<div class="col-sm-6"><div><h4>' + livros[i][3] + '</h4><br><h4>' + livros[i][4] + '</h4><br><p>' + livros[i][2] + '</p></div></div>'
+    conteudo.innerHTML+='<div class="col-sm-6">' + categoria + ano + descricao + '</div>'
     div.appendChild(conteudo)
 galeria.appendChild(div)
 }
