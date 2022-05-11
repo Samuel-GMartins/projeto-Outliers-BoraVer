@@ -20,11 +20,13 @@ document.querySelector("#btContato").onclick = function () {
     // alert("ok")
     // /input de nome / valor desse campo
     if (formC.nameContato.value == "") {
-        alert("Preencha o nome !")
+        alert("Preencha o nome!")
     } else if (formC.emailContato.value == "") {
-        alert("Digite seu E-mail !")
+        alert("Digite seu e-mail!")
+    } else if (formC.assuntoContato.value == "") {
+        alert("Digite o assunto!")
     } else if (formC.comentarioContato.value == "") {
-        alert("Deixe seu comentario :")
+        alert("Deixe seu comentario!")
     } else {
         formC.submit();
     }
