@@ -24,5 +24,5 @@ sair.onclick=function(){
     location.href='index.html'
 }
 
-// localStorage.emailUser ? bemVindo.innerHTML = 'Olá, ' + user : null
+// localStorage.emailUser ? bemVindo.innerHTML = 'Olá, ' + user : null //
 localStorage.emailUser ? msgUser() : resetUser()
