@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head class="text-center">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+   
+</head>
+
+<body>
+     <!--Setor de Cabeçalho-->
+       
+    <header class="text-center">
+        <a href="index.html">
+        <img src="imagens/logo.jpg" alt="" class="logo" width="150">
+        </a>
+        </header>
+
+        <!--Setor de Navegação-->
+        <nav class="text-center mt-3">
+          
+            <a href="index.html">PÁGINA INICIAL |</a></li>
+            <a href="produtos.html">PRODUTOS</a></li>
+            <hr>
+        </nav>
+     
+         <!-- Setor de conteúdo-->
+         <section class="container">
+        <h1 class="text-center mt-5 mb-5">Entre em contato conosco!</h1>
+
+       
+
+        <!--Formulário de contato -->
+        <form action="contato.html" method="post" id="formContato" class="w-50 mx-auto p-4 mt-5 mb-5" style="border:1px solid #ccc;border-radius: 12px">
+
+            <fieldset class="form">
+                <div class="form-group">
+                    <b>
+                    <label>Nome:<br /></label>
+                    </b>
+                    <label for="name"></label>
+                    <input class="form-control" type="text" name="nameContato" id="nameContato" maxlength="50" class="logg" placeholder="Nome completo">
+                </div>
+
+                <div class="form-group">
+                    <br />
+                    <b>
+                    <label>E-mail:<br /></label>
+                    </b>
+                    <label for="email"></label>
+                    <input class="form-control" type="email" name="emailContato" id="emailContato" class="logg" placeholder="Digite seu e-mail">
+                </div>
+
+                <div class="form-group">
+                    <br />
+                    <b>
+                    <label>Assunto:<br /></label>
+                    </b>
+                    <label for="Assunto"></label>
+                    <input class="form-control" type="assunto" name="assuntoContato" id="assuntoContato" class="logg" placeholder="Digite o assunto">
+                </div>
+
+                <div>
+                    <br />
+                    <b>
+                    <label>Comentario:<br /></label>
+                    </b>
+                    <label for="comentario"></label><br>
+                    <textarea name="comentarioContato" id="comentarioContato" class="comentario" cols="30" rows="10"
+                        placeholder="Deixe seu comentário"></textarea>
+                </div>
+                
+                <div>
+                    <button type="button" id="btContato" class="btn btn-danger">Enviar</button>
+                   
+                </div>
+            </fieldset>
+            </form>
+        
+        <!--Final do Form contato-->
+      
+
+
+    </section>
+    <!--Setor de rodapé-->
+        <footer class="bg-dark p-4 text-white text-center mt-4">
+            <p class="copy">&copy; 2022 - Projeto Outliers</p>
+        </footer>
+    </body>
+        <script src="js/contato.js"></script>
+
+</html>
