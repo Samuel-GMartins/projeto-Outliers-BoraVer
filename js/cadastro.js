@@ -1,14 +1,8 @@
-//Caso coloque a chamada dentro do <head> use 
-//Window.onload=function(){<script src="../js/controle.js"></script>
-console.log("Hello World")
+
 console.log(document.querySelector("h1"))
-//document.querySelector("h1").innerHTML="Teste"   ->Esse código substitui o texto do h1 por teste
-//document (documento html)
-//querySelector (consulta um elemento HTML)
-//querySelector("tag")
-//querySelector("#id")
+
 document.querySelector("h1").innerHTML+=""
-//Acesso a um elemento de formulário
+
 console.log(document.forms.formCadastro)
 var formC=document.forms.formCadastro
 //Evento de clique no botão confirmar
@@ -28,6 +22,12 @@ document.querySelector("#btCadastro").onclick=function(){
                 alert("A senha não confere!")
     }else{
         formC.submit()
+        localStorage.emailUser=formC.emailCadastro.value 
+        localStorage.nomeUser=formC.nomeCadastro.value
+        localStorage.telefoneUser=formC.telefoneCadastro.value
+        localStorage.senhaUser=formC.senha.value
+       // localStorage.confsenhaUser=formC.telefoneCadastro.value
+
     }
 
   //  alert(document.forms.formContato.nomeContato.value)
