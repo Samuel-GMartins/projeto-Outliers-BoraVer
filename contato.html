@@ -1,35 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head class="text-center">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+
+    <title>CONTATO</title>
    
 </head>
 
 <body>
      <!--Setor de Cabeçalho-->
        
-    <header class="text-center">
+    <header>
+        <div class="row">
+            <div class="col-sm-2 mt-2">
         <a href="index.html">
-        <img src="imagens/logo.jpg" alt="" class="logo" width="150">
+        <img src="imagens/logo.png" class="ml-2 w-100">
         </a>
+            </div>
+
+
+    <div class="col-sm-4 mt-5 ml-5 text-center">
+        <h1>Nome Do Site Aqui</h1>
+        <p>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em
+            família.</p>
+    </div>
+
+    </div>
+
+
+
+
         </header>
 
         <!--Setor de Navegação-->
-        <nav class="text-center mt-3">
-          
-            <a href="index.html">PÁGINA INICIAL |</a></li>
-            <a href="produtos.html">PRODUTOS</a></li>
-            <hr>
-        </nav>
-     
+        <nav class="text-center">
+        <a href="perfil-usuario.html" class="col-sm-3">PERFIL USUÁRIO</a>
+        <a href="produtos.html" class="col-sm-3">PRODUTOS</a>
+        <a href="promocoes.html" class="col-sm-3">PROMOÇÕES</a>
+        <a href="carrinho.html" class="col-sm-3">CARRINHO</a>
+        </div>
+    </nav>
+    <hr>
+
+
          <!-- Setor de conteúdo-->
          <section class="container">
-        <h1 class="text-center mt-5 mb-5">Entre em contato conosco!</h1>
+        <h1 class="text-center mt-5 mb-5"> Sua opinião é muito importante para nós!</h1>
+        <h2 class="text-center mt-5 mb-5">Entre em contato conosco!</h2>
 
        
 
@@ -69,7 +93,7 @@
                     <label>Comentario:<br /></label>
                     </b>
                     <label for="comentario"></label><br>
-                    <textarea name="comentarioContato" id="comentarioContato" class="comentario" cols="30" rows="10"
+                    <textarea name="comentarioContato" id="comentarioContato" class="comentario"style="border:1px solid #ccc;border-radius: 12px"  cols="30" rows="10"
                         placeholder="Deixe seu comentário"></textarea>
                 </div>
                 
@@ -86,10 +110,12 @@
 
     </section>
     <!--Setor de rodapé-->
-        <footer class="bg-dark p-4 text-white text-center mt-4">
-            <p class="copy">&copy; 2022 - Projeto Outliers</p>
-        </footer>
-    </body>
+
+    <footer class="bg-dark p-4 text-white text-center mt-4">
+        <p class="text-center">&copy; 2022 - Projeto Vídeos - Outliers</p>
+
+    </footer>
+</body>
         <script src="js/contato.js"></script>
 
 </html>
