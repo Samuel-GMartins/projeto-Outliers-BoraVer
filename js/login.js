@@ -8,6 +8,6 @@ document.querySelector("#btLogin").onclick = function () {
         alert("Preencha o senha!")
     } else {
         formL.submit();
-        localStorage.emailUser = forml.value
+        localStorage.emailUser = formL.email.value
     }
 }
