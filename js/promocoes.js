@@ -67,7 +67,7 @@ for (var i = 0; i < filmes.length; i++){
     conteudo.innerHTML += '<h3 class="col-sm-12 mb-3">' + filmes[i][0] + '</h3>'
 
     // Insere uma Imagem com 100% dentro de uma div espaço 3
-    conteudo.innerHTML += '<div class="col-sm-4"><img src="imagens/' + filmes[i][1] + '"class="w-100" /></div>'
+    conteudo.innerHTML += '<div class="col-sm-4"><a href="single-produto.html"><img src="imagens/' + filmes[i][1] + '"class="w-100" /></a></div>'
 
     // Insere um parágrafo com a sinopse dentro de uma div espaço X
     conteudo.innerHTML += resenha
@@ -80,3 +80,4 @@ for (var i = 0; i < filmes.length; i++){
     galeria.appendChild(div)
 
 }
+
