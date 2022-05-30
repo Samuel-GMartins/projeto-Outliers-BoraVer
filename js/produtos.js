@@ -24,13 +24,13 @@ function trocaTrailer(){
 
 
 // Titulo e imagem em LocalStorage
-var filme1 = document.querySelector('#filme1').innerHTML = 'Doutor Estranho'
+var filme1 = document.querySelector('#filme1').innerHTML = 'A Hora do Rush'
+var filme2 = document.querySelector('#filme2').innerHTML = 'Shrek'
+var filme3 = document.querySelector('#filme3').innerHTML = 'Homem Aranha: Sem Volta para Casa'
+var filme4 = document.querySelector('#filme4').innerHTML = 'Em defesa de Cristo'
+var filme5 = document.querySelector('#filme5').innerHTML = 'A Freira'
+var filme6 = document.querySelector('#filme6').innerHTML = 'Corra'
 
-var filme2 = document.querySelector('#filme2').innerHTML = 'A Freira'
-
-var filme3 = document.querySelector('#filme3').innerHTML = 'A Hora do Rush'
-
-var filme4 = document.querySelector('#filme4').innerHTML = 'Em Defesa de Cristo'
 
 
 
