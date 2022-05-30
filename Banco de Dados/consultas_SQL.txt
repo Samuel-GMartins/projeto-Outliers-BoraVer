@@ -1,0 +1,26 @@
+> show databases;
+> use projeto_videos
+
+/////////////////////////////////////
+#Listar todos os filmes
+> SELECT * FROM filmes;
+
+/////////////////////////////////////
+#Exibir um único filme
+> SELECT filmes.filmes_id,filmes.titulo,filmes.genero,filmes.ano,filmes.sinopse FROM filmes WHERE filmes_id=5;
+
+/////////////////////////////////////
+#Exibir os filmes com limite de 10 registros em ordem decrescente de cadastro
+> SELECT filmes_id,titulo,genero,ano,sinopse FROM filmes ORDER BY filmes_id DESC LIMIT 10;
+/////////////////////////////////////
+
+#Exibir os filmes com limite de 10 registros em ordem Alfabética
+> SELECT filmes_id,titulo,genero,ano,sinopse FROM filmes ORDER BY titulo ASC LIMIT 10;
+/////////////////////////////////////
+
+#DESAFIO SQL - Exibir os filmes alugados por um determinado usuário substituindo os números das chaves externas pelos valores de texto com INNER JOIN
+
+SELECT carrinho.carrinho_id,carrinho.usuario,carrinho.servico,carrinho.produto,carrinho.quantidade,carrinho.preco,carrinho.preco,carrinho.qtdTelas
+FROM carrinho
+INNER JOIN usuario
+ON carrinho.usuario = usuario.nome
