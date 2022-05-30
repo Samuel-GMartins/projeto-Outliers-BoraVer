@@ -19,3 +19,25 @@ function trocaTrailer(){
     let trailerCab3 = document.querySelector('#trailerCab3').src = tr [Math.floor(Math.random() * trailer.length)]
 
 }
+
+/////////////////////////////////
+
+
+// Titulo e imagem em LocalStorage
+var filme1 = document.querySelector('#filme1').innerHTML = 'Doutor Estranho'
+
+var filme2 = document.querySelector('#filme2').innerHTML = 'A Freira'
+
+var filme3 = document.querySelector('#filme3').innerHTML = 'A Hora do Rush'
+
+var filme4 = document.querySelector('#filme4').innerHTML = 'Em Defesa de Cristo'
+
+
+
+    function local(titulo,url) {
+        this._titulo = titulo
+        this._url = url
+        localStorage.setItem(_titulo,_url)
+    }
+
+    
