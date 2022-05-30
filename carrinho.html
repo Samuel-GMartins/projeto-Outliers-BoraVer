@@ -1,22 +1,47 @@
-<DOCTYPE html>
-    <html>
-        <head>
-            <title>Página Inicial</title>
-            <meta charset="utf-8" />
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-        </head>
-        <body>
-            <!--Setor de cabeçalho-->
-            <header class="bg-info"> 
-                <div class="row">
-                    <div class="col-sm-2">
-                        <a href="index.html" class="col-sm-3 mr-5 ml-5"><img src="../imagens/logo.jpg" height="250"/></a>
-                    </div>
-                    <div class="col-sm-9 mt-5 mb-5 text-right">
-                        <h1 style="font-size: 90px;" class="text-white">OutStream</h1>
-                    </div>
-                </div>
-            </header> 
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" style="font-size: 100%;">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="col-sm-2 mt-1">
+                <img src="imagens/logo.png" class="w-100">
+            </div>
+            <div class="col-sm-4 mt-5 ml-5 text-center">
+                <h1>BoraVer</h1>
+                <p>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em família.</p>
+            </div>
+
+
+        <div class="col-sm-5 mt-4 mb-4 text-center">
+            <span id="bemVindo"></span>
+            <a id="entrar" href="login.html">Entrar</a>
+            <a class="ml-5 pl-5" style="cursor: pointer; text-decoration: underline" id="sair">Sair</a>
+        </div>
+        
+    </div>
+
+
+        <nav class="mt-4 mb-4 text-center">
+            <a href="perfilUsuario.html" class="col-sm-3">PERFIL DO USUARIO  </a>
+            <a href="produtos.html" class="col-sm-3">PRODUTOS  </a>
+            <a href="promocoes.html" class="col-sm-3">PROMOÇÕES </a>
+            <a href="contato.html" class="col-sm-3">CONTATO  </a>
+            <a href="carrinho.html" class="col-sm-3">CARRINHO</a>
+        </nav>
+
+
+    </header>
     
             <!--Setor de navegação-->
             <ul class="nav nav-tabs justify-content-end">
@@ -52,39 +77,39 @@
                                 <div id="conteudoCarrinho" class="border" style="border: 2px;">
     
                                     <div class="row text-center" id="produto1">
-                                        <div class="col-sm-2 text-left mt-2 ml-2"><img src="../imagens/semvoltapracasa.jpeg" class="w-50"></div>
+                                        <div class="col-sm-2 text-left mt-2 ml-2"><img src="imagens/semvoltapracasa.jpeg" class="w-50"></div>
                                         <input id="tela1" class="col-sm-2 mt-2" type="number" min="1" max="5" style="height: 30px;" />
                                         <div class="col-sm-2 mt-2 text-center" id="qtd1">1</div>
-                                        <div class="col-sm-3 mt-2" id="pre1"></div>
+                                        <div class="col-sm-3 mt-2" id="pre1">R$ 00,00</div>
                                         <div class="col-sm-2 mt-2" id="ex1">
                                             <button id="bt_p1" class="btn">
-                                                <img src="../imagens/lixeira.png" class="w-50"> 
+                                                <img src="imagens/lixeira.png" class="w-50"> 
                                             </button>
                                         </div>
                                     </div>
                                     <hr>
     
                                     <div class="row text-center" id="produto2">
-                                        <div class="col-sm-2 text-left mt-2 ml-2"><img src="../imagens/afreira.jpeg" class="w-50"></div>
+                                        <div class="col-sm-2 text-left mt-2 ml-2"><img src="imagens/afreira.jpeg" class="w-50"></div>
                                         <input id="tela2" class="col-sm-2 mt-2" type="number" min="1" max="5" style="height: 30px;" />
                                         <div class="col-sm-2 mt-2 text-center" id="qtd2">1</div>
-                                        <div class="col-sm-3 mt-2" id="pre2"></div>
+                                        <div class="col-sm-3 mt-2" id="pre2">R$ 00,00</div>
                                         <div class="col-sm-2 mt-2" id="ex2">
                                             <button id="bt_p2" class="btn">
-                                                <img src="../imagens/lixeira.png" class="w-50"> 
+                                                <img src="imagens/lixeira.png" class="w-50"> 
                                             </button>
                                         </div>
                                     </div>
                                     <hr>
     
                                     <div class="row text-center" id="produto3">
-                                        <div class="col-sm-2 text-left mt-2 ml-2"><img src="../imagens/comoeueraantesdevc.jpeg" class="w-50"></div>
+                                        <div class="col-sm-2 text-left mt-2 ml-2"><img src="imagens/comoeueraantesdevc.jpeg" class="w-50"></div>
                                         <input id="tela3" class="col-sm-2 mt-2" type="number" min="1" max="5" style="height: 30px;" />
                                         <div class="col-sm-2 mt-2 text-center" id="qtd3">1</div>
-                                        <div class="col-sm-3 mt-2" id="pre3"></div>
+                                        <div class="col-sm-3 mt-2" id="pre3">R$ 00,00</div>
                                         <div class="col-sm-2 mt-2" id="ex3">
                                             <button id="bt_p3" class="btn">
-                                                <img src="../imagens/lixeira.png" class="w-50"> 
+                                                <img src="imagens/lixeira.png" class="w-50"> 
                                             </button>
                                         </div>
                                     </div>
@@ -94,7 +119,7 @@
                                 <div class="row mt-2 text-right">
                                     <p class="col-sm-9">Limpar carrinho </p>
                                     <button class="btn col-sm-2" id="bt_limparCarrinho"> 
-                                        <img src="../imagens/lixeira.png" class="w-50">
+                                        <img src="imagens/lixeira.png" class="w-50">
                                     </button>
                                 </div>
                             </div>
@@ -141,9 +166,9 @@
     
             <section class="container mt-5">
                 <div class="row">
-                    <div class="col-sm-4"> <img src="../imagens/toryca.jpeg" alt="" class="w-50"></div>
-                    <div class="col-sm-4"> <img src="../imagens/sherek.jpeg" alt="" class="w-50"></div>
-                    <div class="col-sm-4"> <img src="../imagens/cristo.jpeg" alt="" class="w-50"></div>
+                    <div class="col-sm-4"> <img src="imagens/toryca.jpeg" alt="" class="w-50"></div>
+                    <div class="col-sm-4"> <img src="imagens/sherek.jpeg" alt="" class="w-50"></div>
+                    <div class="col-sm-4"> <img src="imagens/cristo.jpeg" alt="" class="w-50"></div>
                 </div>
             </section>    
     
@@ -152,5 +177,5 @@
                 <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
             </footer>
         </body>
-        <script src="carrinho.js"></script>
+        <script src="js/carrinho.js"></script>
 </html>
