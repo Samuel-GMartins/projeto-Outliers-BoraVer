@@ -1,71 +1,151 @@
-valorpro1 = 1
-valorpro2 = 2
-valorpro3 = 1
+console.log("Agora essa bagaceira vai")
 
-preco1 = 12.50
-preco2 = 15
-preco3 = 11
+//id produto = produto1
+//id telas = tela1 (input)
+//id quatidade = qtd1 
+//id preço = pre1 
+//id excluir = ex1
 
-quantidaDeProdutos = valorpro1 + valorpro2 + valorpro3
-somatotal = preco1 + preco2 + preco3
-
-
-let pro1 = document.querySelector('#pro1').innerHTML = valorpro1
-let pro2 = document.querySelector('#pro2').innerHTML = valorpro2
-let pro3 = document.querySelector('#pro3').innerHTML = valorpro3
-
-let pre1 = document.querySelector('#pre1').innerHTML = 'R$ ' + parseFloat(preco1).toFixed(2)
-let pre2 = document.querySelector('#pre2').innerHTML = 'R$ ' + parseFloat(preco2).toFixed(2)
-let pre3 = document.querySelector('#pre3').innerHTML = 'R$ ' + parseFloat(preco3).toFixed(2)
+// //valores filmes
+var preco1 = 12.90
+var preco2 = 9.90
+var preco3 = 9.90
 
 
-let totprod = document.querySelector('#totprod').innerHTML = quantidaDeProdutos + ' Produtos'
+//imprimir em tela valores
+var totalPreco = preco1+preco2+preco3
 
-let tot = document.querySelector('#tot').innerHTML = 'R$ ' + parseFloat(somatotal).toFixed(2)
 
-function calculaValor1(){
-    // zerando total
-    document.getElementById("tot").value = '0';
+//nome de funções e calculos produto
+
+let valorTela1 = 0 
+    if(localStorage.getItem('subtotalTelas1')!=null){
+        valorTela1 = parseFloat(localStorage.getItem('subtotalTelas1'))
+    }
+
+let valorTela2 = 0 
+    if(localStorage.getItem('subtotalTelas2')!=null){
+        valorTela2 = parseFloat(localStorage.getItem('subtotalTelas2'))
+    }
+
+let valorTela3 = 0 
+    if(localStorage.getItem('subtotalTelas3')!=null){
+        valorTela3 = parseFloat(localStorage.getItem('subtotalTelas3'))
+    }
+
+subTotal.innerHTML = 'Subtotal R$ ' + (valorTela1 + valorTela2 + valorTela3).toFixed(2)
+
+
+
+
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//Função calcular input telas e gravar em localStorage
+
+let input1 = tela1
+let input2 = tela2 
+let input3 = tela3
+
+function calcular(input,preco){
+        let result=(input.value * preco).toFixed(2)
     
-    // valor líquido
-    var VTOTALLIQUIDO = somatotal
+    parseFloat(document.querySelector("#total")) + result
+    }
     
-    // desconto em porcentagem
-    var DESCONTO1 = 10
-    
-    var PDESCONTO = parseFloat( ( VTOTALLIQUIDO * DESCONTO1 ) / 100 );
+    function calcularPorcentagem(input,preco,el,preco2){
+        let pct = (input.value * 0.07) * preco
+        localStorage.setItem(el,(preco + pct).toFixed(2))
+        preco2.innerHTML= 'R$ ' + (el,(preco + pct)).toFixed(2)
+    }
 
-    var TOTAL = parseFloat(VTOTALLIQUIDO) - parseFloat(PDESCONTO);
+
+input1.addEventListener('change', function(){
+    calcular(input1,preco1),
+    calcularPorcentagem(input1,preco1,'subtotalTelas1',pre1)
+    window.addEventListener("load",calcularPorcentagem(preco2.innerHTML))
+})
+
+input2.addEventListener('change', function(){
+    calcular(input2,preco2),
+    calcularPorcentagem(input2,preco2,'subtotalTelas2',pre2)
+})
+
+input3.addEventListener('change', function(){
+    calcular(input3,preco3),
+    calcularPorcentagem(input3,preco3,'subtotalTelas3',pre3)
+})
+
     
-    document.querySelector('#tot').innerHTML = 'R$ ' + TOTAL.toFixed(2);
+
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//Função excluir produtos
+
+let limparCarrinho = document.querySelector('#bt_limparCarrinho')
+let btP3 = document.querySelector('#bt_p3')
+
+let excluir = {
+    excluirProduto:function(el,produto){
+        el.innerHTML=produto
+
+    }
 }
-function calculaValor2(){
-    // zerando total
-    document.getElementById("tot").value = '0';
-    
-    // valor líquido
-    var VTOTALLIQUIDO = somatotal
-    
-    // desconto em porcentagem
-    var DESCONTO1 = 20
-    
-    var PDESCONTO = parseFloat( ( VTOTALLIQUIDO * DESCONTO1 ) / 100 );
 
-    var TOTAL = parseFloat(VTOTALLIQUIDO) - parseFloat(PDESCONTO);
-    
-    document.querySelector('#tot').innerHTML = 'R$ ' + TOTAL.toFixed(2);
+
+
+document.querySelector('#bt_p1').onclick=function(){
+    confirm("Tem certeza de que deseja excluir esse produto?")
+    excluir.excluirProduto(document.querySelector('#produto1'),'')
+    localStorage.removeItem('subtotalTelas1')
+    // this.addEventListener('click', function)
+  }
+
+document.querySelector('#bt_p2').onclick=function(){
+    confirm("Tem certeza de que deseja excluir esse produto?")
+    excluir.excluirProduto(document.querySelector('#produto2'),'')
+    localStorage.removeItem('subtotalTelas2')
+  }
+
+btP3.onclick=function(){
+    confirm("Tem certeza de que deseja excluir esse produto?")
+    excluir.excluirProduto(document.querySelector('#produto3'),'')
+    localStorage.removeItem('subtotalTelas3')
+  }
+
+limparCarrinho.onclick=function(){
+    confirm("Tem certeza de que deseja esvaziar seu carrinho?")
+    excluir.excluirProduto(document.querySelector('#limparCarrinho'),'SEU CARRINHO ESTÁ VAZIO')
+    document.querySelector("#produtos").innerHTML = "Não há produtos em seu carrinho."
+    localStorage.clear()
+    subTotal.innerHTML="Subtotal R$ 00,00"
 }
 
-document.querySelector("#botao").onclick=function(){
 
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//Função Cupom
+
+let valorTotal = document.getElementById("#subTotal")
+
+function cupomDesconto(el){
+    document.getElementById("#desconto") = 0;
+    let calculoDesconto = parseFloat( ( valorTotal * el ) / 100 );
+    total = parseFloat(valorTotal) - parseFloat(calculoDesconto);
+
+    document.querySelector("#desconto").innerHTML = 'R$ ' + parseFloat(total).toFixed(2)
+}
+
+document.querySelector('#btCupom').onclick=function(){
     if(formDesconto.cupom.value == "CUPOM123"){
-        calculaValor1()
+        cupomDesconto(10)
+        console.log(total)
     }else if(formDesconto.cupom.value == "CUPOM456"){
-        calculaValor2()
+        cupomDesconto(20)
     }else if(formDesconto.cupom.value != "CUPOM123", "CUPOM456"){
         alert("Ops, cupom inválido!")
     }else{
         formDesconto.submit()
-
     }
-}
+  }
