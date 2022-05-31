@@ -1,38 +1,33 @@
-// Caso coloque a chamanda dentro do <head>
-// use window.onload(){ ... Seu codigo todo aqui...}
-// window.onload=function(){
+var formc = document.forms.formContato
+var idRandon = parseInt(Math.random() * 90000) + 10000
 
-//     // codigo aqui
-// }
-
-
-console.log('Hello World!')
-document.querySelector("h1").innerHTML += "" // Seleciona o h1 e troca o html para   "Teste"
-
-// Acesso a um elemento de Formulário
-console.log(document.forms.formContato)
-
-// Atribuindo o acesso ao formContato para a variavel formC
-var formC = document.forms.formContato
-
-// Evento de click no botao confirmar
 document.querySelector("#btContato").onclick = function () {
-    // alert("ok")
-    // /input de nome / valor desse campo
-    if (formC.nameContato.value == "") {
+    if (formc.nomecontato.value == "") {
+
         alert("Preencha o nome!")
-    } else if (formC.emailContato.value == "") {
-        alert("Digite seu e-mail!")
-    } else if (formC.assuntoContato.value == "") {
-        alert("Digite o assunto!")
-    } else if (formC.comentarioContato.value == "") {
-        alert("Deixe seu comentario!")
-    } else {
-        formC.submit();
+    
+        } else if (formc.emailcontato.value == "") {
+        alert("Preencha o E-mail!")
+
     }
+    
+    else if (formc.telcontato.value == "") {
+        alert("Digite um telefone!")
 
-    // alert(formC.nameContato.value)
-    // alert(formC.emailContato.value)
-    // alert(formC.comentarioContato.value)
+    } else if (formc.assuntocontato.value == "") {
+        alert("Digite o Assunto do Comentário!")
+        
+    } else if (formc.mensagemcontato.value == "") {
+        alert("Escreva Um Comentário")
 
-}
+    } else if (formc.chamado.checked) {
+
+        let arrPeoples = [formc.nomecontato.value,formc.emailcontato.value,formc.telcontato.value,formc.assuntocontato.value]
+        localStorage.setItem('chamado-' + idRandon,arrPeoples)
+        
+        formc.submit();
+    } else {
+        formc.submit();
+    }
+}         
+
