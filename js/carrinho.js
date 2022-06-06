@@ -1,4 +1,4 @@
-console.log("Agora essa bagaceira vai")
+console.log('Teste')
 
 //id produto = produto1
 //id telas = tela1 (input)
@@ -6,82 +6,90 @@ console.log("Agora essa bagaceira vai")
 //id preço = pre1 
 //id excluir = ex1
 
-// //valores filmes
-var preco1 = 12.90
+//valores filmes
+var preco1 =  12.90
 var preco2 = 9.90
 var preco3 = 9.90
 
+//input telas
+let input1 = document.querySelector("#tela1")
+let input2 = document.querySelector("#tela2") 
+let input3 = document.querySelector("#tela3")
 
-//imprimir em tela valores
-var totalPreco = preco1+preco2+preco3
+
+function q (el){
+    return document.querySelector(el)
+}
+  
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//CALCULO PORCENTAGEM E SUBTOTAL
+
+let carrinho
+let result1 = 0
+let result2 = 0
+let result3 = 0
 
 
-//nome de funções e calculos produto
+function calcularCarrinho(){
+    carrinho = 0
+    q("#subTotal").innerHTML = 'R$ 00,00'
 
-let valorTela1 = 0 
-    if(localStorage.getItem('subtotalTelas1')!=null){
-        valorTela1 = parseFloat(localStorage.getItem('subtotalTelas1'))
+    if (result1==null){
+        carrinho = parseFloat(result2) + parseFloat(result3) 
     }
-
-let valorTela2 = 0 
-    if(localStorage.getItem('subtotalTelas2')!=null){
-        valorTela2 = parseFloat(localStorage.getItem('subtotalTelas2'))
+    else if(result2==null){
+        carrinho = parseFloat(result1) + parseFloat(result3)
     }
-
-let valorTela3 = 0 
-    if(localStorage.getItem('subtotalTelas3')!=null){
-        valorTela3 = parseFloat(localStorage.getItem('subtotalTelas3'))
+    else if(result3==null){
+        carrinho = parseFloat(result1) + parseFloat(result2)
     }
-
-subTotal.innerHTML = 'Subtotal R$ ' + (valorTela1 + valorTela2 + valorTela3).toFixed(2)
-
-
-
-
-
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-//Função calcular input telas e gravar em localStorage
-
-let input1 = tela1
-let input2 = tela2 
-let input3 = tela3
-
-function calcular(input,preco){
-        let result=(input.value * preco).toFixed(2)
-    
-    parseFloat(document.querySelector("#total")) + result
+    else if(result1,result2,result3 != null){
+        carrinho = parseFloat(result1) + parseFloat(result2) + parseFloat(result3)
     }
-    
-    function calcularPorcentagem(input,preco,el,preco2){
-        let pct = (input.value * 0.07) * preco
-        localStorage.setItem(el,(preco + pct).toFixed(2))
-        preco2.innerHTML= 'R$ ' + (el,(preco + pct)).toFixed(2)
+    else if(result1 != null){
+        carrinho = parseFloat(result1)
     }
+    else if (result2 != null){
+        carrinho = parseFloat(result2)
+    }
+    else if(result3 != null){
+        carrinho = parseFloat(result3)
+    }
+    q("#subTotal").innerHTML = `R$ ${carrinho.toFixed(2)}`
+}
 
+function alteraCarrinho(){
+    console.log(input1.value)
+    let pct = (input1.value * 0.07) * preco1
+    result1 = (preco1 + pct).toFixed(2)
+    pre1.innerHTML= 'R$ ' + result1
+    calcularCarrinho();
+}
 
-input1.addEventListener('change', function(){
-    calcular(input1,preco1),
-    calcularPorcentagem(input1,preco1,'subtotalTelas1',pre1)
-    window.addEventListener("load",calcularPorcentagem(preco2.innerHTML))
-})
+function alteraCarrinho2(){
+    console.log(input2.value)
+    let pct = (input2.value * 0.07) * preco2
+    result2 = (preco2 + pct).toFixed(2)
+    pre2.innerHTML= 'R$ ' + result2
+    calcularCarrinho();
+}
 
-input2.addEventListener('change', function(){
-    calcular(input2,preco2),
-    calcularPorcentagem(input2,preco2,'subtotalTelas2',pre2)
-})
+function alteraCarrinho3(){
+    console.log(input3.value)
+    let pct = (input3.value * 0.07) * preco3
+    result3 = (preco3 + pct).toFixed(2)
+    pre3.innerHTML= 'R$ ' + result3
+    calcularCarrinho();
+}
 
-input3.addEventListener('change', function(){
-    calcular(input3,preco3),
-    calcularPorcentagem(input3,preco3,'subtotalTelas3',pre3)
-})
+q("#tela1").addEventListener("change",alteraCarrinho)
+q("#tela2").addEventListener("change",alteraCarrinho2)
+q("#tela3").addEventListener("change",alteraCarrinho3)
 
-    
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-//Função excluir produtos
+//FUNÇÃO EXCLUIR PRODUTOS
 
 let limparCarrinho = document.querySelector('#bt_limparCarrinho')
 let btP3 = document.querySelector('#bt_p3')
@@ -89,13 +97,30 @@ let btP3 = document.querySelector('#bt_p3')
 let excluir = {
     excluirProduto:function(el,produto){
         el.innerHTML=produto
-
     }
 }
 
-
-
 document.querySelector('#bt_p1').onclick=function(){
+    confirm("Tem certeza de que deseja excluir esse produto?")
+    excluir.excluirProduto(document.querySelector('#produto1'),'')
+  }
+
+document.querySelector('#bt_p2').onclick=function(){
+    confirm("Tem certeza de que deseja excluir esse produto?")
+    excluir.excluirProduto(document.querySelector('#produto2'),'')
+  }
+
+btP3.onclick=function(){
+    confirm("Tem certeza de que deseja excluir esse produto?")
+    excluir.excluirProduto(document.querySelector('#produto3'),'')
+  }
+
+limparCarrinho.onclick=function(){
+    confirm("Tem certeza de que deseja esvaziar seu carrinho?")
+    excluir.excluirProduto(document.querySelector('#limparCarrinho'),'SEU CARRINHO ESTÁ VAZIO')
+    document.querySelector("#produtos").innerHTML = "Não há produtos em seu carrinho."
+    subTotal.innerHTML="Subtotal R$ 00,00"
+    document.querySelector('#bt_p1').onclick=function(){
     confirm("Tem certeza de que deseja excluir esse produto?")
     excluir.excluirProduto(document.querySelector('#produto1'),'')
     localStorage.removeItem('subtotalTelas1')
@@ -120,32 +145,41 @@ limparCarrinho.onclick=function(){
     document.querySelector("#produtos").innerHTML = "Não há produtos em seu carrinho."
     localStorage.clear()
     subTotal.innerHTML="Subtotal R$ 00,00"
+    desconto.innerHTML="Descontos R$ 00,00"
+    total.innerHTML="Total R$ 00,00"
+}
 }
 
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//CALCULO DESCONTO CUPOM
 
-//Função Cupom
+console.log(parseFloat(subTotal))
 
-let valorTotal = document.getElementById("#subTotal")
+let valor = parseFloat(calcularCarrinho.carrinho)
+console.log(Number(valor))
 
-function cupomDesconto(el){
-    document.getElementById("#desconto") = 0;
-    let calculoDesconto = parseFloat( ( valorTotal * el ) / 100 );
-    total = parseFloat(valorTotal) - parseFloat(calculoDesconto);
 
-    document.querySelector("#desconto").innerHTML = 'R$ ' + parseFloat(total).toFixed(2)
-}
-
-document.querySelector('#btCupom').onclick=function(){
+q('#btCupom').onclick=function(){
     if(formDesconto.cupom.value == "CUPOM123"){
-        cupomDesconto(10)
+        let calculoDesconto = parseFloat((valor * 10) / 100 );
+        let total = parseFloat(valor) - parseFloat(calculoDesconto);
+        q("#desconto").innerHTML = 'R$ ' + parseFloat(total).toFixed(2)
         console.log(total)
-    }else if(formDesconto.cupom.value == "CUPOM456"){
-        cupomDesconto(20)
-    }else if(formDesconto.cupom.value != "CUPOM123", "CUPOM456"){
-        alert("Ops, cupom inválido!")
-    }else{
+        console.log(calculoDesconto)
+        console.log(valor)
+    }
+    // else if(formDesconto.cupom.value == "CUPOM456"){
+    //     let calculoDesconto = parseFloat( ( valor * 20 ) / 100 );
+    //     total = parseFloat(valor) - parseFloat(calculoDesconto);
+    //     q("#desconto").innerHTML = 'R$ ' + parseFloat(total).toFixed(2)
+    //     console.log(total)
+    // }
+    // else if(formDesconto.cupom.value != "CUPOM123" || "CUPOM456"){
+    //     alert("Ops, cupom inválido!")
+    // }
+    else{
         formDesconto.submit()
     }
+    q("#btCupom").setAttribute("disabled",true)
   }

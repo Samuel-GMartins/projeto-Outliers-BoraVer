@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Projeto Livraria</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <header class="container p-4">
+        <div class="row">
+            <div class="col-sm-3 mt-1">
+                <a href="indexAdmin"><img src="../imagens/logo.png" class=" ml-2 w-100"></a>
+            </div>
+
+            <div class="col-sm-4 mt-5 ml-5 text-center">
+                <h1>Nome Do Site Aqui</h1>
+                <p>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em família.</p>
+            </div>
+        </div>
+    </header>
+
+    <body>
+        <h1 class="container mt-4 mb-3"><b>Relatório Comercial</b></h1>
+
+        <section id="tabs" class="project-tab">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <nav>
+                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                                    role="tab" aria-controls="nav-home" aria-selected="true">Assinaturas</a>
+                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                                    role="tab" aria-controls="nav-profile" aria-selected="false">Aluguel</a>
+
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                aria-labelledby="nav-home-tab">
+                                <table class="table border" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th id="clienteAssi">Cliente</th>
+                                            <th>Descrição de serviços</th>
+                                            <th>Valor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td id="assi1">Maria Joaquina</td>
+                                            <td>Assinatura Mensal</td>
+                                            <td id="assinatura1">R$ 00,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="assi2">João Manoel</td>
+                                            <td>Assinatura Familia</td>
+                                            <td id="assinatura2">R$ 00,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="assi3">Valentina</td>
+                                            <td>Assinatura Anual</td>
+                                            <td id="assinatura3">R$ 00,00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div id="totalAssinantes" style="border: 1px solid;">Total R$ 00,00</div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                aria-labelledby="nav-profile-tab">
+                                <table class="table border" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th id="clienteAlu">Cliente</th>
+                                            <th id="totalFilmes">Descrição de Serviços</th>
+                                            <th>Valor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Carla</td>
+                                            <td>Aluguel</td>
+                                            <td id="aluguel1">R$ 00,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pedro</td>
+                                            <td>Aluguel</td>
+                                            <td id="aluguel2">R$ 00,00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Marcos</td>
+                                            <td>Aluguel</td>
+                                            <td id="aluguel3">R$ 00,00</td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                                <div id="totalAluguel" style="border: 1px solid;">Total R$ 00,00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2 class="text-center mt-2 mb-2" style="font-family: monospace;">Visão Macro</h2>
+                        <div style="border: 2px solid; padding: 2mm 1mm 1mm 5mm;">
+                            <div>
+                                <p id="assinantes">Assinantes: XXX
+                                    <div id="macroAssinantes">Total: R$</div>
+                                    <br />
+                            </div>
+                            <div>
+                                <p id="filmesAlugados">Filmes Alugados: XXX</p>
+                                <div id="macroAluguel">Total: R$</div>
+                                <br />
+                            </div>
+                            <div>
+                                <p><b>Média de Filmes Alugados:</b></p>
+                                <p id="mediaFilmes">xxx</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mt-5">
+                        <div class="flex-row d-flex justify-content-around">
+                            <div class=" col-sm-4">
+                                <a href="../single-produto"><img
+                                        src="../imagens/semvoltapracasa.jpeg" alt="Imagem1"
+                                        class="w-30"></a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a href="../single-produto"><img
+                                        src="../imagens/cristo.jpeg" alt="Imagem2"
+                                        class="w-30"></a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a href="../single-produto"><img
+                                        src="..//imagens/velosesefuriosos.jpeg" alt="Imagem3"
+                                        class="w-30"></a>
+                            </div>
+                        </div>
+        </section>
+        <footer class="bg-dark p-4 text-white text-center mt-4">
+            <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
+        </footer>
+    </body>
+    <script src="../../administrador/relatorioComercial.js"></script>
+
+</html>

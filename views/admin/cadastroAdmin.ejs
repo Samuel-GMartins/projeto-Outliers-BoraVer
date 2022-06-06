@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cadastro Adm</title>
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="col-sm-2 mt-1">
+                <a href="../"><img src="../imagens/logo.jpg" class=" ml-2 w-100"></a>
+            </div>
+
+            <div class="col-sm-4 mt-5 ml-5 text-center">
+                <h1>Nome Do Site Aqui</h1>
+                <p>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em
+                    família.</p>
+            </div>
+
+        </div>
+    </header>
+    <nav class="text-center">
+        <a href="cadastroProduto" class="col-sm-3">CADASTRO DE PRODUTOS</a>
+        <a href="indexAdmin" class="col-sm-3">PÁGINA INICIAL</a>
+        </div>
+    </nav>
+    <hr>
+           <!---->
+               <section class="container">
+                <h1 class="text-center mt-5 mb-5"> Bem-vindo à sua home de vídeos on-line!</h1> 
+                    <h2 class="text-center mt-5 mb-5"> Faça seu cadastro!</h2> 
+
+                    <article>
+                        <form id="formCadastro" method="post" action="./" class="w-50 mx-auto p-3 mt-5 mb-5" 
+                        style="border:1px solid #ccc; border-radius: 12px;">
+                        
+                                          
+                       <fieldset>
+                          <legend>Entre com os seus dados:</legend>
+                           <div class="form-group">
+                              <label>Nome :<br /></label> 
+                              <input class="form-control" name="nomeCadastro" maxlength="100" required>
+                           </div>
+                            <div class="form-group">
+                                <label>Email :<br /></label>
+                                <input class="form-control" name="emailCadastro" type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Senha :<br /></label>
+                                <input class="form-control w-50" name="senha" id="senha" type="password" maxlength="8" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirme a senha :<br /></label>
+                                <input class="form-control w-50" name="senhaC" id="senhac" type="password" maxlength="8" required>
+                            </div>
+                            <div>
+                            <select name="nivel" class="form-group">
+                                <option value="1">Adm</option>
+                                <option value="2">Adm Master</option>
+                            </select>
+                            </div>
+                            <div>
+                                <nav>
+                                <button id="btCadastro" type="button"  class="btn btn-danger"  >Confirmar</button>        
+                                <a href="indexAdmin">
+                                </nav>
+                            </div>
+                        </fieldset>
+                    </form>
+                    </article>
+                   
+                </section>
+                
+                <footer class="bg-dark p-4 text-white text-center mt-4">
+                    <p class="text-center">&copy; 2022 - Projeto Vídeos - Outliers</p>
+            
+                </footer>
+            </body>
+            <script src="../../administrador/cadastroAdmin.js"></script>
+        </html>
