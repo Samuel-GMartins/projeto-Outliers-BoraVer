@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `projeto_video` /*!40100 DEFAULT CHARACTER SET ut
 USE `projeto_video`;
 -- MySQL dump 10.13  Distrib 8.0.25, for Linux (x86_64)
 --
--- Host: localhost    Database: projeto_video
+-- Host: 127.0.0.1    Database: projeto_video
 -- ------------------------------------------------------
 -- Server version	8.0.29-0ubuntu0.20.04.3
 
@@ -33,7 +33,7 @@ CREATE TABLE `carrinho` (
   `preco` int NOT NULL,
   `qtdTelas` int NOT NULL,
   PRIMARY KEY (`carrinho_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `carrinho` (
 
 LOCK TABLES `carrinho` WRITE;
 /*!40000 ALTER TABLE `carrinho` DISABLE KEYS */;
-INSERT INTO `carrinho` VALUES (1,'Vanessa Da Mata','Aluguel','A Freira',1,10,0),(2,'Frederico Rodrigues','Assinatura','Plano Mensal 1 tela',1,10,0),(3,'Olivio Matos','Plano Familia','Plano familia Mensal',1,50,0);
+INSERT INTO `carrinho` VALUES (1,'1','Aluguel','A Freira',1,10,1),(2,'2','Assinatura','Assinatura Mensal',1,10,1),(3,'1','Assinatura','Assinatura Semestral',1,50,1),(5,'2','Aluguel','Velozes e Furiosos',2,20,1),(6,'2','Aluguel','Skrek',3,30,1);
 /*!40000 ALTER TABLE `carrinho` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -220,4 +220,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-29 21:28:51
+-- Dump completed on 2022-06-07 13:47:19
