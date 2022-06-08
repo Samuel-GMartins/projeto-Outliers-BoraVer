@@ -3,6 +3,8 @@ const express =  require('express')
 const app = express()
 const db =require("./db.js")
 const port = 8080
+const url = require("url")
+
 
 app.set("view engine","ejs")
 
@@ -52,8 +54,21 @@ app.get("/single-preferencia",(req,res)=>{
     res.render(`single-preferencia`)
 })
 
-app.get("/single-produto",(req,res)=>{
-    res.render(`single-produto`,{produto:consulta})
+app.get("/single-produto",async(req,res) => {
+    let infoUrl = req.url
+    let urlProp = url.parse(infoUrl,true) // ?id=5
+    let q = urlProp.query
+    const consultaSingle = await db.selectSingle(q.id)
+    const consultaInit = await db.selectSingle(4)
+
+
+    res.render(`single-produto`, {
+        titulo:"Conheça nossos livros", 
+        promo:"Todos os livros com 10%OFF !",
+        livro: consulta,
+        galeria: consultaSingle,
+        inicio: consultaInit
+        })
 })
 
 app.get("/admin/cadastroAdmin",(req,res)=>{

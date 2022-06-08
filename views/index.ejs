@@ -65,72 +65,18 @@
                     com a
                     namorada.</p>
             </div>
+            <%filme.forEach((item)=> { %>
+
             <div class="col-sm-4 mt-5">
-                <h2>
-                    <%=filme[13].titulo%>
-               </h2>
-                <a href="/single-produto"><img src="imagens/afreira.jpeg"></a>
-                   <p> <%=filme[13].sinopse.substring(0,30)%></p>
+                <h2><%=item.titulo%></h2>
+                <a href="/single-produto?id=<%=item.filmes_id%>">
+                    <img class="card-img-top" src="imagens/<%=item.fotos%>" alt="Card image cap">
+                    </a>
+                   <p> <%=item.sinopse%></p>
                    
             </div>
-            <div class="col-sm-4 mt-5">
-                <h2>
-                    <%=filme[14].titulo%>
-                </h2>
-                <a href="/single-produto"><img src="imagens/bateroucorrer.jpeg"></a>
-                <p> <%=filme[14].sinopse.substring(0,30)%></p>
-            </div>
-            <div class="col-sm-4 mt-5">
-                <h2>
-                    <%=filme[12].titulo%>
-                </h2>
-                <a href="/single-produto"><img src="imagens/comoeueraantesdevc.jpeg"></a>
-                <p> <%=filme[12].sinopse.substring(0,30)%></p>
-            </div>
+            <% }) %>
 
-            <div class="col-sm-4 mt-5">
-                <h2>
-                    <%=filme[16].titulo%>
-                </h2>
-                <a href="/single-produto"><img src="imagens/cristo.jpeg"></a>
-                <p> <%=filme[16].sinopse.substring(0,30)%></p>
-            </div>
-            <div class="col-sm-4 mt-5">
-                <h2>
-                    <%=filme[17].titulo%>
-                </h2>
-                <a href="/single-produto"><img src="imagens/semvoltapracasa.jpeg"></a>
-                <p> <%=filme[17].sinopse.substring(0,30)%></p>
-            </div>
-            <div class="col-sm-4 mt-5">
-                <h2>
-                    <%=filme[15].titulo%>
-                </h2>
-                <a href="/single-produto"><img src="imagens/corra.jpeg"></a>
-                <p> <%=filme[15].sinopse.substring(0,30)%></p>
-            </div>
-
-            <div class="col-sm-4 mt-5">
-                <h2>
-                    <%=filme[18].titulo%>
-                </h2>
-                <a href="/single-produto"><img src="imagens/sherek.jpeg"></a>
-                <p> <%=filme[18].sinopse.substring(0,30)%></p>
-            </div>
-            <div class="col-sm-4 mt-5">
-                <h2>
-                    <%=filme[19].titulo%>
-                </h2>
-                <a href="/single-produto"><img src="imagens/velosesefuriosos.jpeg"></a>
-                <p> <%=filme[19].sinopse.substring(0,30)%></p>
-            </div>
-            <div class="col-sm-4 mt-5">
-                <h2>
-                    <%=filme[20].titulo%>
-                </h2>
-                <a href="/single-produto"><img src="imagens/toryca.jpeg"></a>
-                <p> <%=filme[20].sinopse.substring(0,30)%></p>
-            </div>
         </div>
 
     </section>
