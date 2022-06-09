@@ -64,13 +64,76 @@ body {
     font-size: large;
 }
 
+.label-float input {
+    width: 100%;
+    padding: 6px 6px;
+    display: inline-block;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    background-color:#ffffff10;
+    outline: none;
+    min-width: 180px;
+    font-size: 15px;
+    color: #fff;
+    transition: all .2s ease-out;
+    border-radius: 0;
+}
 
+.label-float {
+    position: relative;
+    padding-top: 13px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
 
+.label-float input:focus {
+    border-bottom: 1px solid #e4b954;
+}
 
+.label-float label {
+    color: #dbab3c;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 25px;
+    transition: all .2s ease-in-out;
+}
 
+.label-float input:focus+label,
+.label-float input:valid+label {
+    font-size: 13px;
+    margin-top: 0;
+    color: #dbab3c;
+}
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
 
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.fa-eye{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+    color: #dbab3c ;
+}
 
 footer {
     background-color: #dbab3c;
