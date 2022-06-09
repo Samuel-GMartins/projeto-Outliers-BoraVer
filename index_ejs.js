@@ -6,6 +6,7 @@ const port = 8080
 const url = require("url")
 
 
+
 app.set("view engine","ejs")
 
 app.use(express.static('projetoGrupo3-Outliers'))
@@ -96,6 +97,35 @@ app.get("/admin/relatorioComercial",(req,res)=>{
 })
 
 
+app.get("/atualiza-promo",async(req,res)=>{
+    // let infoUrl = req.url
+    let qs = url.parse(req.url,true).query
+     await db.updatePromo(qs.promo,qs.id)
+     res.send("<h2>Lista de Promoções Atualizada!</h2><a href='./'>Voltar</a>")
+ })
+
+ app.get("/promocoes",async(req,res)=>{
+     const consultaPromo = await db.selectPromo()
+     res.render(`promocoes`,{
+         titulo:"Conheça nossos livros",
+         promo:"Todos os livros com 10% de desconto!",
+         filmes:consulta,
+         galeria:consultaPromo
+     })
+    })
+    app.get("/upd-promo", async(req,res)=>{
+      let qs = url.parse(req.url,true).query
+      await db.updatePromo(qs.promo,qs.id)
+        res.render(`admin/atualiza-promocoes`,{
+            titulo:"Conheça nossos filmes",
+            promo:"Todos os filmes com 10% de desconto!",
+            filmes:consulta,
+            galeria:consulta   
+            })
+    })
+
 app.listen(port,()=> console.log("Servidor rodando com nodemon!"))
 
 })()
+
+
