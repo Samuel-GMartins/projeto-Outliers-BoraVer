@@ -2,8 +2,8 @@ async function conecta(){
     const mysql=require("mysql2/promise")
     const conn= await mysql.createConnection({
         host:"localhost",
-        user:"lari",
-        password:"312406La@.",
+        user:"priallmeida",
+        password:"Pri1234#@",
         database:"projeto_video"
     })
     console.log("mySQL conectado!")
@@ -29,5 +29,24 @@ async function selectSingle(id){
     return rows
 }
 
+async function selectPromo(){
+    const conectado = await conecta() 
+    const [rows] = await conectado.query("SELECT * FROM filmes Where promo=1")  
+    //console.log(rows)
+    return rows
+}
+async function updatePromo(promo,id){
+    const conectado = await conecta();
+    const values = [promo,id]
+    return await conectado.query("UPDATE filmes set promo=? where filmes_id=?",values)
+  }
+  
+  //updatePromo(1,3)
 
-module.exports ={selectFilmes,selectSingle}
+
+module.exports ={
+    selectFilmes,
+    selectSingle,
+    updatePromo,
+    selectPromo
+}
