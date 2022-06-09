@@ -13,34 +13,66 @@
 
 <body>
     <header>
-        <div class="row">
-            <div class="col-sm-2 mt-1">
-                <a href="/"><img src="imagens/logo.png" class=" ml-2 w-100"></a>
+        <div class=" faixaPrincipal row">
+            <div class="col-sm-3 ml-3">
+                <a href="/"><img src="imagens/logo.png" width="250px"></a>
             </div>
-
-            <div class="col-sm-4 mt-5 ml-5 text-center">
-                <h1>Nome Do Site Aqui</h1>
-                <p>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em
-                    família.</p>
+            <div class="col-sm-8 text-center mt-5">
+                <h1 class="titulo">Bora Ver ?!</h1>
+                <p class="subtituloHeader">Filmes, Séries e Documentários</p>
             </div>
-
         </div>
     </header>
-    <nav class="text-center">
-        <a href="/perfilUsuario" class="col-sm-3">PERFIL USUÁRIO</a>
-        <a href="/produtos" class="col-sm-3">PRODUTOS</a>
-        <a href="/contato" class="col-sm-3">CONTATO</a>
-        <a href="/carrinho" class="col-sm-3">CARRINHO</a>
+    <nav class=" faixaPrincipal navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/produtos">Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/promocoes">Promoções</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contato">Contato</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/carrinho">Carrinho</a>
+              </li>
+          </ul>
         </div>
-    </nav>
-    <hr>
+      </nav>
 
-        <article class="container mb-5 mt-5">
-            <div id="galeria" class="row mt-4"></div>
-        </article>
-        <footer class="bg-dark p-4 text-white text-center mt-4">
-            <p class="text-center">&copy; 2022 - Projeto Vídeos - Outliers</p>
+      <section class="container mt-5">
+          <div class="row">
+            <%produto.forEach((item)=> { %>
+              <div class="col-sm-4">
+                  <div><h2><%=item.titulo%></h2></div>
+                  <div class="row">
+                      <div class="col-sm-6">
+                        <a href="/single-produto?id=<%=item.filmes_id%>">
+                            <img class="card-img-top w-100" src="imagens/<%=item.fotos%>" alt="Card image cap">
+                        </a>
+                      </div>
+                      <div class="col-sm-6">
+                        <p>Gênero: <%=item.genero%></p>
+                          <p><%=item.sinopse%></p>
+                          <p class="precoPromo">R$ 9,90</p>
+                      </div>
+                  </div>
+              </div>
+              <% }) %>
+          </div>
+      </section>
+
+        <footer class="text-white text-center mt-5" id="footer">
+            <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
+            <a href="/sobreNos" target="_blank"><img src="../imagens/pessoas.png" alt=""></a>
         </footer>
     </body>
-    <script src="js/promocoes.js"></script>
 </html>

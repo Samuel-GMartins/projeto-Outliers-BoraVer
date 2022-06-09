@@ -47,7 +47,7 @@ app.get("/produtos",(req,res)=>{
 })
 
 app.get("/promocoes",(req,res)=>{
-    res.render(`promocoes`)
+    res.render(`promocoes`,{produto:consulta})
 })
 
 app.get("/single-preferencia",(req,res)=>{

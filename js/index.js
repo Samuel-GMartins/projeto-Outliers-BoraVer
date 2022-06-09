@@ -11,7 +11,7 @@ let sair = document.querySelector('#sair')
 
 function msgUser() {
     let nomeUser = user.substring(0, user.indexOf('@'))
-    bemVindo.innerHTML = 'Olá, <b>' + nomeUser + '</b>'
+    bemVindo.innerHTML = '<span>Olá, <b class="entrar">' + nomeUser + '</b>'
     entrar.style.display = "none"
 }
 
