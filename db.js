@@ -2,8 +2,8 @@ async function conecta(){
     const mysql=require("mysql2/promise")
     const conn= await mysql.createConnection({
         host:"localhost",
-        user:"samuel",
-        password:"But4kozcs@",
+        user:"lari",
+        password:"312406La@.",
         database:"projeto_video"
     })
     console.log("mySQL conectado!")
@@ -18,6 +18,7 @@ async function selectFilmes(){
     //console.log(rows)
      return rows
 }
+
 //selectFilmes()
 
 async function selectSingle(id){

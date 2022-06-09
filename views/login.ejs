@@ -30,28 +30,29 @@
             <form id="formLogin" method="post" action="/" class="w-50 mx-auto p-3 mt-4 mb-4"
                 style="border:1px solid #ccc;border-radius: 12px;">
                 <fieldset>
-                    <legend> Preencha os campos</legend>
-                    <div class="form-group">
-                        <label>E-mail: </label>
-                        <input class="form-control" name="email" id="email" maxlength="50">
-                    </div>
-                    <div class="form-group">
-                        <label>Senha: </label>
-                        <input class="form-control" name="senha" id="senha" maxlength="8" type="password">
-                    </div>
-                    <button type="button" id="btLogin" class="btn btn-warning">Confirmar</button>
+                    <div class="label-float">
+                        <input type="text" name="email" id="email" maxlength="50" placeholder="" required>
+                        <label id="labelEmail">E-mail</label>
                     </div>
 
+                    <div class="label-float">
+                        <input name="senha" id="senha" type="password" placeholder="" required>
+                        <label id="labelSenha">Senha</label>
+                        <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+                    </div>
+                    <div class="justify-center">
+                        <button type="button" id="btLogin" class="btn btn-warning" class="justify-center">Confirmar</button>
+                    </div>
                 </fieldset>
             </form>
-        </article>
-        <div class="text-center">
-            <p><a href="/cadastro"> Não possui cadastro? Cadastre-se agora!</a></p>
-        </div>
-        </article>
-    </section>
+    </article>
+    <div class="text-center">
+        <p> Não possui cadastro? <a href="/cadastro">Cadastre-se agora!</a></p>
+    </div>
+    </article>
+</section>
     </hr>
-    <!--Setor de rodapé-->
+    <!--Setor de rodapé--->
     <footer class="text-white text-center mt-5" id="footer">
         <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
         <a href="/sobreNos" target="_blank"><img src="../imagens/pessoas.png" alt=""></a>
