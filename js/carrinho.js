@@ -26,6 +26,7 @@ function q (el){
 //CALCULO PORCENTAGEM E SUBTOTAL
 
 let carrinho
+let result
 let result1 = 0
 let result2 = 0
 let result3 = 0
@@ -56,11 +57,12 @@ function calcularCarrinho(){
     else if(result3 != null){
         carrinho = parseFloat(result3)
     }
-    q("#subTotal").innerHTML = `R$ ${carrinho.toFixed(2)}`
+    q("#subTotal").innerHTML = `Subtotal: R$ ${carrinho.toFixed(2)}`
+    q("#total").innerHTML = `Total R$ ${carrinho.toFixed(2)}`
 }
 
+
 function alteraCarrinho(){
-    console.log(input1.value)
     let pct = (input1.value * 0.07) * preco1
     result1 = (preco1 + pct).toFixed(2)
     pre1.innerHTML= 'R$ ' + result1
@@ -68,7 +70,6 @@ function alteraCarrinho(){
 }
 
 function alteraCarrinho2(){
-    console.log(input2.value)
     let pct = (input2.value * 0.07) * preco2
     result2 = (preco2 + pct).toFixed(2)
     pre2.innerHTML= 'R$ ' + result2
@@ -76,7 +77,6 @@ function alteraCarrinho2(){
 }
 
 function alteraCarrinho3(){
-    console.log(input3.value)
     let pct = (input3.value * 0.07) * preco3
     result3 = (preco3 + pct).toFixed(2)
     pre3.innerHTML= 'R$ ' + result3
@@ -103,83 +103,49 @@ let excluir = {
 document.querySelector('#bt_p1').onclick=function(){
     confirm("Tem certeza de que deseja excluir esse produto?")
     excluir.excluirProduto(document.querySelector('#produto1'),'')
+    result1 = 0
+    calcularCarrinho()
   }
 
 document.querySelector('#bt_p2').onclick=function(){
     confirm("Tem certeza de que deseja excluir esse produto?")
     excluir.excluirProduto(document.querySelector('#produto2'),'')
+    result2 = 0
+    calcularCarrinho()
   }
 
 btP3.onclick=function(){
     confirm("Tem certeza de que deseja excluir esse produto?")
     excluir.excluirProduto(document.querySelector('#produto3'),'')
+    result3 = 0
+    calcularCarrinho()
   }
 
 limparCarrinho.onclick=function(){
     confirm("Tem certeza de que deseja esvaziar seu carrinho?")
     excluir.excluirProduto(document.querySelector('#limparCarrinho'),'SEU CARRINHO ESTÁ VAZIO')
     document.querySelector("#produtos").innerHTML = "Não há produtos em seu carrinho."
-    subTotal.innerHTML="Subtotal R$ 00,00"
-    document.querySelector('#bt_p1').onclick=function(){
-    confirm("Tem certeza de que deseja excluir esse produto?")
-    excluir.excluirProduto(document.querySelector('#produto1'),'')
-    localStorage.removeItem('subtotalTelas1')
-    // this.addEventListener('click', function)
+    q("#subTotal").innerHTML="Subtotal R$ 00,00"
+    q("#total").innerHTML="Total R$ 00,00"
   }
 
-document.querySelector('#bt_p2').onclick=function(){
-    confirm("Tem certeza de que deseja excluir esse produto?")
-    excluir.excluirProduto(document.querySelector('#produto2'),'')
-    localStorage.removeItem('subtotalTelas2')
-  }
-
-btP3.onclick=function(){
-    confirm("Tem certeza de que deseja excluir esse produto?")
-    excluir.excluirProduto(document.querySelector('#produto3'),'')
-    localStorage.removeItem('subtotalTelas3')
-  }
-
-limparCarrinho.onclick=function(){
-    confirm("Tem certeza de que deseja esvaziar seu carrinho?")
-    excluir.excluirProduto(document.querySelector('#limparCarrinho'),'SEU CARRINHO ESTÁ VAZIO')
-    document.querySelector("#produtos").innerHTML = "Não há produtos em seu carrinho."
-    localStorage.clear()
-    subTotal.innerHTML="Subtotal R$ 00,00"
-    desconto.innerHTML="Descontos R$ 00,00"
-    total.innerHTML="Total R$ 00,00"
-}
-}
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 //CALCULO DESCONTO CUPOM
 
-console.log(parseFloat(subTotal))
-
-let valor = parseFloat(calcularCarrinho.carrinho)
-console.log(Number(valor))
-
-
 q('#btCupom').onclick=function(){
     if(formDesconto.cupom.value == "CUPOM123"){
-        let calculoDesconto = parseFloat((valor * 10) / 100 );
-        let total = parseFloat(valor) - parseFloat(calculoDesconto);
-        q("#desconto").innerHTML = 'R$ ' + parseFloat(total).toFixed(2)
-        console.log(total)
-        console.log(calculoDesconto)
-        console.log(valor)
-    }
-    // else if(formDesconto.cupom.value == "CUPOM456"){
-    //     let calculoDesconto = parseFloat( ( valor * 20 ) / 100 );
-    //     total = parseFloat(valor) - parseFloat(calculoDesconto);
-    //     q("#desconto").innerHTML = 'R$ ' + parseFloat(total).toFixed(2)
-    //     console.log(total)
-    // }
-    // else if(formDesconto.cupom.value != "CUPOM123" || "CUPOM456"){
-    //     alert("Ops, cupom inválido!")
-    // }
-    else{
+        let calculoDesconto = parseFloat( ( `${carrinho.toFixed(2)}` * 10 ) / 100 );
+        total = parseFloat(`${carrinho.toFixed(2)}`) - parseFloat(`${calculoDesconto.toFixed(2)}`);
+    }else if(formDesconto.cupom.value == "CUPOM456"){
+        let calculoDesconto = parseFloat( ( `${carrinho.toFixed(2)}` * 20 ) / 100 );
+        total = parseFloat(`${carrinho.toFixed(2)}`) - parseFloat(`${calculoDesconto.toFixed(2)}`);
+    }else if(formDesconto.cupom.value != "CUPOM123", "CUPOM456"){
+        alert("Ops, cupom inválido!")
+    }else{
         formDesconto.submit()
     }
+    q("#total").innerHTML = 'Total R$ ' + parseFloat(total).toFixed(2)
     q("#btCupom").setAttribute("disabled",true)
   }
