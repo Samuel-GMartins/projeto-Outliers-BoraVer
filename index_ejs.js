@@ -1,6 +1,10 @@
-const express = require('express')
+(async()=>{
+const express =  require('express')
 const app = express()
+const db =require("./db.js")
 const port = 8080
+const url = require("url")
+
 
 app.set("view engine","ejs")
 
@@ -11,8 +15,11 @@ app.use("/js",express.static("js"))
 app.use("/administrador",express.static("administrador"))
 app.use("/Banco de Dados",express.static("Banco de Dados"))
 
+const consulta = await db.selectFilmes()   
+console.log(consulta[0])
+
 app.get("/",(req,res)=>{
-    res.render(`index`,{})
+    res.render(`index`,{filme:consulta})
 })
 
 app.get("/cadastro",(req,res)=>{
@@ -36,19 +43,32 @@ app.get("/perfilUsuario",(req,res)=>{
 })
 
 app.get("/produtos",(req,res)=>{
-    res.render(`produtos`)
+    res.render(`produtos`,{produto:consulta})
 })
 
 app.get("/promocoes",(req,res)=>{
-    res.render(`promocoes`)
+    res.render(`promocoes`,{produto:consulta})
 })
 
 app.get("/single-preferencia",(req,res)=>{
     res.render(`single-preferencia`)
 })
 
-app.get("/single-produto",(req,res)=>{
-    res.render(`single-produto`)
+app.get("/single-produto",async(req,res) => {
+    let infoUrl = req.url
+    let urlProp = url.parse(infoUrl,true) // ?id=5
+    let q = urlProp.query
+    const consultaSingle = await db.selectSingle(q.id)
+    const consultaInit = await db.selectSingle(4)
+
+
+    res.render(`single-produto`, {
+        titulo:"Conheça nossos livros", 
+        promo:"Todos os livros com 10%OFF !",
+        livro: consulta,
+        galeria: consultaSingle,
+        inicio: consultaInit
+        })
 })
 
 app.get("/admin/cadastroAdmin",(req,res)=>{
@@ -77,3 +97,5 @@ app.get("/admin/relatorioComercial",(req,res)=>{
 
 
 app.listen(port,()=> console.log("Servidor rodando com nodemon!"))
+
+})()

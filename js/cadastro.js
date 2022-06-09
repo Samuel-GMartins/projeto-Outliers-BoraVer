@@ -1,13 +1,9 @@
-
-console.log(document.querySelector("h1"))
-
-document.querySelector("h1").innerHTML+=""
-
-console.log(document.forms.formCadastro)
 var formC=document.forms.formCadastro
+let verSenha = document.querySelector('#verSenha')
+let verConfSenha = document.querySelector('#verConfirmeSenha')
+
 //Evento de clique no botão confirmar
 document.querySelector("#btCadastro").onclick=function(){
-    //alert('ok')
     if(formC.nomeCadastro.value == ""){
         alert("Preencha o nome!")
     }else if(formC.emailCadastro.value == ""){
@@ -26,11 +22,28 @@ document.querySelector("#btCadastro").onclick=function(){
         localStorage.nomeUser=formC.nomeCadastro.value
         localStorage.telefoneUser=formC.telefoneCadastro.value
         localStorage.senhaUser=formC.senha.value
-       // localStorage.confsenhaUser=formC.telefoneCadastro.value
-
     }
 
-  //  alert(document.forms.formContato.nomeContato.value)
-    //alert(document.forms.formContato.emailContato.value)
-    //alert(document.forms.formContato.comentario.value)
 }
+
+ // Evento de clique olhinho
+ verSenha.addEventListener('click', ()=>{
+    let inputSenha = document.querySelector('#senha')
+
+    if(inputSenha.getAttribute('type') == 'password'){
+        inputSenha.setAttribute('type', 'text')
+    } else {
+        inputSenha.setAttribute('type' , 'password')
+    }
+})
+
+ // Evento de clique olhinho confirme senha.
+verConfSenha.addEventListener('click', ()=>{
+    let inputConfirmeSenha = document.querySelector('#senhaC')
+
+    if(inputConfirmeSenha.getAttribute('type') == 'password'){
+        inputConfirmeSenha.setAttribute('type', 'text')
+    } else {
+        inputConfirmeSenha.setAttribute('type' , 'password')
+    }
+})
