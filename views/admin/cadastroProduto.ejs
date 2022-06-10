@@ -30,7 +30,7 @@
     </nav>
     <hr>
 
-    <form action="#" method="post" id="formCadastroProduto" class="w-50 mx-auto p-4 mt-5 mb-5" style="border:3px solid #ccc;border-radius: 12px">
+    <form action="" method="post" id="formCadastroProduto" class="w-50 mx-auto p-4 mt-5 mb-5" style="border:3px solid #ccc;border-radius: 12px">
 
         <fieldset class="form">
             <div class="form-group">
@@ -38,7 +38,7 @@
                 <label>Título:<br /></label>
                 </b>
                 <label for="título"></label>
-                <input class="form-control" type="text" id="tituloFilme" placeholder="Título do filme" required>
+                <input class="form-control" type="text" id="tituloFilme" name="tituloFilme" placeholder="Título do filme" required>
             </div>
 
             <div class="form-group">
@@ -47,7 +47,7 @@
                 <label>Categoria:<br /></label>
                 </b>
                 <label for="categoria"></label>
-                <input class="form-control" type="text" id="categoriaFilme" placeholder="Categoria do filme" required>
+                <input class="form-control" type="text" id="categoriaFilme" name="categoriaFilme" placeholder="Categoria do filme" required>
             </div>
 
             <div class="form-group">
@@ -56,16 +56,7 @@
                 <label>Ano de lançamento:<br /></label>
                 </b>
                 <label for="ano"></label>
-                <input class="form-control" maxlength="4" id="anoDeLancamento" placeholder="Ano de lançamento" required>
-            </div>
-
-            <div class="form-group">
-                <br />
-                <b>
-                <label>Imagem<br /></label>
-                </b>
-                <label for="Imagem"></label>
-                <input class="form-control" aria-label="file example" type="file" id="imagemFilme" required>
+                <input class="form-control" maxlength="4" id="anoDeLancamento" name="anoDeLancamento" placeholder="Ano de lançamento" required>
             </div>
 
             <div>
@@ -74,9 +65,19 @@
                 <label>Sinopse:<br /></label>
                 </b>
                 <label for="Sinopse"></label><br>
-                <textarea id="sinopseFilme" style="border:1px solid #ccc;border-radius: 10px"  cols="80" rows="8" placeholder="Sinopse filme" required></textarea>
+                <textarea id="sinopseFilme" name="sinopseFilme" style="border:1px solid #ccc;border-radius: 10px"  cols="60" rows="8" placeholder="Sinopse filme" required></textarea>
             </div>
             
+            <div class="form-group">
+                <br />
+                <b>
+                <label>Imagem<br /></label>
+                </b>
+                <label for="Imagem"></label>
+                <input class="form-control" aria-label="file example" type="file" id="fotos" name="fotos" required>
+            </div>
+
+
             <div>
                 <button type="submit" id="btCadastroProduto" class="btn btn-danger">Enviar</button>
                
