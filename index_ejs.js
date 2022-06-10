@@ -1,13 +1,16 @@
+
 (async()=>{
 const express =  require('express')
 const app = express()
 const db =require("./db.js")
 const port = 8080
 const url = require("url")
-
+const bodyParser = require("body-parser")
 
 
 app.set("view engine","ejs")
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
 
 app.use(express.static('projetoGrupo3-Outliers'))
 app.use("/imagens",express.static("imagens"))
@@ -122,6 +125,46 @@ app.get("/atualiza-promo",async(req,res)=>{
             filmes:consulta,
             galeria:consulta   
             })
+    })
+
+    app.get("/cadastro",async(req,res)=>{
+        let infoUrl = req.url
+        let urlProp = url.parse(infoUrl,true)//  /?id=5
+        let q = urlProp.query
+       const consultaSingle = await db.selectSingle(q.id)
+       const consultaInit = await db.selectSingle(4)
+       res.render(`cadastro`,{
+           titulo:"Conheça nossos livros",
+           promo:"Todos os livros com 10% de desconto!",
+           livro:consulta,
+           galeria: consultaInit
+       })
+    })
+    app.post("/cadastro",async(req,res)=>{
+        const info=req.body
+        await db.insertUsuario({
+            nome:info.nomeCadastro,
+            email:info.emailCadastro,
+            data_nascimento:info.dataNascimento,
+            data_cadastro:info.dataCadastro,
+            telefone:info.telefone,
+            senha:info.senha
+        
+        })
+    
+        res.redirect("/")
+    })
+    app.post("/admin/cadastroProduto",async(req,res)=>{
+        const info=req.body
+        await db.insertFilmes({
+            titulo:info.tituloFilme,
+            genero:info.categoriaFilme,
+            ano:info.anoDeLancamento,
+            sinopse:info.sinopseFilme,
+            fotos:info.fotos      
+        })
+    
+        res.redirect("/promocoes")
     })
 
 app.listen(port,()=> console.log("Servidor rodando com nodemon!"))

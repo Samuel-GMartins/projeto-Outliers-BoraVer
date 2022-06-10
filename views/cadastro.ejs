@@ -8,7 +8,7 @@
             <h2 class="text-center mt-5 mb-5"> Cadastro</h2>
     
             <article>
-                <form id="formCadastro" method="post" action="/" class="w-50 mx-auto p-3 mt-5 mb-5"
+                <form id="formCadastro" method="post" action="" class="w-50 mx-auto p-3 mt-5 mb-5"
                     style="border:1px solid #ccc; border-radius: 12px;">
     
     
@@ -23,9 +23,19 @@
                             <input type="text" name="emailCadastro" id="email" maxlength="50" placeholder="" required>
                             <label>E-mail</label>
                           </div>
-                  
+
                           <div class="label-float">
-                            <input type="tel" name="telefoneCadastro" id="telefone" maxlength="11" placeholder="" required>
+                            <input type="date" name="dataNascimento" id="dtNascimento"  required>
+                            <label>Data de Nascimento</label>
+                          </div>
+
+                          <div class="label-float">
+                            <input type="date" name="dataCadastro" id="dtCadastro"  required>
+                            <label>Data de Cadastro</label>
+                          </div>
+
+                          <div class="label-float">
+                            <input type="tel" name="telefone" id="telefone" maxlength="11" placeholder="" required>
                             <label>Celular</label>
                           </div>
                   
@@ -42,7 +52,7 @@
                           </div>
     
                         <div class="justify-center">
-                            <button id="btCadastro" type="button"  class="btn btn-warning" > Confirmar</button>        
+                            <button id="btCadastro" type="submit"  class="btn btn-warning" > Confirmar</button>        
                         </div>
                         <hr>
                         <div>
