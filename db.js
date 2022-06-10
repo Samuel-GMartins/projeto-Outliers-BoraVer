@@ -2,8 +2,8 @@ async function conecta(){
     const mysql=require("mysql2/promise")
     const conn= await mysql.createConnection({
         host:"localhost",
-        user:"root",
-        password:"Cyn32832@",
+        user:"priallmeida",
+        password:"Pri1234#@",
         database:"projeto_video"
     })
     console.log("mySQL conectado!")
@@ -43,10 +43,37 @@ async function updatePromo(promo,id){
   
   //updatePromo(1,3)
 
+  async function insertUsuario(usuario){
+    const conectado = await conecta() 
+    const values = [usuario.nome,usuario.email,usuario.data_nascimento,usuario.data_cadastro,usuario.telefone,usuario.senha]
+    const [rows] = 
+    await conectado.query("INSERT INTO usuario(nome,email,data_nascimento,data_cadastro,telefone,senha) VALUES (?,?,?,?,?,?)",values)  
+    console.log("Insert ok!")
+    return rows
+}
+
+async function insertFilmes(filmes){
+    const conectado = await conecta() 
+    const values = [filmes.titulo,filmes.genero,filmes.ano,filmes.sinopse,filmes.fotos,filmes.promo]
+    const [rows] = 
+    await conectado.query("INSERT INTO filmes(titulo,genero,ano,sinopse,fotos,promo) VALUES (?,?,?,?,?,?)",values)  
+    console.log("Insert ok!")
+    return rows
+}
+//insertFilmes({
+  //  titulo:"A Bela e Fera",
+  //  genero:"Infantil",
+  //  ano:"1700",
+  //  sinopse:"Eles se amam",
+  //  fotos:"lixeira.png",
+  //  promo:"1"
+//})
 
 module.exports ={
     selectFilmes,
     selectSingle,
     updatePromo,
-    selectPromo
+    selectPromo,
+    insertUsuario,
+    insertFilmes
 }
