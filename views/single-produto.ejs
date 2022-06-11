@@ -1,8 +1,6 @@
 <%- include("header.ejs")%>
 <%- include("nav.ejs")%>
 
-
-
     <section class="container">
         <div class="row">
             <div class=" livros col-sm-4">
@@ -11,14 +9,15 @@
                 </div>
             </div>
 
-                    <div class=" col-sm-8 mt-3 card-singleProd">
-                        <h4 class="subtitulo card-title"><%=galeria[0].titulo%></h4>
-                        <p class="card-text"><%=galeria[0].sinopse%></p>
-                    </div>
-
-
+            <div class=" col-sm-8 mt-5 card-singleProd">
+                <h4 class="subtitulo card-title"><%=galeria[0].titulo%></h4>
+                <h5 class="ml-5 mb-4"> <%=galeria[0].genero%> | <%=galeria[0].ano%> </h5>
+                <h4 class="card-text"><%=galeria[0].sinopse%></h4>
+                <h2 class="precoPromo text-center" style="font-size: xxx-large!important;">R$ <%=galeria[0].preco%></h2>
+            </div>
         </div>
     </section>
+    
     <%- include("footer.ejs")%>
 
 </body>
