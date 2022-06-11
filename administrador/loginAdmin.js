@@ -11,3 +11,14 @@ document.querySelector("#btLogin").onclick = function () {
         localStorage.emailUser = formL.email.value
     }
 }
+
+ // Evento de clique olhinho.
+ verSenha.addEventListener('click', ()=>{
+    let inputSenha = document.querySelector('#senha')
+
+    if(inputSenha.getAttribute('type') == 'password'){
+        inputSenha.setAttribute('type', 'text')
+    } else {
+        inputSenha.setAttribute('type' , 'password')
+    }
+})

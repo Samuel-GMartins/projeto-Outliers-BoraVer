@@ -23,7 +23,6 @@ document.querySelector("#btCadastro").onclick=function(){
         localStorage.telefoneUser=formC.telefoneCadastro.value
         localStorage.senhaUser=formC.senha.value
     }
-
 }
 
  // Evento de clique olhinho
@@ -37,7 +36,7 @@ document.querySelector("#btCadastro").onclick=function(){
     }
 })
 
- // Evento de clique olhinho confirme senha.
+ // Evento de clique olhinho confirme senha
 verConfSenha.addEventListener('click', ()=>{
     let inputConfirmeSenha = document.querySelector('#senhaC')
 
