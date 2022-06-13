@@ -50,10 +50,6 @@ app.get("/produtos",(req,res)=>{
     res.render(`produtos`,{produto:consulta})
 })
 
-app.get("/promocoes",(req,res)=>{
-    res.render(`promocoes`,{produto:consulta})
-})
-
 app.get("/single-preferencia",(req,res)=>{
     res.render(`single-preferencia`)
 })
@@ -105,67 +101,67 @@ app.get("/atualiza-promo",async(req,res)=>{
     let qs = url.parse(req.url,true).query
      await db.updatePromo(qs.promo,qs.id)
      res.send("<h2>Lista de Promoções Atualizada!</h2><a href='./'>Voltar</a>")
- })
+})
 
- app.get("/promocoes",async(req,res)=>{
-     const consultaPromo = await db.selectPromo()
-     res.render(`promocoes`,{
-         titulo:"Conheça nossos livros",
-         promo:"Todos os livros com 10% de desconto!",
-         filmes:consulta,
-         galeria:consultaPromo
-     })
+app.get("/promocoes",async(req,res)=>{
+    const consultaPromo=await db.selectPromo()
+    res.render(`promocoes`,{
+    produto:consultaPromo
     })
-    app.get("/upd-promo", async(req,res)=>{
-      let qs = url.parse(req.url,true).query
-      await db.updatePromo(qs.promo,qs.id)
-        res.render(`admin/atualiza-promocoes`,{
-            titulo:"Conheça nossos filmes",
-            promo:"Todos os filmes com 10% de desconto!",
-            filmes:consulta,
-            galeria:consulta   
-            })
-    })
+})
+  
+app.get("/upd-promo", async(req,res)=>{
+    let qs = url.parse(req.url,true).query
+    await db.updatePromo(qs.promo,qs.id)
+    res.render(`admin/atualiza-promocoes`,{
+        titulo:"Conheça nossos filmes",
+        promo:"Todos os filmes com 10% de desconto!",
+        filmes:consulta,
+        galeria:consulta   
+        })
+})
 
-    app.get("/cadastro",async(req,res)=>{
-        let infoUrl = req.url
-        let urlProp = url.parse(infoUrl,true)//  /?id=5
-        let q = urlProp.query
-       const consultaSingle = await db.selectSingle(q.id)
-       const consultaInit = await db.selectSingle(4)
-       res.render(`cadastro`,{
-           titulo:"Conheça nossos livros",
-           promo:"Todos os livros com 10% de desconto!",
-           livro:consulta,
-           galeria: consultaInit
-       })
+app.get("/cadastro",async(req,res)=>{
+    let infoUrl = req.url
+    let urlProp = url.parse(infoUrl,true)//  /?id=5
+    let q = urlProp.query
+    const consultaSingle = await db.selectSingle(q.id)
+    const consultaInit = await db.selectSingle(4)
+    res.render(`cadastro`,{
+        titulo:"Conheça nossos livros",
+        promo:"Todos os livros com 10% de desconto!",
+        livro:consulta,
+        galeria: consultaInit
     })
-    app.post("/cadastro",async(req,res)=>{
-        const info=req.body
-        await db.insertUsuario({
-            nome:info.nomeCadastro,
-            email:info.emailCadastro,
-            data_nascimento:info.dataNascimento,
-            data_cadastro:info.dataCadastro,
-            telefone:info.telefone,
-            senha:info.senha
-        
-        })
+})
+
+app.post("/cadastro",async(req,res)=>{
+    const info=req.body
+    await db.insertUsuario({
+        nome:info.nomeCadastro,
+        email:info.emailCadastro,
+        data_nascimento:info.dataNascimento,
+        data_cadastro:info.dataCadastro,
+        telefone:info.telefone,
+        senha:info.senha        
+    })    
+    res.redirect("/")
+})
     
-        res.redirect("/")
+app.post("/admin/cadastroProduto",async(req,res)=>{
+    const info=req.body
+    await db.insertFilmes({
+        titulo:info.tituloFilme,
+        genero:info.categoriaFilme,
+        ano:info.anoDeLancamento,
+        sinopse:info.sinopseFilme,
+        fotos:info.fotos      
     })
-    app.post("/admin/cadastroProduto",async(req,res)=>{
-        const info=req.body
-        await db.insertFilmes({
-            titulo:info.tituloFilme,
-            genero:info.categoriaFilme,
-            ano:info.anoDeLancamento,
-            sinopse:info.sinopseFilme,
-            fotos:info.fotos      
-        })
-    
-        res.redirect("/promocoes")
-    })
+    res.redirect("/promocoes")
+})
+
+
+
 
 app.listen(port,()=> console.log("Servidor rodando com nodemon!"))
 

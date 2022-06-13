@@ -1,28 +1,30 @@
 <%- include("header.ejs")%>
 <%- include("nav.ejs")%>
-      <section class="container mt-5">
-          <div class="row">
-            <%produto.forEach((item)=> { %>
-              <div class="col-sm-4">
-                  <div><h2><%=item.titulo%></h2></div>
-                  <div class="row">
-                      <div class="col-sm-6">
-                        <a href="/single-produto?id=<%=item.filmes_id%>">
-                            <img class="card-img-top w-100" src="imagens/<%=item.fotos%>" alt="Card image cap">
-                        </a>
-                      </div>
-                      <div class="col-sm-6">
-                        <p>Gênero: <%=item.genero%></p>
-                          <p><%=item.sinopse%></p>
-                          <p class="precoPromo">R$ 9,90</p>
-                      </div>
-                  </div>
-              </div>
-              <% }) %>
-          </div>
-      </section>
-      
-      <%- include("footer.ejs")%>
 
-    </body>
+
+    <section class="container mt-5">
+        <div class="row">
+        <%produto.forEach((item)=>{ %>
+            <div class="col-sm-4 filmes">
+                <div class="mt-4 mb-2"><h4><%=item.titulo%></h4></div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a href="/single-produto?id=<%=item.filmes_id%>">
+                            <img class="card-img-top w-100" src="imagens/<%=item.fotos%>" alt="Card image cap">
+                            </a>
+                        </div>
+                    <div class="col-sm-6 mt-3">
+                        <h5>Gênero: <%=item.genero%></h5>
+                        <h4 class="precoPromo">R$ <%=item.preco%></h4>  
+                        <p class="sinopse"><%= item.sinopse.substring(0,90)+"..." %></p>                        
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+        </div>          
+    </section>
+      
+  <%- include("footer.ejs")%>
+
+</body>
 </html>
