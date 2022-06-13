@@ -4,7 +4,7 @@ valorpro3 = 1
 
 preco1 = 25,00
 preco2 = 45,50
-preco3 = 65,00
+preco3 = 100,00
 
 alug1 = 12.50
 alug2 = 15,90

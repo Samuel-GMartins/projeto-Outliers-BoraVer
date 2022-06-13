@@ -1,0 +1,134 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+.navcolor {
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    color: white;
+}
+
+.titulo {
+    color: #dbab3c;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 75pt;
+}
+
+.subtituloHeader{
+    color: white ;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20pt;
+}
+
+.subtitulo {
+    color: black ;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25pt;
+}
+
+.entrarSair {
+    color:rgb(20, 20, 20);
+}
+
+.faixaPrincipal {
+    background-color: rgb(20, 20, 20);
+}
+
+
+.card-img-top {
+    border: 3px solid white;
+    width: 280px;
+    border-radius: 15px;
+    -webkit-transition: all .2s ease-in;
+}
+
+.card-img-top:hover {
+    -webkit-transform: scale(1.1);
+}
+
+.singleImagem {
+    border: 3px solid white; 
+    border-radius: 15px;
+}
+
+.card-title {
+    font-size: 50pt;
+}
+
+.precoPromo{
+    color: red;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.label-float input {
+    width: 100%;
+    padding: 6px 6px;
+    display: inline-block;
+    border: 0;
+    border-bottom: 1px solid #00000060;
+    outline: none;
+    min-width: 180px;
+    font-size: 15px;
+    transition: all .2s ease-out;
+    border-radius: 0;
+}
+
+.label-float {
+    position: relative;
+    padding-top: 13px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.label-float input:focus {
+    border-bottom: 1px solid #e4b954;
+}
+
+.label-float label {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 25px;
+    transition: all .2s ease-in-out;
+}
+
+.label-float input:focus+label,
+.label-float input:valid+label {
+    font-size: 13px;
+    margin-top: 0;
+    color: #dbab3c;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color:rgb(20, 20, 20) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.fa-eye{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+    color: rgb(20, 20, 20);;
+}
+
+footer {
+    background-color:rgb(20, 20, 20);
+    padding: 15px;
+}

@@ -5,42 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index do Admin</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" style="font-size: 100%;">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        style="font-size: 100%;">
+    <link rel="stylesheet" href="../css/styleAdmin.css">
+    <title>Home</title>
 </head>
 
 <body>
     <header>
-        <div class="row">
-            <div class="col-sm-2 mt-1">
-                <img src="../imagens/logo.png" class="w-100">
+        <div class=" faixaPrincipal row">
+            <div class="col-sm-3 ml-3">
+                <a href="../administrador/indexAdmin.html"><img src="../imagens/logoAdmin.png" width="250px"></a>
             </div>
-            <div class="col-sm-4 mt-5 ml-5 text-center">
-                <h1>Nome Do Site aqui</h1>
-                <p>Versão Administrador</p>
-                <p>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em família.</p>
+            <div class="col-sm-8 text-center mt-5">
+                <h1 class="titulo">Bora Ver ?!</h1>
+                <p class="subtituloHeader">Filmes, Séries e Documentários</p>
             </div>
-
-
-        <div class="col-sm-5 mt-4 mb-4 text-center">
-            <span id="bemVindo"></span>
-            <a id="entrar" href="loginAdmin.html">Entrar</a>
-            <a class="ml-5 pl-5" style="cursor: pointer; text-decoration: underline" id="sair">Sair</a>
         </div>
-        
-    </div>
-
-
-        <nav class="mt-4 mb-4 text-center">
-            <a href="cadastroAdmin.html" class="col-sm-3">CADASTRO DO ADMINISTRADOR  </a>
-            <a href="cadastroProduto.html" class="col-sm-3">CADASTRO DE PRODUTOS  </a>
-           
-        </nav>
-
-
     </header>
+
+    <nav class=" faixaPrincipal navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="../administrador/indexAdmin.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../administrador/cadastroProduto.html">Cadastro de Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../administrador/relatorio-chamada.html">Chamadas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../administrador/relatorioComercial.html"> Relatório Comercial</a>
+              </li>
+          </ul>
+        </div>
+        <div class=" entrarSair text-right">
+            <span id="bemVindo"></span>
+            <a href="../administrador/loginAdmin.html" id="entrar"> Entrar </a>            
+            <a href="../administrador/cadastroAdmin.html" id="cadastrar"> Cadastre-se</a>
+            <a href="../administrador/indexAdmin.html" id="sair" class="ml-2"><img src="../imagens/sair.png" width="30px" alt=""></a>
+        </div>
+      </nav>
 
     <section class="container">
         <div class="row">
@@ -53,9 +63,10 @@
        
     </section>
 
-        <footer class="bg-dark p-4 text-white text-center mt-4">
-            <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
-        </footer> 
+    <footer class="text-white text-center mt-5" id="footer">
+        <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
+        <a href="/sobreNos" target="_blank"><img src="../imagens/pessoas.png" alt=""></a>
+    </footer>
 
 </body>
 <script src="indexAdmin.js"></script>
