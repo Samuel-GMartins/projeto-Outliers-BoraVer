@@ -1,15 +1,4 @@
 
-//let ch = JSON.stringify(localStorage.getItem('chamado-58948'))
-
-//let chArray = ch.split(',')
-
-
-
-// var nome = document.querySelector('#nome').innerHTML = chArray[i][0]
-// var email = document.querySelector('#email').innerHTML = chArray[i][1]
-// var teelfone = document.querySelector('#telefone').innerHTML = chArray[i][2]
-// var assunto = document.querySelector('#assunto').innerHTML = chArray[i][3]
-
 var i=0
 let listaUsers=[]
 let listaResult=[]
@@ -42,6 +31,7 @@ for (key in localStorage) {
     }     
 }  
 let btAtende= document.querySelector("#btAtende")
+
 //evento click do botão atendimento
 document.querySelector("#btAtende").onclick=function(){
         darBaixa();
