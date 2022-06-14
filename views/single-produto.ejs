@@ -14,12 +14,40 @@
                 <h5 class="ml-5 mb-4"> <%=galeria[0].genero%> | <%=galeria[0].ano%> </h5>
                 <h4 class="card-text"><%=galeria[0].sinopse%></h4>
                 <h2 class="precoPromo text-center" style="font-size: xxx-large!important;">R$ <%=galeria[0].preco%></h2>
+                <button data-id="<%=galeria[0].filmes_id%>" data-produto="<%=galeria[0].titulo%>" data-valor="<%=galeria[0].preco%>" data-fotos="<%=galeria[0].fotos%>" class="btn btn-warning bt-carrinho btn-lg btn-block">
+                    Adicionar ao carrinho
+                </button> 
             </div>
+            
         </div>
     </section>
     
     <%- include("footer.ejs")%>
 
 </body>
+
+<script>
+    $().ready(function(){
+        console.log("Jquery funfando...")
+        $('.bt-carrinho').click(function(){
+            let dataid = $(this).attr('data-id')
+            let dataProduto = $(this).attr('data-produto')
+            let dataValor = $(this).attr('data-valor')
+            let dataFotos = $(this).attr('data-fotos')
+
+            $.post("/carrinho",
+            {
+                filmes_id:dataid,
+                produto:dataProduto,
+                qtd:1,
+                preco:dataValor,
+                fotos:dataFotos,
+            },
+            function(data,status){
+                location.href='/carrinho'
+            },'json')                
+        })        
+    })
+</script>
 
 </html>

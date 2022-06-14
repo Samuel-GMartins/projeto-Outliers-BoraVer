@@ -3,35 +3,40 @@
 
 
     <section class="container">
-        <h1 class="ml-5 mt-5 mb-5" style="color: brown;">Meu Carrinho</h1>
+        <h1 class="ml-5 mt-5 mb-5" style="color:goldenrod;">Meu Carrinho</h1>
         
         <!--Informações carrinho-->
         <div class="row">
             <div class="col-sm-12 text-center">
                 <div class="row text-center">
-                    <h4 class="col-sm-2 text-left"><b>Produto</b></h4>
-                    <h4 class="col-sm-2"><b>Telas</b></h4>
+                    <h4 class="col-sm-4"><b>Produto</b></h4>
+                    <h4 class="col-sm-1"><b>Telas</b></h4>
                     <h4 class="col-sm-2"><b>Quantidade</b></h4>
-                    <h4 class="col-sm-3"><b>Preço</b></h4>
+                    <h4 class="col-sm-2"><b>Preço</b></h4>
                     <h4 class="col-sm-2 text-right"><b>Excluir<b></b></h4>
                 </div>                
                 <div id="conteudoCarrinho" class="border" style="border: 2px;">
                     <%
                      total=0
+                     totalQtd=0
                      carrinho.forEach((item)=>{
                      total += parseFloat(item.preco)
+                     totalQtd += parseFloat(item.qtd)
                         %>   
 
                     <div class="row text-center" id="produto1">
-                        <div class="col-sm-2 text-left mt-2 ml-2">                            
-                            <%=item.produto %>
+                        <div class="col-sm-2 mt-1 mb-1">  
+                            <img class="w-50" src="imagens/<%=item.fotos%>" alt="Card image cap">                                                                                  
                         </div>
-                        <input id="tela1" class="col-sm-2 mt-2" type="number" min="1" max="5" style="height: 30px;" />
+                        <div class="col-sm-2 text-left mt-1 ml-1">
+                            <h5> <%=item.produto %> </h5>
+                        </div>
+                        <input id="tela1" class="col-sm-1 mt-2" type="number" min="1" max="5" style="height: 30px;" />
                         <div class="col-sm-2 mt-2 text-center"><%=item.qtd %></div>
-                        <div class="col-sm-3 mt-2">R$ <%=item.preco %></div>
+                        <div class="col-sm-2 mt-2">R$ <%=item.preco %></div>
                         <div class="col-sm-2 mt-2">
-                            <button class="btn bt-carrinho" data-id="<%=item.carrinho_id%>">
-                                <img src="imagens/lixeiraCinza.png" class="w-50"> 
+                            <button class="btn bt-carrinho ml-5" data-id="<%=item.carrinho_id%>">
+                                <img src="imagens/lixeiraCinza.png" class="w-100"> 
                             </button>
                         </div>
                     </div>
@@ -41,11 +46,12 @@
         </div>
     </section>
 
+
     <section class="container mt-5">
         <div class="row">
             <div class="col-sm-5">
                 <!-- área cupom -->
-                <h1 style="color: brown;">Cupom</h1>
+                <h1 style="color:goldenrod;">Cupom</h1>
                 <div style="border: 2px solid; border-radius: 20px;">
                     <form id="formDesconto" class="text-center mt-3 mb-3 ml-3 mr-3">
                         <h4>Digite o código do cupom:</h4>
@@ -58,17 +64,17 @@
 
             <!--Setor Resumo do pedido-->
             <div class="col-sm-6" id="divResumo">
-                <h1 style="color: brown;">Resumo do pedido</h1>
+                <h1 style="color: goldenrod;">Resumo do pedido</h1>
                 <div style="border: 2px solid;" id="resumoPedido">
                     <div>
-                        <h3 class="mt-3 ml-3 text-center"> Produtos</h3>
+                        <h3 class="mt-3 ml-3 text-center"><%=totalQtd%> Produtos</h3>
                     </div>
                     <div>
                         <h5 class="mt-3 ml-3" id="subTotal">Subtotal: <%=total.toFixed(2)%></h5>                        
                         <h3 class="ml-3 text-center" id="total">Total: <%=total.toFixed(2)%></h3>
                     </div>
                     <div class="mt-5 ml-4 mr-4">
-                        <button class="btn btn-danger btn-lg btn-block">Continuar</button>
+                        <button class="btn btn-warning btn-lg btn-block">Continuar</button>
                     </div>
                     <div class="mt-3 mb-5 text-center">
                         <h6><a href="/produtos">Adicionar Mais Produtos</a></h6>
@@ -90,7 +96,7 @@
     <%- include('footer.ejs') %>
   
 </body>
-<!-- <script src="js/carrinho.js"></script> -->
+
 <script>
     $().ready(function(){
         console.log("Jquery funfando...")
