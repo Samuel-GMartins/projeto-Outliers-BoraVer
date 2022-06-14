@@ -23,7 +23,7 @@ document.querySelector("#btContato").onclick = function () {
     } else if (formc.chamado.checked) {
 
         let arrPeoples = [formc.nomecontato.value,formc.emailcontato.value,formc.telcontato.value,formc.assuntocontato.value]
-        localStorage.setItem('chamado-' + idRandon,arrPeoples)
+        localStorage.setItem('chamado-' + idRandon,JSON.stringify(arrPeoples))
         
         formc.submit();
     } else {
