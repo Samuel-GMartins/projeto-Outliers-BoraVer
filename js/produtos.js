@@ -40,4 +40,4 @@ var filme6 = document.querySelector('#filme6').innerHTML = 'Corra'
         localStorage.setItem(_titulo,_url)
     }
 
-    
+    trocaTrailer()

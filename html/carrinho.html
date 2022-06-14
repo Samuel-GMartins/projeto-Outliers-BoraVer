@@ -6,176 +6,184 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" style="font-size: 100%;">
-    <link rel="stylesheet" href="css/style.css">
+    <!--- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        style="font-size: 100%;">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <header>
-        <div class="row">
-            <div class="col-sm-2 mt-1">
-                <img src="imagens/logo.png" class="w-100">
+        <div class=" faixaPrincipal row">
+            <div class="col-sm-3 ml-3">
+                <a href="/"><img src="../imagens/logo.png" width="250px"></a>
             </div>
-            <div class="col-sm-4 mt-5 ml-5 text-center">
-                <h1>BoraVer</h1>
-                <p>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em família.</p>
+            <div class="col-sm-8 text-center mt-5">
+                <h1 class="titulo">Bora Ver</h1>
+                <p class="subtituloHeader">Filmes, Séries e Documentários</p>
             </div>
-
-
-        <div class="col-sm-5 mt-4 mb-4 text-center">
-            <span id="bemVindo"></span>
-            <a id="entrar" href="login.html">Entrar</a>
-            <a class="ml-5 pl-5" style="cursor: pointer; text-decoration: underline" id="sair">Sair</a>
         </div>
-        
-    </div>
-
-
-        <nav class="mt-4 mb-4 text-center">
-            <a href="perfilUsuario.html" class="col-sm-3">PERFIL DO USUARIO  </a>
-            <a href="produtos.html" class="col-sm-3">PRODUTOS  </a>
-            <a href="promocoes.html" class="col-sm-3">PROMOÇÕES </a>
-            <a href="contato.html" class="col-sm-3">CONTATO  </a>
-            <a href="carrinho.html" class="col-sm-3">CARRINHO</a>
-        </nav>
-
-
     </header>
-    
-            <!--Setor de navegação-->
-            <ul class="nav nav-tabs justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">PÁGINA INICAL</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="promocoes.html">PROMOÇÕES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">LOGIN</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastro.html">CADASTRO</a>
-                </li>
-            </ul>
-    
-            <!--Setor de conteúdo-->
-            <section class="container">
-                    <h1 class="ml-5 mt-5 mb-5" style="color: brown;">Meu Carrinho</h1>
-                    
-                    <!--Informações carrinho-->
-                    <div class="row">
-                        <div class="col-sm-12 text-center">
-                            <div class="row text-center">
-                                <h4 class="col-sm-2 text-left"><b>Produto</b></h4>
-                                <h4 class="col-sm-2"><b>Telas</b></h4>
-                                <h4 class="col-sm-2"><b>Quantidade</b></h4>
-                                <h4 class="col-sm-3"><b>Preço</b></h4>
-                                <h4 class="col-sm-2 text-right"><b>Excluir<b></b></h4>
-                            </div>
-                            <div id="limparCarrinho">
-                                <div id="conteudoCarrinho" class="border" style="border: 2px;">
-    
-                                    <div class="row text-center" id="produto1">
-                                        <div class="col-sm-2 text-left mt-2 ml-2"><img src="imagens/semvoltapracasa.jpeg" class="w-50"></div>
-                                        <input id="tela1" class="col-sm-2 mt-2" type="number" min="1" max="5" style="height: 30px;" />
-                                        <div class="col-sm-2 mt-2 text-center" id="qtd1">1</div>
-                                        <div class="col-sm-3 mt-2" id="pre1">R$ 20,80</div>
-                                        <div class="col-sm-2 mt-2" id="ex1">
-                                            <button id="bt_p1" class="btn">
-                                                <img src="imagens/lixeira.png" class="w-50"> 
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <hr>
-    
-                                    <div class="row text-center" id="produto2">
-                                        <div class="col-sm-2 text-left mt-2 ml-2"><img src="imagens/afreira.jpeg" class="w-50"></div>
-                                        <input id="tela2" class="col-sm-2 mt-2" type="number" min="1" max="5" style="height: 30px;" />
-                                        <div class="col-sm-2 mt-2 text-center" id="qtd2">1</div>
-                                        <div class="col-sm-3 mt-2" id="pre2">R$ 18,70</div>
-                                        <div class="col-sm-2 mt-2" id="ex2">
-                                            <button id="bt_p2" class="btn">
-                                                <img src="imagens/lixeira.png" class="w-50"> 
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <hr>
-    
-                                    <div class="row text-center" id="produto3">
-                                        <div class="col-sm-2 text-left mt-2 ml-2"><img src="imagens/comoeueraantesdevc.jpeg" class="w-50"></div>
-                                        <input id="tela3" class="col-sm-2 mt-2" type="number" min="1" max="5" style="height: 30px;" />
-                                        <div class="col-sm-2 mt-2 text-center" id="qtd3">1</div>
-                                        <div class="col-sm-3 mt-2" id="pre3">R$ 32,10</div>
-                                        <div class="col-sm-2 mt-2" id="ex3">
-                                            <button id="bt_p3" class="btn">
-                                                <img src="imagens/lixeira.png" class="w-50"> 
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <hr>
-    
-                                </div>
-                                <div class="row mt-2 text-right">
-                                    <p class="col-sm-9">Limpar carrinho </p>
-                                    <button class="btn col-sm-2" id="bt_limparCarrinho"> 
-                                        <img src="imagens/lixeira.png" class="w-50">
-                                    </button>
-                                </div>
+
+<nav class=" faixaPrincipal navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="../html/index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../html/produtos.html">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../html/promocoes.html">Promoções</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../html/contato.html">Contato</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../html/carrinho.html">Carrinho</a>
+          </li>
+      </ul>
+    </div>
+    <div class=" entrarSair text-right mr-5">
+      <span id="bemVindo"></span>
+      <a href="../html/cadastro.html" id="cadastro" class="mr-2"> Cadastre-se </a>
+      <a href="../html/perfilUsuario.html" id="perfil" class="ml-2"><img src="../imagens/perfil.png" width="30px" alt=""></a>
+      <a href="../html/login.html" id="entrar"> Entrar </a>
+      <a href="../html/index.html" id="sair" class="ml-2"><img src="../imagens/sair.png" width="30px" alt=""></a>
+  </div>
+</nav>
+
+    <!--Setor de conteúdo-->
+    <section class="container">
+        <h1 class="ml-5 mt-5 mb-5" style="color: brown;">Meu Carrinho</h1>
+
+        <!--Informações carrinho-->
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="row text-center">
+                    <h4 class="col-sm-2 text-left"><b>Produto</b></h4>
+                    <h4 class="col-sm-2"><b>Telas</b></h4>
+                    <h4 class="col-sm-2"><b>Quantidade</b></h4>
+                    <h4 class="col-sm-3"><b>Preço</b></h4>
+                    <h4 class="col-sm-2 text-right"><b>Excluir<b></b></h4>
+                </div>
+                <div id="limparCarrinho">
+                    <div id="conteudoCarrinho" class="border" style="border: 2px;">
+
+                        <div class="row text-center" id="produto1">
+                            <div class="col-sm-2 text-left mt-2 ml-2"><img src="../imagens/semVoltaPraCasa.jpeg"
+                                    class="w-50"></div>
+                            <input id="tela1" class="col-sm-2 mt-2" type="number" min="1" max="5"
+                                style="height: 30px;" />
+                            <div class="col-sm-2 mt-2 text-center" id="qtd1">1</div>
+                            <div class="col-sm-3 mt-2" id="pre1">R$ 20,80</div>
+                            <div class="col-sm-2 mt-2" id="ex1">
+                                <button id="bt_p1" class="btn">
+                                    <img src="../imagens/lixeira.png" class="w-50">
+                                </button>
                             </div>
                         </div>
+                        <hr>
+
+                        <div class="row text-center" id="produto2">
+                            <div class="col-sm-2 text-left mt-2 ml-2"><img src="../imagens/afreira.jpeg" class="w-50">
+                            </div>
+                            <input id="tela2" class="col-sm-2 mt-2" type="number" min="1" max="5"
+                                style="height: 30px;" />
+                            <div class="col-sm-2 mt-2 text-center" id="qtd2">1</div>
+                            <div class="col-sm-3 mt-2" id="pre2">R$ 18,70</div>
+                            <div class="col-sm-2 mt-2" id="ex2">
+                                <button id="bt_p2" class="btn">
+                                    <img src="../imagens/lixeira.png" class="w-50">
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row text-center" id="produto3">
+                            <div class="col-sm-2 text-left mt-2 ml-2"><img src="../imagens/comoEuEra.jpeg"
+                                    class="w-50"></div>
+                            <input id="tela3" class="col-sm-2 mt-2" type="number" min="1" max="5"
+                                style="height: 30px;" />
+                            <div class="col-sm-2 mt-2 text-center" id="qtd3">1</div>
+                            <div class="col-sm-3 mt-2" id="pre3">R$ 32,10</div>
+                            <div class="col-sm-2 mt-2" id="ex3">
+                                <button id="bt_p3" class="btn">
+                                    <img src="../imagens/lixeira.png" class="w-50">
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+
                     </div>
-            </section>
-    
-            <section class="container mt-5">
-                <div class="row">
-                    <div class="col-sm-5">
-                        <!--área cupom-->
-                        <h1 style="color: brown;">Cupom</h1>
-                        <div style="border: 2px solid; border-radius: 20px;">
-                            <form id="formDesconto" class="text-center mt-3 mb-3 ml-3 mr-3">
-                                <h4>Digite o código do cupom:</h4>
-                                <input type="text" id="cupom" class="form-control w-80 text-center mt-2">
-                                <button type="button" class="btn btn-info btn-lg btn-block mt-3" name="botao" id="btCupom">Aplicar</button>
-                            </form>
-                        </div>
-                    </div>
-    
-                    <!--Setor Resumo do pedido-->
-                    <div class="col-sm-6" id="divResumo">
-                        <h1 style="color: brown;">Resumo do pedido</h1>
-                        <div style="border: 2px solid;" id="resumoPedido">
-                            <div>
-                                <h3 class="mt-3 ml-3 text-center" id="produtos">3 Produtos</h3>
-                            </div>
-                            <div>
-                                <h5 class="mt-3 ml-3" id="subTotal">Subtotal R$ 00.00</h5>
-                                <h5 class="mt-1 ml-3" id="desconto">Descontos R$ 00.00</h5>
-                                <h3 class="ml-3 text-center" id="total">Total R$ 00.00</h3>
-                            </div>
-                            <div class="mt-5 ml-4 mr-4">
-                                <button class="btn btn-danger btn-lg btn-block">Continuar</button>
-                            </div>
-                            <div class="mt-3 mb-5 text-center">
-                                <h6><a href="produtos.html">Adicionar Mais Produtos</a></h6>
-                            </div>
-                        </div>
+                    <div class="row mt-2 text-right">
+                        <p class="col-sm-9">Limpar carrinho </p>
+                        <button class="btn col-sm-2" id="bt_limparCarrinho">
+                            <img src="../imagens/lixeira.png" class="w-50">
+                        </button>
                     </div>
                 </div>
-            </section>
-    
-            <section class="container mt-5">
-                <div class="row">
-                    <div class="col-sm-4"> <img src="imagens/toryca.jpeg" alt="" class="w-50"></div>
-                    <div class="col-sm-4"> <img src="imagens/sherek.jpeg" alt="" class="w-50"></div>
-                    <div class="col-sm-4"> <img src="imagens/cristo.jpeg" alt="" class="w-50"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col-sm-5">
+                <!--área cupom-->
+                <h1 style="color: brown;">Cupom</h1>
+                <div style="border: 2px solid; border-radius: 20px;">
+                    <form id="formDesconto" class="text-center mt-3 mb-3 ml-3 mr-3">
+                        <h4>Digite o código do cupom:</h4>
+                        <input type="text" id="cupom" class="form-control w-80 text-center mt-2">
+                        <button type="button" class="btn btn-info btn-lg btn-block mt-3" name="botao"
+                            id="btCupom">Aplicar</button>
+                    </form>
                 </div>
-            </section>    
-    
-            <!--Setor de rodapé-->
-            <footer class="bg-dark p-4 text-white text-center mt-4">
-                <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
-            </footer>
-        </body>
-        <script src="js/carrinho.js"></script>
+            </div>
+
+            <!--Setor Resumo do pedido-->
+            <div class="col-sm-6" id="divResumo">
+                <h1 style="color: brown;">Resumo do pedido</h1>
+                <div style="border: 2px solid;" id="resumoPedido">
+                    <div>
+                        <h3 class="mt-3 ml-3 text-center" id="produtos">3 Produtos</h3>
+                    </div>
+                    <div>
+                        <h5 class="mt-3 ml-3" id="subTotal">Subtotal R$ 00.00</h5>
+                        <h5 class="mt-1 ml-3" id="desconto">Descontos R$ 00.00</h5>
+                        <h3 class="ml-3 text-center" id="total">Total R$ 00.00</h3>
+                    </div>
+                    <div class="mt-5 ml-4 mr-4">
+                        <button class="btn btn-danger btn-lg btn-block">Continuar</button>
+                    </div>
+                    <div class="mt-3 mb-5 text-center">
+                        <h6><a href="../html/produtos.html">Adicionar Mais Produtos</a></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col-sm-4"> <img src="../imagens/toryca.jpeg" alt="" class="w-50"></div>
+            <div class="col-sm-4"> <img src="../imagens/shrek.jpeg" alt="" class="w-50"></div>
+            <div class="col-sm-4"> <img src="../imagens/cristo.jpeg" alt="" class="w-50"></div>
+        </div>
+    </section>
+
+    <!--Setor de rodapé-->
+    <footer class="text-white text-center mt-5" id="footer">
+        <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
+        <a href="/sobreNos" target="_blank"><img src="../imagens/pessoas.png" alt=""></a>
+    </footer>
+</body>
+<script src="../js/carrinho.js"></script>
+<script src="../js/index.js"></script>
+
 </html>
