@@ -1,14 +1,7 @@
 <%- include('header.ejs') %>
 <%- include('nav.ejs') %>
 
-        
-    <div class=" entrarSair text-right">
-        <span id="bemVindo"></span>
-        <a href="/cadastro" id="cadastro" class="mr-2"> Cadastre-se </a>
-        <a href="/login" id="entrar"> Entrar </a>
-        <a href="/" id="sair" class="ml-2"><img src="imagens/sair.png" width="30px" alt=""></a>
-    </div>
-     
+    
     <section class="container mt-5">
         <div class="row ">
             <%filme.forEach((item)=> { %>
@@ -35,7 +28,7 @@
 
 </body>
 
-<!-- <script src="js/index.js"></script> -->
+ <script src="js/index.js"></script>
 <script>
     $().ready(function(){
         console.log("Jquery funfando...")

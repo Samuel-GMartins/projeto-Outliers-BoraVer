@@ -1,6 +1,7 @@
 let user= localStorage.emailUser
 let bemVindo=document.querySelector("#bemVindo")
 let entrar=document.querySelector("#entrar")
+let cadastro=document.querySelector('#cadastro')
 let sair=document.querySelector("#sair")
 
 //saudação ao usuário
@@ -8,6 +9,7 @@ function msgUser(){
     let nomeUser=localStorage.nomeUser
     bemVindo.innerHTML='Olá, <b>' + nomeUser + '</b>!'
     entrar.style.display="none"
+    cadastro.style.display="none"
 }
 
 function resetUser(){
