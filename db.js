@@ -63,12 +63,43 @@ async function insertFilmes(filmes){
     return rows
 }
 
+async function insertUsuario(usuario){
+    const conectado = await conecta() 
+    const values = [usuario.nome,usuario.email,usuario.data_nascimento,usuario.data_cadastro,usuario.telefone,usuario.senha]
+    const [rows] = 
+    await conectado.query("INSERT INTO usuario(nome,email,data_nascimento,data_cadastro,telefone,senha) VALUES (?,?,?,?,?,?)",values)  
+    return rows
+}
+
+async function selectCarrinho(){
+    const conectado = await conecta()
+    const [rows] = await conectado.query("SELECT * FROM carrinho ORDER BY carrinho_id DESC")    
+    return rows
+}
+
+async function insertCarrinho(carrinho){
+    const conectado = await conecta()
+    const values = [carrinho.produto,carrinho.qtd,carrinho.preco,carrinho.filmes_id]
+    const [rows] = await conectado.query("INSERT INTO carrinho(produto,qtd,preco,filmes_id) VALUES (?,?,?,?)",values)
+    console.log(rows)
+    return rows
+}
+
+async function deleteCarrinho(id){
+    const conectado = await conecta();
+    const values = [id]    
+    return await conectado.query("DELETE FROM carrinho WHERE carrinho_id=?",values)    
+}
+
 module.exports ={
     selectFilmes,
     selectSingle,
     updatePromo,
     selectPromo,
-    cadastroContato,
+    insertUsuario,
     insertFilmes,
-    selectUsers
+    selectUsers,
+    insertCarrinho,
+    deleteCarrinho,
+    selectCarrinho,
 }
