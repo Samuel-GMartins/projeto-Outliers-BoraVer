@@ -1,54 +1,47 @@
 <%- include('header.ejs') %>
 <%- include('nav.ejs') %>
 
-        
-    <div class=" entrarSair text-right">
-        <span id="bemVindo"></span>
-        <a href="/cadastro" id="cadastro" class="mr-2"> Cadastre-se </a>
-        <a href="/login" id="entrar"> Entrar </a>
-        <a href="/" id="sair" class="ml-2"><img src="imagens/sair.png" width="30px" alt=""></a>
+<section class="container mt-5">
+    <div class="row ">
+        <%filme.forEach((item)=> { %>
+
+        <div class="col-sm-4 mt-5 mb-3 ">
+            <h2 class="mb-3 subtitulo"><%=item.titulo%></h2>
+            <a href="/single-produto?id=<%=item.filmes_id%>">
+                <img class="card-img-top" src="imagens/<%=item.fotos%>" alt="Card image cap">
+            </a>
+        </div>
+        <% }) %>
+
     </div>
-     
-    <section class="container mt-5">
-        <div class="row ">
-            <%filme.forEach((item)=> { %>
+</section>
 
-            <div class="col-sm-4 mt-5 mb-3 ">
-                <h2 class="mb-3 subtitulo"><%=item.titulo%></h2>
-                <a href="/single-produto?id=<%=item.filmes_id%>">
-                    <img class="card-img-top" src="imagens/<%=item.fotos%>" alt="Card image cap">
-                </a>                                      
+<section class="container mt-5">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-4 mt-5">
+                <div>
+                    <a href="/single-preferencia"><img src="" alt="x" class="w-50" id="favorito1"></a>
+                </div>
             </div>
-            <% }) %>
-
-        </div>
-    </section>
-
-    <section class="container mt-5">
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-sm-4 mt-5">
-                    <div>
-                        <a href="/single-preferencia"><img src="" alt="x" class="w-50" id="favorito1"></a>
-                    </div>
+            <div class="col-sm-4 mt-5">
+                <div>
+                    <a href="/single-preferencia"><img src="" alt="x" class="w-50" id="favorito2"></a>
                 </div>
-                <div class="col-sm-4 mt-5">
-                    <div>
-                        <a href="/single-preferencia"><img src="" alt="x" class="w-50" id="favorito2"></a>
-                    </div>
-                </div>
-                <div class="col-sm-4 mt-5">
-                    <div>
-                        <a href="/single-preferencia"><img src="" alt="x" class="w-50" id="favorito3"></a>
-                    </div>
+            </div>
+            <div class="col-sm-4 mt-5">
+                <div>
+                    <a href="/single-preferencia"><img src="" alt="x" class="w-50" id="favorito3"></a>
                 </div>
             </div>
         </div>
-    </section>
-   
-    <%- include('footer.ejs') %>
+    </div>
+</section>
+
+<%- include('footer.ejs') %>
 
 </body>
 
 <script src="js/index.js"></script>
+
 </html>

@@ -2,13 +2,21 @@ async function conecta(){
     const mysql=require("mysql2/promise")
     const conn= await mysql.createConnection({
         host:"localhost",
-        user:"hemylli",
-        password:"Tec#381*",
+        user:"samuel",
+        password:"But4kozcs@",
         database:"projeto_video"
     })
     console.log("mySQL conectado!")
     global.connection = conn
     return connection
+}
+
+async function selectUsers(email,senha){
+    const conectado = await conecta()
+    const values = [email,senha]
+    const [rows] = await conectado.query("SELECT * FROM usuario WHERE email=? AND senha=?", values)
+    //console.log(rows)
+    return rows
 }
 
 async function selectFilmes(){
@@ -37,12 +45,12 @@ async function updatePromo(promo,id){
 }
   
 
-async function insertUsuario(usuario){
-    const conectado = await conecta() 
+async function cadastroContato(usuario){
+    const conectado = await conecta()
     const values = [usuario.nome,usuario.email,usuario.data_nascimento,usuario.data_cadastro,usuario.telefone,usuario.senha]
     const [rows] = 
-    await conectado.query("INSERT INTO usuario(nome,email,data_nascimento,data_cadastro,telefone,senha) VALUES (?,?,?,?,?,?)",values)  
-    console.log("Insert ok!")
+    await conectado.query("INSERT INTO usuario(nome,email,data_nascimento,data_cadastro,telefone,senha) VALUES (?,?,?,?,?,?)",values)
+    console.log("Insert OK")
     return rows
 }
 
@@ -60,6 +68,7 @@ module.exports ={
     selectSingle,
     updatePromo,
     selectPromo,
-    insertUsuario,
-    insertFilmes
+    cadastroContato,
+    insertFilmes,
+    selectUsers
 }
