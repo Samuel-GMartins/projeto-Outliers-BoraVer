@@ -40,4 +40,5 @@ var filme6 = document.querySelector('#filme6').innerHTML = 'Corra'
         localStorage.setItem(_titulo,_url)
     }
 
+//exibe os vídeos ao carregar a página
     trocaTrailer()
