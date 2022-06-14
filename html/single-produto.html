@@ -5,35 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+    <!--- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>TITULO DA PAG</title>
+        style="font-size: 100%;">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <header>
-        <div class="row">
-            <div class="col-sm-2 mt-1">
-                <a href="index.html"><img src="imagens/logo.png" class=" ml-2 w-100"></a>
+        <div class=" faixaPrincipal row">
+            <div class="col-sm-3 ml-3">
+                <a href="/"><img src="../imagens/logo.png" width="250px"></a>
             </div>
-
-            <div class="col-sm-4 mt-5 ml-5 text-center">
-                <h1>Nome Do Site Aqui</h1>
-                <p>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em
-                    família.</p>
+            <div class="col-sm-8 text-center mt-5">
+                <h1 class="titulo">Bora Ver</h1>
+                <p class="subtituloHeader">Filmes, Séries e Documentários</p>
             </div>
-
         </div>
     </header>
-    <nav class="text-center">
-        <a href="perfil-usuario.html" class="col-sm-3">PERFIL USUÁRIO</a>
-        <a href="produtos.html" class="col-sm-3">PRODUTOS</a>
-        <a href="promocoes.html" class="col-sm-3">PROMOÇÕES</a>
-        <a href="contato.html" class="col-sm-3">CONTATO</a>
-        <a href="carrinho.html" class="col-sm-3">CARRINHO</a>
-        </div>
-    </nav>
+
+<nav class=" faixaPrincipal navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="../html/index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../html/produtos.html">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../html/promocoes.html">Promoções</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../html/contato.html">Contato</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../html/carrinho.html">Carrinho</a>
+          </li>
+      </ul>
+    </div>
+    <div class=" entrarSair text-right mr-5">
+      <span id="bemVindo"></span>
+      <a href="../html/cadastro.html" id="cadastro" class="mr-2"> Cadastre-se </a>
+      <a href="../html/perfilUsuario.html" id="perfil" class="ml-2"><img src="../imagens/perfil.png" width="30px" alt=""></a>
+      <a href="../html/login.html" id="entrar"> Entrar </a>
+      <a href="../html/index.html" id="sair" class="ml-2"><img src="../imagens/sair.png" width="30px" alt=""></a>
+  </div>
+</nav>
+
     <hr>
         <section class="container">
             <div class="row">
@@ -59,15 +82,19 @@
             
             <div id="galeria-videos" class="row">
                 <div class="col-sm-1 mt-2"></div>
-                <a href="single-produto.html"><img src="imagens/afreira.jpeg" class="col-xs-4 mt-4 mr-5"></a>
-                <a href="single-produto.html"><img src="imagens/bateroucorrer.jpeg" class="col-xs-4 mt-4 mr-5"></a>
-                <a href="single-produto.html"><img src="imagens/comoeueraantesdevc.jpeg" class="col-xs-4 mt-4 mr-5"></a>
+                <a href="../html/single-produto.html"><img src="../imagens/afreira.jpeg" class="col-xs-4 mt-4 mr-5"></a>
+                <a href="../html/single-produto.html"><img src="../imagens/aHoraDoRush.jpeg" class="col-xs-4 mt-4 mr-5"></a>
+                <a href="../html/single-produto.html"><img src="../imagens/comoEuEra.jpeg" class="col-xs-4 mt-4 mr-5"></a>
             </div>
             </section>
-            <footer class="bg-dark p-4 text-white text-center mt-4">
-                <p class="text-center">&copy; 2022 - Projeto Vídeos - Outliers</p>
-        
+            
+            <footer class="text-white text-center mt-5" id="footer">
+                <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
+                <a href="/sobreNos" target="_blank"><img src="../imagens/pessoas.png" alt=""></a>
             </footer>
+
         </body>
+
+        <script src="../js/index.js"></script>
         
         </html>

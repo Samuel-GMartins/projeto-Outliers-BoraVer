@@ -4,6 +4,7 @@ let user = localStorage.emailUser
 let bemVindo = document.querySelector('#bemVindo')
 let entrar = document.querySelector('#entrar')
 let cadastrar = document.querySelector('#cadastro')
+let perfil = document.querySelector('#perfil')
 let sair = document.querySelector('#sair')
 
  //Devolve a string do 0 até 0 @, independete da quantidade de caracteres
@@ -16,6 +17,7 @@ function msgUser() {
 
 function resetUser() {
     sair.style.display = "none"
+    perfil.style.display = "none"
 }
 
 sair.onclick = function () {

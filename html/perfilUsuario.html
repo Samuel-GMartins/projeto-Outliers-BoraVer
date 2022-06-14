@@ -1,41 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-        <title>Perfil Usuário</title>
-    </head>
-    <body>
-        <header>
-            <div class="row">
-                <div class="col-sm-2 mt-1">
-                    <a href="index.html"><img src="imagens/logo.png" class=" ml-2 w-100"></a>
-                </div>
-    
-                <div class="col-sm-4 mt-5 ml-5 text-center">
-                    <h1>Nome Do Site Aqui</h1>
-                    <p>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em
-                        família.</p>
-                </div>
-    
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <!--- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        style="font-size: 100%;">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class=" faixaPrincipal row">
+            <div class="col-sm-3 ml-3">
+                <a href="/"><img src="../imagens/logo.png" width="250px"></a>
             </div>
-        </header>
-        <nav class="text-center">
-            <a href="perfilUsuario.html" class="col-sm-3">PERFIL USUÁRIO</a>
-            <a href="produtos.html" class="col-sm-3">PRODUTOS</a>
-            <a href="promocoes.html" class="col-sm-3">PROMOÇÕES</a>
-            <a href="contato.html" class="col-sm-3">CONTATO</a>
-            <a href="carrinho.html" class="col-sm-3">CARRINHO</a>
+            <div class="col-sm-8 text-center mt-5">
+                <h1 class="titulo">Bora Ver</h1>
+                <p class="subtituloHeader">Filmes, Séries e Documentários</p>
             </div>
-        </nav>
-        <hr>
-        </header>
+        </div>
+    </header>
+
+<nav class=" faixaPrincipal navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="../html/index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../html/produtos.html">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../html/promocoes.html">Promoções</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../html/contato.html">Contato</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../html/carrinho.html">Carrinho</a>
+          </li>
+      </ul>
+    </div>
+    <div class=" entrarSair text-right mr-5">
+      <span id="bemVindo"></span>
+      <a href="../html/cadastro.html" id="cadastro" class="mr-2"> Cadastre-se </a>
+      <a href="../html/perfilUsuario.html" id="perfil" class="ml-2"><img src="../imagens/perfil.png" width="30px" alt=""></a>
+      <a href="../html/login.html" id="entrar"> Entrar </a>
+      <a href="../html/index.html" id="sair" class="ml-2"><img src="../imagens/sair.png" width="30px" alt=""></a>
+  </div>
+</nav>
+
         <section class="container">
-            <h2 class="text-center mt-3 mb-3" style="color:rgb(69, 67, 67)">Informações de Usuário</h2>
+            <h2 class="text-center mt-3 mb-3">Informações de Usuário</h2>
             <article>
                 <form id="formUsuario" method="post" class="w-50 mx-auto p-3 mt-3 mb-5" style="border:1px solid #CCC; border-radius: 12px;">
                     <fieldset>
@@ -54,9 +77,11 @@
 
             </article>
         </section>
-        <footer>
-            <p class="copy, bg-dark p-4 text-white text-center mt-4">&copy; 2022 - Projeto Vídeos - Outliers</p>
+        <footer class="text-white text-center mt-5" id="footer">
+            <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
+            <a href="/sobreNos" target="_blank"><img src="../imagens/pessoas.png" alt=""></a>
         </footer>
     </body>
-    <script src="js/perfilUsuario.js"></script>
+    <script src="../js/perfilUsuario.js"></script>
+    <script src="../js/index.js"></script>
 </html>
