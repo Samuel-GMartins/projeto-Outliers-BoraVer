@@ -48,17 +48,21 @@
         <div class="row ">
             <%produto.forEach((item)=> { %>
             <div class="col-sm-4 mt-5 mb-3 ">
-                <h2 class="mb-3 subtitulo"><%=item.titulo%></h2>
+                <h2 class="mb-3 text-left subtitulo"><%=item.titulo%></h2>
                 <a href="/single-produto?id=<%=item.filmes_id%>">
                     <img class="card-img-top" src="imagens/<%=item.fotos%>" alt="Card image cap">
                 </a>
-                <p class="mt-3 mr-5"> <%=item.sinopse%></p>
-
+                <div class="row">
+                    <h4 class="precoPromo mt-3 ml-3 mr-2" style="font-size: x-large!important;"> 
+                        R$ <%=item.preco%>
+                    </h4>
+                    <button data-id="<%=item.filmes_id%>" data-produto="<%=item.titulo%>" data-valor="<%=item.preco%>" data-fotos="<%=item.fotos%>" class="btn btn-dark bt-carrinho mt-2">
+                        Adicionar ao carrinho
+                    </button>                                   
+                </div>     
             </div>
             <% }) %>
-
         </div>
-
     </section>
 <hr>
     <section class="col-sm-12 mt-5">
@@ -77,5 +81,29 @@
 </body>
 
 <%- include("footer.ejs")%>
+
+<script>
+    $().ready(function(){
+        console.log("Jquery funfando...")
+        $('.bt-carrinho').click(function(){
+            let dataid = $(this).attr('data-id')
+            let dataProduto = $(this).attr('data-produto')
+            let dataValor = $(this).attr('data-valor')
+            let dataFotos = $(this).attr('data-fotos')
+
+            $.post("/carrinho",
+            {
+                filmes_id:dataid,
+                produto:dataProduto,
+                qtd:1,
+                preco:dataValor,
+                fotos:dataFotos,
+            },
+            function(data,status){
+                location.href='/carrinho'
+            },'json')                
+        })        
+    })
+</script>
 
 </html>

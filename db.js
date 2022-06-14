@@ -2,8 +2,8 @@ async function conecta(){
     const mysql=require("mysql2/promise")
     const conn= await mysql.createConnection({
         host:"localhost",
-        user:"samuel",
-        password:"But4kozcs@",
+        user:"",
+        password:"",
         database:"projeto_video"
     })
     console.log("mySQL conectado!")
@@ -50,7 +50,6 @@ async function cadastroContato(usuario){
     const values = [usuario.nome,usuario.email,usuario.data_nascimento,usuario.data_cadastro,usuario.telefone,usuario.senha]
     const [rows] = 
     await conectado.query("INSERT INTO usuario(nome,email,data_nascimento,data_cadastro,telefone,senha) VALUES (?,?,?,?,?,?)",values)
-    console.log("Insert OK")
     return rows
 }
 
@@ -58,8 +57,7 @@ async function insertFilmes(filmes){
     const conectado = await conecta() 
     const values = [filmes.titulo,filmes.genero,filmes.ano,filmes.sinopse,filmes.fotos,filmes.promo]
     const [rows] = 
-    await conectado.query("INSERT INTO filmes(titulo,genero,ano,sinopse,fotos,promo) VALUES (?,?,?,?,?,?)",values)  
-    console.log("Insert ok!")
+    await conectado.query("INSERT INTO filmes(titulo,genero,ano,sinopse,fotos,promo) VALUES (?,?,?,?,?,?)",values)      
     return rows
 }
 
@@ -72,9 +70,8 @@ async function selectCarrinho(){
 
 async function insertCarrinho(carrinho){
     const conectado = await conecta()
-    const values = [carrinho.produto,carrinho.qtd,carrinho.preco,carrinho.filmes_id]
-    const [rows] = await conectado.query("INSERT INTO carrinho(produto,qtd,preco,filmes_id) VALUES (?,?,?,?)",values)
-    console.log(rows)
+    const values = [carrinho.produto,carrinho.qtd,carrinho.preco,carrinho.filmes_id,carrinho.fotos]
+    const [rows] = await conectado.query("INSERT INTO carrinho(produto,qtd,preco,filmes_id,fotos) VALUES (?,?,?,?,?)",values)
     return rows
 }
 

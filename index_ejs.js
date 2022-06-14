@@ -75,7 +75,8 @@ app.post("/carrinho",async(req,res)=>{
         produto:info.produto,
         qtd:info.qtd,
         preco:info.preco,        
-        filmes_id:info.filmes_id,                  
+        filmes_id:info.filmes_id,
+        fotos:info.fotos,                  
     })
     res.send(req.body)
 })
