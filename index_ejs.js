@@ -59,10 +59,31 @@ app.get("/cadastro",(req,res)=>{
     res.render(`cadastro`)
 })
 
+app.get("/carrinho",async(req,res)=>{
+    const consultaCarrinho = await db.selectCarrinho()    
+    res.render(`carrinho`,{
+        titulo:"",
+        promo:"", 
+        filme:consulta,
+        carrinho:consultaCarrinho       
+    })
+})
 
+app.post("/carrinho",async(req,res)=>{
+    const info = req.body
+    await db.insertCarrinho({
+        produto:info.produto,
+        qtd:info.qtd,
+        preco:info.preco,        
+        filmes_id:info.filmes_id,                  
+    })
+    res.send(req.body)
+})
 
-app.get("/carrinho",(req,res)=>{
-    res.render(`carrinho`)
+app.post("/delete-carrinho",async(req,res)=>{
+    const info = req.body
+    await db.deleteCarrinho(info.id)
+    res.send(info)
 })
 
 app.get("/contato",(req,res)=>{
