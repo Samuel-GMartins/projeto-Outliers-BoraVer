@@ -9,7 +9,7 @@ body {
 #produto{
     border: 1px solid rgba(255, 255, 255, 0.185);
     border-radius: 15px;
-    box-shadow: 5px 5px 30px rgba(255, 255, 0, 0.438);
+    box-shadow: 3px 3px 30px rgba(255, 255, 0, 0.438);
 
 }
 
