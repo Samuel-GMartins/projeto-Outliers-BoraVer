@@ -1,3 +1,5 @@
+console.log('Js Index')
+
 let user = localStorage.emailUser
 let bemVindo = document.querySelector('#bemVindo')
 let entrar = document.querySelector('#entrar')
@@ -22,3 +24,4 @@ sair.onclick = function () {
 }
 
 localStorage.emailUser ? msgUser() : resetUser()
+

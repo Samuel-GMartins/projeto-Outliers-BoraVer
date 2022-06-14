@@ -198,7 +198,7 @@ app.post("/cadastro",async(req,res)=> {
 })
     res.redirect("/login")
 })
-    
+
 app.post("/admin/cadastroProduto",async(req,res)=>{
     const info=req.body
     await db.insertFilmes({

@@ -63,13 +63,6 @@ async function insertFilmes(filmes){
     return rows
 }
 
-async function insertUsuario(usuario){
-    const conectado = await conecta() 
-    const values = [usuario.nome,usuario.email,usuario.data_nascimento,usuario.data_cadastro,usuario.telefone,usuario.senha]
-    const [rows] = 
-    await conectado.query("INSERT INTO usuario(nome,email,data_nascimento,data_cadastro,telefone,senha) VALUES (?,?,?,?,?,?)",values)  
-    return rows
-}
 
 async function selectCarrinho(){
     const conectado = await conecta()
@@ -96,10 +89,10 @@ module.exports ={
     selectSingle,
     updatePromo,
     selectPromo,
-    insertUsuario,
     insertFilmes,
     selectUsers,
     insertCarrinho,
     deleteCarrinho,
     selectCarrinho,
+    cadastroContato
 }

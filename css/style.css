@@ -6,6 +6,13 @@ body {
     color: white;
 }
 
+#produto{
+    border: 1px solid rgba(255, 255, 255, 0.185);
+    border-radius: 15px;
+    box-shadow: 5px 5px 30px rgba(255, 255, 0, 0.438);
+
+}
+
 .navcolor {
     background-image: linear-gradient(to right, #434343 0%, black 100%);
     color: white;
@@ -27,6 +34,7 @@ body {
     color: orange ;
     font-family: 'Bebas Neue', cursive;
     font-size: 25pt;
+    text-align: center;
 }
 
 .entrarSair {
@@ -40,9 +48,10 @@ body {
 
 .card-img-top {
     border: 3px solid white;
-    width: 280px;
+    width: 254px;
     border-radius: 15px;
     -webkit-transition: all .2s ease-in;
+    align-items: center;
 }
 
 .card-img-top:hover {
@@ -59,9 +68,10 @@ body {
 }
 
 .precoPromo{
-    color: red;
+    color: white;
     font-weight: bolder;
-    font-size: large;
+    font-family: 'Bebas Neue', cursive;
+
 }
 
 .label-float input {
