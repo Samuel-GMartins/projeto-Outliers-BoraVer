@@ -75,7 +75,8 @@ app.post("/carrinho",async(req,res)=>{
         produto:info.produto,
         qtd:info.qtd,
         preco:info.preco,        
-        filmes_id:info.filmes_id,                  
+        filmes_id:info.filmes_id,
+        fotos:info.fotos,                  
     })
     res.send(req.body)
 })
@@ -198,7 +199,7 @@ app.post("/cadastro",async(req,res)=> {
 })
     res.redirect("/login")
 })
-    
+
 app.post("/admin/cadastroProduto",async(req,res)=>{
     const info=req.body
     await db.insertFilmes({
