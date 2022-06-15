@@ -124,10 +124,6 @@ app.get("/single-produto",async(req,res) => {
         })
 })
 
-app.get("/admin/cadastroAdmin",(req,res)=>{
-    res.render(`admin/cadastroAdmin`)
-})
-
 app.get("/admin/cadastroProduto",(req,res)=>{
     res.render(`admin/cadastroProduto`)
 })
@@ -213,6 +209,32 @@ app.post("/admin/cadastroProduto",async(req,res)=>{
     res.redirect("/admin/cadastroProduto")
 })
 
+app.get("/admin/cadastroAdmin",async(req,res) => {
+    let infoUrl = req.url
+    let urlProp = url.parse(infoUrl,true) // ?id=5
+    let q = urlProp.query
+    const consultaSingle = await db.selectSingle(q.id)
+    const consultaInit = await db.selectSingle(4)
+
+    res.render(`admin/cadastroAdmin`, {
+        titulo:"Conheça nossos livros", 
+        promo:"Todos os livros com 10%OFF !",
+        })
+})
+
+app.post("/admin/cadastroAdmin",async(req,res)=> {
+    const info=req.body
+    await db.cadastroAdmin({
+    nome:info.nome,
+    email:info.email,
+    data_nascimento: info.data_nascimento,
+    data_cadastro: info.data_cadastro,
+    telefone:info.telefone,
+    senha:info.senha,
+    tipo_usuario: info.tipo_usuario
+})
+    res.redirect("/admin/cadastroAdmin")
+})
 
 
 

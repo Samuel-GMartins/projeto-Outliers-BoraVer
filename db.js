@@ -53,6 +53,14 @@ async function cadastroContato(usuario){
     return rows
 }
 
+async function cadastroAdmin(usuario){
+    const conectado = await conecta()
+    const values = [usuario.nome,usuario.email,usuario.data_nascimento,usuario.data_cadastro,usuario.telefone,usuario.senha,usuario.tipo_usuario]
+    const [rows] = 
+    await conectado.query("INSERT INTO usuario(nome,email,data_nascimento,data_cadastro,telefone,senha,tipo_usuario) VALUES (?,?,?,?,?,?,?)",values)
+    return rows
+}
+
 async function insertFilmes(filmes){
     const conectado = await conecta() 
     const values = [filmes.titulo,filmes.genero,filmes.ano,filmes.sinopse,filmes.fotos,filmes.preco,filmes.promo]
@@ -91,5 +99,6 @@ module.exports ={
     insertCarrinho,
     deleteCarrinho,
     selectCarrinho,
-    cadastroContato
+    cadastroContato,
+    cadastroAdmin
 }
