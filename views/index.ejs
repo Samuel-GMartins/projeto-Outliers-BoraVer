@@ -22,11 +22,13 @@
             </div>
             <% }) %>
 
-        </div>
-    </section>
-   
+        <div class="col-sm-3 mt-5" id="produto">
+            <a href="/single-produto?id=<%=item.filmes_id%>">
+                <img class="card-img-top mt-3" src="imagens/<%=item.fotos%>" alt="Card image cap">
+            </a>
+            <h2 class="mt-3 subtitulo"><%=item.titulo%></h2>
+            <h4 class="precoPromo mt-3 text-center">R$ <%=item.preco%></h4>  
 
-</body>
 
  <script src="js/index.js"></script>
 <script>
@@ -53,4 +55,5 @@
 
 <%- include('footer.ejs') %>
 
+</body>
 </html>
