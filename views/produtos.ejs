@@ -67,15 +67,11 @@
 <hr>
     <section class="col-sm-12 mt-5">
         <div class="flex-row d-flex justify-content-around">
-            <div class=" col-sm-4">
-                <a href="/single-produto"><img src="imagens/afreira.jpeg" alt="Imagem1" class="w-85"></a>
-            </div>
-            <div class="col-sm-4">
-                <a href="/single-produto"><img src="imagens/cristo.jpeg" alt="Imagem2" class="w-85"></a>
-            </div>
-            <div class="col-sm-4">
-                <a href="/single-produto"><img src="imagens/afreira.jpeg" alt="Imagem3" class="w-85"></a>
-            </div>
+            <%produto.forEach((item)=> { %>
+                <div class=" col-sm-4">
+                    <iframe src="<%=item.trailer%>" width="560" height="315" frameborder="0"></iframe>
+                </div>
+            <% }) %>
         </div>
     </section>
 </body>
