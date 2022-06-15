@@ -12,7 +12,7 @@ var filmes =[
     "Chris é um jovem fotógrafo negro que está prestes a conhecer os pais de Rose, sua namorada caucasiana. Com o tempo, ele percebe que a família dela esconde algo muito perturbador."],
 
     ["A Hora do Rush",
-    "bateroucorrer.jpeg",
+    "aHoraDoRush.jpeg",
     "Ação/Comédia",
     "1998",
     "A filha de um diplomata chinês é sequestrada em Los Angeles e o cônsul chama o inspetor Lee em Hong Kong para ajudar o FBI com o caso."],
@@ -24,13 +24,13 @@ var filmes =[
     "Um jornalista investigativo, ateu convicto, parte em uma investida para desmentir a existência de Deus após sua esposa tornar-se cristã."],
 
     ["Homem Aranha",
-    "semvoltapracasa.jpeg",
+    "semVoltaPraCasa.jpeg",
     "Ação",
     "2021",
     "O Homem-Aranha precisa lidar com as consequências da sua verdadeira identidade ter sido descoberta."],
 
     ["Shrek",
-    "sherek.jpeg",
+    "shrek.jpeg",
     "Comédia",
     "2001",
     "Era uma vez um pântano distante, onde vivia um ogro chamado Shrek. De repente, seu sossego é interrompido pela invasão de personagens de contos de fadas que foram banidos de seu reino pelo maldoso Lorde Farquaad."],
@@ -67,7 +67,7 @@ for (var i = 0; i < filmes.length; i++){
     conteudo.innerHTML += '<h3 class="col-sm-12 mb-3">' + filmes[i][0] + '</h3>'
 
     // Insere uma Imagem com 100% dentro de uma div espaço 3
-    conteudo.innerHTML += '<div class="col-sm-4"><a href="single-produto.html"><img src="imagens/' + filmes[i][1] + '"class="w-100" /></a></div>'
+    conteudo.innerHTML += '<div class="col-sm-4"><a href="../html/single-produto.html"><img src="../imagens/' + filmes[i][1] + '"class="w-100" /></a></div>'
 
     // Insere um parágrafo com a sinopse dentro de uma div espaço X
     conteudo.innerHTML += resenha

@@ -1,5 +1,4 @@
 <%- include('header.ejs') %>
-<%- include('nav.ejs') %>
 
 
     <!--Setor de conteúdo-->
@@ -7,18 +6,18 @@
         <h1 class="text-center mt-4 mb-4">Login</h1>
         <article>
             <!--Formulário de login-->
-            <form id="formLogin" method="post" action="/" class="w-50 mx-auto p-3 mt-4 mb-4"
+            <form id="formLogin" method="post" action="" class="w-50 mx-auto p-3 mt-4 mb-4"
                 style="border:1px solid #ccc;border-radius: 12px;">
                 <fieldset>
                     <div class="label-float">
-                        <input type="text" name="email" id="email" maxlength="50" placeholder="" required>
+                        <input type="text" name="email" id="nome_login" required>
                         <label id="labelEmail">E-mail</label>
                     </div>
 
                     <div class="label-float">
                         <input name="senha" id="senha" type="password" placeholder="" required>
                         <label id="labelSenha">Senha</label>
-                        <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+                        <i id="verSenha" class="fa fa-eye " aria-hidden="true"></i>
                     </div>
                     <div class="justify-center">
                         <button type="button" id="btLogin" class="btn btn-warning" class="justify-center">Confirmar</button>

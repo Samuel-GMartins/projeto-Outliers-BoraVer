@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <title>Projeto Livraria</title>
@@ -8,22 +8,50 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/styleAdmin.css">
+    <title>Relatório Comercial</title>
 </head>
 
 <body>
-    <header class="container p-4">
-        <div class="row">
-            <div class="col-sm-3 mt-1">
-                <a href="index.html"><img src="../imagens/logo.png" class=" ml-2 w-100"></a>
+    <header>
+        <div class=" faixaPrincipal row">
+            <div class="col-sm-3 ml-3">
+                <a href="../administrador/indexAdmin.html"><img src="../imagens/logoAdmin.png" width="250px"></a>
             </div>
-
-            <div class="col-sm-4 mt-5 ml-5 text-center">
-                <h1>Nome Do Site Aqui</h1>
-                <p>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em família.</p>
+            <div class="col-sm-8 text-center mt-5">
+                <h1 class="titulo">Bora Ver ?!</h1>
+                <p class="subtituloHeader">Filmes, Séries e Documentários</p>
             </div>
         </div>
     </header>
 
+    <nav class=" faixaPrincipal navbar navbar-expand-lg navbar-light bg-light">
+        <div class=" entrarSair text-right">
+          <span id="bemVindo"></span>
+          <a href="../administrador/loginAdmin.html" id="entrar"> Entrar </a>            
+          <a href="../administrador/cadastroAdmin.html" id="cadastrar"> Cadastre-se</a>
+          <a href="../administrador/indexAdmin.html" id="sair" class="ml-2"><img src="../imagens/sair.png" width="30px" alt=""></a>
+      </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="../administrador/indexAdmin.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../administrador/cadastroProduto.html">Cadastro de Produtos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../administrador/relatorio-chamada.html">Chamadas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../administrador/relatorioComercial.html"> Relatório Comercial</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
     <body>
         <h1 class="container mt-4 mb-3"><b>Relatório Comercial</b></h1>
 
@@ -126,26 +154,25 @@
                     <div class="col-sm-12 mt-5">
                         <div class="flex-row d-flex justify-content-around">
                             <div class=" col-sm-4">
-                                <a href="single-produto.html"><img
-                                        src="../imagens/semvoltapracasa.jpeg" alt="Imagem1"
+                                <a href="../html/single-produto.html"><img src="../imagens/semVoltaPraCasa.jpeg" alt="Imagem1"
                                         class="w-30"></a>
                             </div>
                             <div class="col-sm-4">
-                                <a href="single-produto.html"><img
-                                        src="../imagens/cristo.jpeg" alt="Imagem2"
+                                <a href="../html/single-produto.html"><img src="../imagens/cristo.jpeg" alt="Imagem2"
                                         class="w-30"></a>
                             </div>
                             <div class="col-sm-4">
-                                <a href="single-produto.html"><img
-                                        src="..//imagens/velosesefuriosos.jpeg" alt="Imagem3"
+                                <a href="../html/single-produto.html"><img src="../imagens/velozeseFuriosos.jpeg" alt="Imagem3"
                                         class="w-30"></a>
                             </div>
                         </div>
         </section>
-        <footer class="bg-dark p-4 text-white text-center mt-4">
+        <footer class="text-white text-center mt-5" id="footer">
             <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
+            <a href="/sobreNos" target="_blank"><img src="../imagens/pessoas.png" alt=""></a>
         </footer>
     </body>
+    <script src="../administrador/indexAdmin.js"></script>
     <script src="relatorioComercial.js"></script>
 
 </html>

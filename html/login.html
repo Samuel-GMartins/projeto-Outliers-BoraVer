@@ -1,75 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-            integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/style.css">
         <title>Login</title>
 </head>
 <body>
-    
-</body>
-</html>
-    <body>
-        <header>
-            <div class="row">
-                <div class="col-sm-2 mt-1">
-                    <a href="index.html"><img src="imagens/logo.png" class=" ml-2 w-100"></a>
-                </div>
-
-                <div class="col-sm-4 mt-5 ml-5 text-center">
-                    <h1>Nome Do Site Aqui</h1>
-                    <p>O site de vídeos que garante sua diversão e entretenimento, para quem está só ou em
-                        família.</p>
-                </div>
+    <header>
+        <div class=" faixaPrincipal row">
+            <div class="col-sm-3 ml-3">
+                <a href="#"><img src="../imagens/logo.png" width="250px"></a>
             </div>
-        </header>
-        <hr>
-
-    </body>
-
-    </html>
-
+            <div class="col-sm-8 text-center mt-5">
+                <h1 class="titulo">Bora Ver ?!</h1>
+                <p class="subtituloHeader">Filmes, Séries e Documentários</p>
+            </div>
+        </div>
+    </header>
 
     <!--Setor de conteúdo-->
     <section class="container">
         <h1 class="text-center mt-4 mb-4">Login</h1>
         <article>
             <!--Formulário de login-->
-            <form id="formLogin" method="post" action="index.html" class="w-50 mx-auto p-3 mt-4 mb-4"
-                style="border:1px solid #ccc;border-radius: 12px;">
+            <form id="formLogin" method="post" action="../html/index.html" class="w-50 mx-auto p-3 mt-4 mb-4"
+                style="border:1px solid #fff ;border-radius: 12px;">
                 <fieldset>
-                    <legend> Preencha os campos</legend>
-                    <div class="form-group">
-                        <label>E-mail: </label>
-                        <input class="form-control" name="email" id="email" maxlength="50">
+                    <div class="label-float">
+                        <input type="text" name="email" id="email" maxlength="50" placeholder="" required>
+                        <label id="labelEmail">E-mail</label>
                     </div>
-                    <div class="form-group">
-                        <label>Senha: </label>
-                        <input class="form-control" name="senha" id="senha" maxlength="8" type="password">
+
+                    <div class="label-float">
+                        <input name="senha" id="senha" type="password" placeholder="" required>
+                        <label id="labelSenha">Senha</label>
+                        <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
                     </div>
-                    <button type="button" id="btLogin" class="btn btn-danger">Confirmar</button>
-                    </div>
-                    <div>
+                    <div class="justify-center">
+                        <button type="button" id="btLogin" class="btn btn-warning">Confirmar</button>
                     </div>
                 </fieldset>
             </form>
-        </article>
-        <div class="text-center">
-            <p><a href="cadastro.html"> Não possui cadastro? Cadastre-se agora!</a></p>
-        </div>
-        </article>
-    </section>
-    </hr>
-    <!--Setor de rodapé-->
-    <footer class="bg-dark p-4 text-white text-center mt-4">
-        <p>&copy; 2022 - Todos os direitos reservados</p>
+    </article>
+    <div class="text-center">
+        <p>Ainda não tem cadastro? <a href="../html/cadastro.html">Cadastre-se</a></p>
+    </div>
+    </article>
+</section>
+
+    <!--Setor de rodapé--->
+    <footer class="text-white text-center mt-5" id="footer">
+        <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
+        <a href="/sobreNos" target="_blank"><img src="../imagens/pessoas.png" alt=""></a>
     </footer>
 
 </body>
-<script src="js/login.js"></script>
+<script src="../js/login.js"></script>
 
 </html>

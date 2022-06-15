@@ -3,12 +3,24 @@
 const express =  require('express')
 const app = express()
 const db =require("./db.js")
-const port = 8080
 const url = require("url")
 const bodyParser = require("body-parser")
+const session = require("express-session")
 
+const port = 8080
 
 app.set("view engine","ejs")
+
+const dia = 1000 * 60 * 60 * 24;
+const min15 = 1000 * 60 * 60 / 4;
+
+app.use(session({
+    secret: "hrgfgrfrty84fwir767",
+    saveUninitialized:true,
+    cookie: { maxAge: dia},
+    resave: false 
+}))
+
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
@@ -19,8 +31,25 @@ app.use("/js",express.static("js"))
 app.use("/administrador",express.static("administrador"))
 app.use("/Banco de Dados",express.static("Banco de Dados"))
 
-const consulta = await db.selectFilmes()   
-console.log(consulta[0])
+const consulta = await db.selectFilmes() 
+
+app.get("/login",async(req,res) => {
+    res.render(`login`, {
+        titulo:"Entrar - xx"
+    })
+})
+
+app.post("/login",async(req,res)=>{
+    let info = req.body
+    let consultaUsers = await db.selectUsers(info.email,info.senha)
+    consultaUsers == '' ? res.redirect("/mensagemAlert") : res.redirect("/")
+    const s = req.session
+    consultaUsers != '' ? s.nome = info.nome : null
+})
+
+app.get("/mensagemAlert",(req,res)=>{
+    res.render(`mensagemAlert`,{filme:consulta})
+})
 
 app.get("/",(req,res)=>{
     res.render(`index`,{filme:consulta})
@@ -30,8 +59,32 @@ app.get("/cadastro",(req,res)=>{
     res.render(`cadastro`)
 })
 
-app.get("/carrinho",(req,res)=>{
-    res.render(`carrinho`)
+app.get("/carrinho",async(req,res)=>{
+    const consultaCarrinho = await db.selectCarrinho()    
+    res.render(`carrinho`,{
+        titulo:"",
+        promo:"", 
+        filme:consulta,
+        carrinho:consultaCarrinho       
+    })
+})
+
+app.post("/carrinho",async(req,res)=>{
+    const info = req.body
+    await db.insertCarrinho({
+        produto:info.produto,
+        qtd:info.qtd,
+        preco:info.preco,        
+        filmes_id:info.filmes_id,
+        fotos:info.fotos,                  
+    })
+    res.send(req.body)
+})
+
+app.post("/delete-carrinho",async(req,res)=>{
+    const info = req.body
+    await db.deleteCarrinho(info.id)
+    res.send(info)
 })
 
 app.get("/contato",(req,res)=>{
@@ -121,33 +174,32 @@ app.get("/upd-promo", async(req,res)=>{
         })
 })
 
-app.get("/cadastro",async(req,res)=>{
+app.get("/cadastro",async(req,res) => {
     let infoUrl = req.url
-    let urlProp = url.parse(infoUrl,true)//  /?id=5
+    let urlProp = url.parse(infoUrl,true) // ?id=5
     let q = urlProp.query
     const consultaSingle = await db.selectSingle(q.id)
     const consultaInit = await db.selectSingle(4)
-    res.render(`cadastro`,{
-        titulo:"Conheça nossos livros",
-        promo:"Todos os livros com 10% de desconto!",
-        livro:consulta,
-        galeria: consultaInit
-    })
+
+    res.render(`cadastro`, {
+        titulo:"Conheça nossos livros", 
+        promo:"Todos os livros com 10%OFF !",
+        })
 })
 
-app.post("/cadastro",async(req,res)=>{
+app.post("/cadastro",async(req,res)=> {
     const info=req.body
-    await db.insertUsuario({
-        nome:info.nomeCadastro,
-        email:info.emailCadastro,
-        data_nascimento:info.dataNascimento,
-        data_cadastro:info.dataCadastro,
-        telefone:info.telefone,
-        senha:info.senha        
-    })    
-    res.redirect("/")
+    await db.cadastroContato({
+    nome:info.nome,
+    email:info.email,
+    data_nascimento: info.data_nascimento,
+    data_cadastro: info.data_cadastro,
+    telefone:info.telefone,
+    senha:info.senha
 })
-    
+    res.redirect("/login")
+})
+
 app.post("/admin/cadastroProduto",async(req,res)=>{
     const info=req.body
     await db.insertFilmes({
