@@ -206,10 +206,11 @@ app.post("/admin/cadastroProduto",async(req,res)=>{
         titulo:info.tituloFilme,
         genero:info.categoriaFilme,
         ano:info.anoDeLancamento,
+        preco:info.preco,
         sinopse:info.sinopseFilme,
         fotos:info.fotos      
     })
-    res.redirect("/promocoes")
+    res.redirect("/admin/cadastroProduto")
 })
 
 

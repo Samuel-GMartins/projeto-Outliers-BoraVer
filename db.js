@@ -55,9 +55,9 @@ async function cadastroContato(usuario){
 
 async function insertFilmes(filmes){
     const conectado = await conecta() 
-    const values = [filmes.titulo,filmes.genero,filmes.ano,filmes.sinopse,filmes.fotos,filmes.promo]
+    const values = [filmes.titulo,filmes.genero,filmes.ano,filmes.sinopse,filmes.fotos,filmes.preco,filmes.promo]
     const [rows] = 
-    await conectado.query("INSERT INTO filmes(titulo,genero,ano,sinopse,fotos,promo) VALUES (?,?,?,?,?,?)",values)      
+    await conectado.query("INSERT INTO filmes(titulo,genero,ano,sinopse,fotos,preco,promo) VALUES (?,?,?,?,?,?,0)",values)      
     return rows
 }
 
