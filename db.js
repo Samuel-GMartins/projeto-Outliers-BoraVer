@@ -19,6 +19,14 @@ async function selectUsers(email,senha){
     return rows
 }
 
+async function selectUsersAdmin(email,senha){
+    const conectado = await conecta()
+    const values = [email,senha]
+    const [rows] = await conectado.query("SELECT * FROM usuario WHERE email=? AND senha=? AND tipo_usuario=1", values)
+    //console.log(rows)
+    return rows
+}
+
 async function selectFilmes(){
     const conectado = await conecta()
     const [rows] = await conectado.query("SELECT * FROM filmes")
@@ -100,5 +108,6 @@ module.exports ={
     deleteCarrinho,
     selectCarrinho,
     cadastroContato,
-    cadastroAdmin
+    cadastroAdmin,
+    selectUsersAdmin
 }

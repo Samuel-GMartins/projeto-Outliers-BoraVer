@@ -91,9 +91,6 @@ app.get("/contato",(req,res)=>{
     res.render(`contato`)
 })
 
-app.get("/login",(req,res)=>{
-    res.render(`login`)
-})
 
 app.get("/perfilUsuario",(req,res)=>{
     res.render(`perfilUsuario`)
@@ -160,17 +157,10 @@ app.post("/cadastro",async(req,res)=> {
 
 //////////// ==> ADMINISTRADOR <== ///////////
 
-app.get("/cadastroProduto",(req,res)=>{
-    res.render(`admin/cadastroProduto`)
-})
-
 app.get("/indexAdmin",(req,res)=>{
     res.render(`admin/indexAdmin`)
 })
 
-app.get("/loginAdmin",(req,res)=>{
-    res.render(`admin/loginAdmin`)
-})
 
 app.get("/relatorio-chamada",(req,res)=>{
     res.render(`admin/relatorio-chamada`)
@@ -178,6 +168,10 @@ app.get("/relatorio-chamada",(req,res)=>{
 
 app.get("/relatorioComercial",(req,res)=>{
     res.render(`admin/relatorioComercial`)
+})
+
+app.get("/cadastroProduto",(req,res)=>{
+    res.render(`admin/cadastroProduto`)
 })
 
 app.post("/cadastroProduto",async(req,res)=>{
@@ -237,6 +231,21 @@ app.get("/atualiza-promo",async(req,res)=>{
      await db.updatePromo(qs.promo,qs.id)
      res.send("<h2>Lista de Promoções Atualizada!</h2><a href='./'>Voltar</a>")
 })
+
+app.get("/loginAdmin",async(req,res) => {
+    res.render(`admin/loginAdmin`, {
+        titulo:"Entrar - xx"
+    })
+})
+
+app.post("/loginAdmin",async(req,res)=>{
+    let info = req.body
+    let consultaUsers = await db.selectUsersAdmin(info.email,info.senha)
+    consultaUsers == '' ? res.redirect("/mensagemAlert") : res.redirect("/indexAdmin")
+    const s = req.session
+    consultaUsers != '' ? s.nome = info.nome : null
+})
+
 //////////// ==> FIM DO ADMINISTRADOR <== ///////////
 
 app.listen(port,()=> console.log("Servidor rodando com nodemon!"))
