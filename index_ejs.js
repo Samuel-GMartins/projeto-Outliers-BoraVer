@@ -55,6 +55,10 @@ app.get("/",(req,res)=>{
     res.render(`index`,{filme:consulta})
 })
 
+app.get("/faq",(req,res)=>{
+    res.render(`faq`,{filme:consulta})
+})
+
 app.get("/cadastro",(req,res)=>{
     res.render(`cadastro`)
 })
