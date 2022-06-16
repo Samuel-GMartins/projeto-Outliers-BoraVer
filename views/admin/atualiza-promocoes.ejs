@@ -1,49 +1,5 @@
-
-<!--
-Projeto Livraria Online
-Parte do curso Javascript Programmer    
--->
-<!-- ============= HEADER ================ -->
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Leonardo Tumadjian">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Books Online - <%=titulo%></title>
-</head>
-<body>
-<!-- ========= FIM HEADER ============= -->
-    <!-- ======= MENU DO PROJETO ======== -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-            <img src="../imgs/logo.png" width="180" height="" class="d-inline-block align-top">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/cadastro">Cadastre-se</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/carrinho">Carrinho de compras</a>
-                </li>
-            </ul>
-            <div class="navbar-text">
-                Books Online
-            </div>
-        </div>
-    </nav>
+<%- include('headerAdmin.ejs') %>
+<%- include('navAdmin.ejs') %>
     <!-- =============== FIM DO MENU =============== -->
     
     <!-- =============== Conteúdo ================== -->
@@ -112,50 +68,9 @@ Parte do curso Javascript Programmer
     <!-- =============== Fim do Conteúdo ================== -->
 
 <!-- =============== FOOTER ================== -->
-<footer class="bg-dark mt-5 pt-5 text-left text-white">
-   <p class="pl-5 pb-5">&copy;2034 - Todos os direitos reservados</p>
-</footer>
+<%- include('footerAdmin.ejs') %>
+
 </body>
     <script src="js/controle.js"></script>
 </html>
 <!-- =============== Fim FOOTER ================== -->
-
-        <!-- =============== Paginação ================== -->
-        <nav>
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-                <li class="page-item active">
-                    <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- =============== Fim da Paginação ================== -->
-    </div>
-    <!-- =============== Fim do Conteúdo ================== -->
-
-<!-- =============== FOOTER ================== -->
-<footer class="bg-dark mt-5 pt-5 text-left text-white">
-   <p class="pl-5 pb-5">&copy;2034 - Todos os direitos reservados</p>
-</footer>
-</body>
-<script src="js/controle.js"></script>
-</html>
-<!-- =============== Fim FOOTER ================== -->
-

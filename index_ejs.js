@@ -28,7 +28,7 @@ app.use(express.static('projetoGrupo3-Outliers'))
 app.use("/imagens",express.static("imagens"))
 app.use("/css",express.static("css"))
 app.use("/js",express.static("js"))
-app.use("/administrador",express.static("administrador"))
+app.use("/admin",express.static("admin"))
 app.use("/Banco de Dados",express.static("Banco de Dados"))
 
 const consulta = await db.selectFilmes() 
@@ -124,50 +124,11 @@ app.get("/single-produto",async(req,res) => {
         })
 })
 
-app.get("/admin/cadastroProduto",(req,res)=>{
-    res.render(`admin/cadastroProduto`)
-})
-
-app.get("/admin/indexAdmin",(req,res)=>{
-    res.render(`admin/indexAdmin`)
-})
-
-app.get("/admin/loginAdmin",(req,res)=>{
-    res.render(`admin/loginAdmin`)
-})
-
-app.get("/admin/relatorio-chamada",(req,res)=>{
-    res.render(`admin/relatorio-chamada`)
-})
-
-app.get("/admin/relatorioComercial",(req,res)=>{
-    res.render(`admin/relatorioComercial`)
-})
-
-
-app.get("/atualiza-promo",async(req,res)=>{
-    // let infoUrl = req.url
-    let qs = url.parse(req.url,true).query
-     await db.updatePromo(qs.promo,qs.id)
-     res.send("<h2>Lista de Promoções Atualizada!</h2><a href='./'>Voltar</a>")
-})
-
 app.get("/promocoes",async(req,res)=>{
     const consultaPromo=await db.selectPromo()
     res.render(`promocoes`,{
     produto:consultaPromo
     })
-})
-  
-app.get("/upd-promo", async(req,res)=>{
-    let qs = url.parse(req.url,true).query
-    await db.updatePromo(qs.promo,qs.id)
-    res.render(`admin/atualiza-promocoes`,{
-        titulo:"Conheça nossos filmes",
-        promo:"Todos os filmes com 10% de desconto!",
-        filmes:consulta,
-        galeria:consulta   
-        })
 })
 
 app.get("/cadastro",async(req,res) => {
@@ -196,7 +157,30 @@ app.post("/cadastro",async(req,res)=> {
     res.redirect("/login")
 })
 
-app.post("/admin/cadastroProduto",async(req,res)=>{
+
+//////////// ==> ADMINISTRADOR <== ///////////
+
+app.get("/cadastroProduto",(req,res)=>{
+    res.render(`admin/cadastroProduto`)
+})
+
+app.get("/indexAdmin",(req,res)=>{
+    res.render(`admin/indexAdmin`)
+})
+
+app.get("/loginAdmin",(req,res)=>{
+    res.render(`admin/loginAdmin`)
+})
+
+app.get("/relatorio-chamada",(req,res)=>{
+    res.render(`admin/relatorio-chamada`)
+})
+
+app.get("/relatorioComercial",(req,res)=>{
+    res.render(`admin/relatorioComercial`)
+})
+
+app.post("/cadastroProduto",async(req,res)=>{
     const info=req.body
     await db.insertFilmes({
         titulo:info.tituloFilme,
@@ -206,10 +190,10 @@ app.post("/admin/cadastroProduto",async(req,res)=>{
         sinopse:info.sinopseFilme,
         fotos:info.fotos      
     })
-    res.redirect("/admin/cadastroProduto")
+    res.redirect("/cadastroProduto")
 })
 
-app.get("/admin/cadastroAdmin",async(req,res) => {
+app.get("/cadastroAdmin",async(req,res) => {
     let infoUrl = req.url
     let urlProp = url.parse(infoUrl,true) // ?id=5
     let q = urlProp.query
@@ -222,7 +206,7 @@ app.get("/admin/cadastroAdmin",async(req,res) => {
         })
 })
 
-app.post("/admin/cadastroAdmin",async(req,res)=> {
+app.post("/cadastroAdmin",async(req,res)=> {
     const info=req.body
     await db.cadastroAdmin({
     nome:info.nome,
@@ -233,10 +217,27 @@ app.post("/admin/cadastroAdmin",async(req,res)=> {
     senha:info.senha,
     tipo_usuario: info.tipo_usuario
 })
-    res.redirect("/admin/cadastroAdmin")
+    res.redirect("/cadastroAdmin")
 })
 
+app.get("/upd-promo", async(req,res)=>{
+    let qs = url.parse(req.url,true).query
+    await db.updatePromo(qs.promo,qs.id)
+    res.render(`admin/atualiza-promocoes`,{
+        titulo:"Conheça nossos filmes",
+        promo:"Todos os filmes com 10% de desconto!",
+        filmes:consulta,
+        galeria:consulta   
+        })
+})
 
+app.get("/atualiza-promo",async(req,res)=>{
+    // let infoUrl = req.url
+    let qs = url.parse(req.url,true).query
+     await db.updatePromo(qs.promo,qs.id)
+     res.send("<h2>Lista de Promoções Atualizada!</h2><a href='./'>Voltar</a>")
+})
+//////////// ==> FIM DO ADMINISTRADOR <== ///////////
 
 app.listen(port,()=> console.log("Servidor rodando com nodemon!"))
 
