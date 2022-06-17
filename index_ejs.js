@@ -14,12 +14,7 @@ app.set("view engine","ejs")
 const dia = 1000 * 60 * 60 * 24;
 const min15 = 1000 * 60 * 60 / 4;
 
-app.use(session({
-    secret: "hrgfgrfrty84fwir767",
-    saveUninitialized:true,
-    cookie: { maxAge: dia},
-    resave: false 
-}))
+
 
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
@@ -30,6 +25,40 @@ app.use("/css",express.static("css"))
 app.use("/js",express.static("js"))
 app.use("/admin",express.static("admin"))
 app.use("/Banco de Dados",express.static("Banco de Dados"))
+
+const options ={
+    expiration: 10800000,
+    createDatabaseTable: true,
+    schema: {
+        tableName: 'session_tbl',
+        columnNames: {
+            session_id: 'session_id',
+            expires: 'expires',
+            data: 'data'
+        }
+    }  
+}
+await db.makeSession(app,options,session)
+
+function checkFirst(req, res, next) {
+if (!req.session.userInfo) {
+  res.redirect('/promocoes');
+} else {
+  next();
+}
+}
+
+function checkAuth(req, res, next) {
+if (!req.session.userInfo) {
+  res.send('Você não está autorizado para acessar esta página');
+} else {
+  next();
+}
+}
+var userInfo=''
+app.locals.info = {
+user:userInfo
+}
 
 const consulta = await db.selectFilmes() 
 
@@ -51,7 +80,7 @@ app.get("/mensagemAlert",(req,res)=>{
     res.render(`mensagemAlert`,{filme:consulta})
 })
 
-app.get("/",(req,res)=>{
+app.get("/",checkFirst,(req,res)=>{
     res.render(`index`,{filme:consulta})
 })
 
@@ -63,7 +92,7 @@ app.get("/cadastro",(req,res)=>{
     res.render(`cadastro`)
 })
 
-app.get("/carrinho",async(req,res)=>{
+app.get("/carrinho",checkAuth,async(req,res)=>{
     const consultaCarrinho = await db.selectCarrinho()    
     res.render(`carrinho`,{
         titulo:"",
