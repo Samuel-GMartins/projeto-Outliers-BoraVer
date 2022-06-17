@@ -20,6 +20,16 @@
         <li class="nav-item">
             <a class="nav-link" href="/carrinho">Carrinho</a>
           </li>
+          <% if (info.user){ %>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Sair</a>
+            </li>
+            <% }else { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+          </li>
+          <% } %>
+          
       </ul>
       
     </div>
@@ -27,7 +37,9 @@
       <span id="bemVindo"></span>
       <a href="/cadastro" id="cadastro" class="mr-2"> Cadastre-se </a>
       <a href="/perfilUsuario" id="perfil" class="ml-2"><img src="../imagens/perfil.png" width="30px" alt=""></a>
-      <a href="/login" id="entrar"> Entrar </a>
+      <span class="d-inline-block mr-3 font-weight-bold text-white"> 
+        <%=info.user%>
+        </span>
       <a href="/" id="sair" class="ml-2"><img src="imagens/sair.png" width="30px" alt=""></a>
   </div>
 </nav>
