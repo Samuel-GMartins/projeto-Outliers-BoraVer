@@ -1,14 +1,33 @@
+const session = require("express-session")
+const mysqlSession = require("express-mysql-session")(session)
+
 async function conecta(){
     const mysql=require("mysql2/promise")
     const conn= await mysql.createConnection({
         host:"localhost",
-        user:"",
-        password:"",
+        user:"root",
+        password:"Cyn32832@",
         database:"projeto_video"
     })
     console.log("mySQL conectado!")
     global.connection = conn
     return connection
+}
+async function makeSession(app,opt){
+    
+    const dia = 1000 * 60 * 60 * 24;
+    const min15 = 1000 * 60 * 60 / 4;
+    const conectado = await conecta()
+
+    const  sessionStore = new mysqlSession(opt,conectado)
+    app.use(session({
+        secret: "hrgfgrfrty84fwir767",
+        saveUninitialized:false,
+        store:sessionStore,
+        cookie: { maxAge: dia},
+        resave: false 
+    }))
+
 }
 
 async function selectUsers(email,senha){
@@ -109,5 +128,6 @@ module.exports ={
     selectCarrinho,
     cadastroContato,
     cadastroAdmin,
-    selectUsersAdmin
+    selectUsersAdmin,
+    makeSession
 }
