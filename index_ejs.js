@@ -186,7 +186,8 @@ app.post("/cadastroProduto",async(req,res)=>{
         ano:info.anoDeLancamento,
         preco:info.preco,
         sinopse:info.sinopseFilme,
-        fotos:info.fotos      
+        fotos:info.fotos,
+        trailer:info.trailer      
     })
     res.redirect("/cadastroProduto")
 })
