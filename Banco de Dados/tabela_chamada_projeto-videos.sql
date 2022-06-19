@@ -16,31 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `carrinho`
+-- Table structure for table `chamada`
 --
 
-DROP TABLE IF EXISTS `carrinho`;
+DROP TABLE IF EXISTS `chamada`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `carrinho` (
-  `carrinho_id` int NOT NULL AUTO_INCREMENT,
-  `produto` varchar(100) DEFAULT NULL,
-  `qtd` int DEFAULT '1',
-  `preco` varchar(100) DEFAULT NULL,
-  `filmes_id` int DEFAULT NULL,
-  `fotos` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`carrinho_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `chamada` (
+  `chamada_id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `telefone` int NOT NULL,
+  `assunto` varchar(50) NOT NULL,
+  `comentario` varchar(200) DEFAULT NULL,
+  `atendimento` int DEFAULT '0',
+  PRIMARY KEY (`chamada_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `carrinho`
+-- Dumping data for table `chamada`
 --
 
-LOCK TABLES `carrinho` WRITE;
-/*!40000 ALTER TABLE `carrinho` DISABLE KEYS */;
-INSERT INTO `carrinho` VALUES (27,'Oito Mulheres e um Segredo',1,'12.90',8,'oitoMulheres.jpeg'),(28,'Uma Verdade Mais Inconveniente',1,'9.90',33,'umaVerdade.jpeg');
-/*!40000 ALTER TABLE `carrinho` ENABLE KEYS */;
+LOCK TABLES `chamada` WRITE;
+/*!40000 ALTER TABLE `chamada` DISABLE KEYS */;
+INSERT INTO `chamada` VALUES (15,'samuel','sa.samuelmartins@gmail.com',123123,'biscoito tem?','oi? tem biscoito?                        ',0);
+/*!40000 ALTER TABLE `chamada` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-14 17:14:13
+-- Dump completed on 2022-06-19 13:37:00

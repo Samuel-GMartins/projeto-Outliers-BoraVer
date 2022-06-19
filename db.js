@@ -5,8 +5,8 @@ async function conecta(){
     const mysql=require("mysql2/promise")
     const conn= await mysql.createConnection({
         host:"localhost",
-        user:"root",
-        password:"Cyn32832@",
+        user:"samuel",
+        password:"But4kozcs@",
         database:"projeto_video"
     })
     console.log("mySQL conectado!")
@@ -49,6 +49,12 @@ async function selectUsersAdmin(email,senha){
 async function selectFilmes(){
     const conectado = await conecta()
     const [rows] = await conectado.query("SELECT * FROM filmes")
+     return rows
+}
+
+async function selectChamada(){
+    const conectado = await conecta()
+    const [rows] = await conectado.query("SELECT * FROM chamada")
      return rows
 }
 
@@ -116,9 +122,30 @@ async function deleteCarrinho(id){
     return await conectado.query("DELETE FROM carrinho WHERE carrinho_id=?",values)    
 }
 
+async function insertChamada(chamada){
+    const conectado = await conecta()
+    const values = [chamada.nome,chamada.email,chamada.telefone,chamada.assunto,chamada.comentario,chamada.atendimento]
+    const [rows] = 
+    await conectado.query("INSERT INTO chamada(nome,email,telefone,assunto,comentario,atendimento) VALUES (?,?,?,?,?,0)",values)
+    return rows
+}
+
+async function naoAtendidas(){
+    const conectado = await conecta()
+    const [rows] = await conectado.query("SELECT COUNT(*) AS atendimento FROM chamada WHERE atendimento=0")
+     return rows
+}
+
+async function atendidas(){
+    const conectado = await conecta()
+    const [rows] = await conectado.query("SELECT COUNT(*) AS atendimento FROM chamada WHERE atendimento=1")
+     return rows
+}
+
 module.exports ={
     selectFilmes,
     selectSingle,
+    selectChamada,
     updatePromo,
     selectPromo,
     insertFilmes,
@@ -129,5 +156,8 @@ module.exports ={
     cadastroContato,
     cadastroAdmin,
     selectUsersAdmin,
-    makeSession
+    makeSession,
+    insertChamada,
+    naoAtendidas,
+    atendidas,
 }

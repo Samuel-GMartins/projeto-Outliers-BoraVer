@@ -61,6 +61,9 @@ user:userInfo
 }
 
 const consulta = await db.selectFilmes() 
+const selectChamada = await db.selectChamada()
+const naoAtendidas = await db.naoAtendidas()
+const atendidas = await db.atendidas()
 
 app.get("/login",async(req,res) => {
     res.render(`login`, {
@@ -124,6 +127,17 @@ app.get("/contato",(req,res)=>{
     res.render(`contato`)
 })
 
+app.post("/contato", async (req, res) => {
+    const info = req.body
+    await db.insertChamada({
+        nome: info.nome,
+        email: info.email,
+        telefone: info.telefone,
+        assunto: info.assunto,
+        comentario: info.comentario
+    })
+    res.redirect("/contato")
+})
 
 app.get("/perfilUsuario",(req,res)=>{
     res.render(`perfilUsuario`)
@@ -195,10 +209,13 @@ app.get("/indexAdmin",(req,res)=>{
 })
 
 
-app.get("/relatorio-chamada",(req,res)=>{
-    res.render(`admin/relatorio-chamada`)
+app.get("/relatorio-chamada", (req, res) => {
+    res.render(`admin/relatorio-chamada`,{
+        chamado:selectChamada,
+        atendimento:naoAtendidas,
+        atendidas:atendidas,
+    })
 })
-
 app.get("/relatorioComercial",(req,res)=>{
     res.render(`admin/relatorioComercial`)
 })
