@@ -52,6 +52,12 @@ async function selectFilmes(){
      return rows
 }
 
+async function selectFilmesRelatorio(){
+    const conectado = await conecta()
+    const [rows] = await conectado.query("SELECT * FROM filmes ORDER BY filmes_id DESC")
+     return rows
+}
+
 async function selectChamada(){
     const conectado = await conecta()
     const [rows] = await conectado.query("SELECT * FROM chamada")
@@ -96,9 +102,9 @@ async function cadastroAdmin(usuario){
 
 async function insertFilmes(filmes){
     const conectado = await conecta() 
-    const values = [filmes.titulo,filmes.genero,filmes.ano,filmes.sinopse,filmes.fotos,filmes.preco,filmes.promo,filmes.trailer]
+    const values = [filmes.titulo,filmes.genero,filmes.sinopse,filmes.fotos,filmes.preco,filmes.promo,filmes.trailer]
     const [rows] = 
-    await conectado.query("INSERT INTO filmes(titulo,genero,ano,sinopse,fotos,preco,promo,trailer) VALUES (?,?,?,?,?,?,0,?)",values)      
+    await conectado.query("INSERT INTO filmes(titulo,genero,sinopse,fotos,preco,promo,trailer) VALUES (?,?,?,?,?,0,?)",values)      
     return rows
 }
 
@@ -160,4 +166,5 @@ module.exports ={
     insertChamada,
     naoAtendidas,
     atendidas,
+    selectFilmesRelatorio
 }
