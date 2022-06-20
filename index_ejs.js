@@ -1,4 +1,3 @@
-
 (async()=>{
     const express =  require('express')
     const app = express()
@@ -7,7 +6,7 @@
     const bodyParser = require("body-parser")
     const session = require("express-session")
     
-    const port = 3030
+    const port = 8080
     
     app.set("view engine","ejs")
     
@@ -64,12 +63,14 @@
     const selectChamada = await db.selectChamada()
     const naoAtendidas = await db.naoAtendidas()
     const atendidas = await db.atendidas()
+    const selectFilmesRelatorio = await db.selectFilmesRelatorio()
     
     app.get("/login",async(req,res) => {
         res.render(`login`, {
             titulo:"Entrar - xx"
         })
     })
+
     app.use('/logout', function (req, res) {
         req.app.locals.info = {}
         req.session.destroy()
@@ -79,7 +80,7 @@
     })
     
     app.post("/login",async(req,res)=>{
-         const {email,senha} = req.body
+        const {email,senha} = req.body
         const logado = await db.selectUsers(email,senha)
         if(logado != ""){
             req.session.userInfo = email
@@ -226,6 +227,14 @@
             atendidas:atendidas,
         })
     })
+    
+    app.get("/relatorio-produto", (req, res) => {
+        res.render(`admin/relatorio-produto`,{
+            produto:selectFilmesRelatorio
+        })
+    })
+    
+    
     app.get("/relatorioComercial",(req,res)=>{
         res.render(`admin/relatorioComercial`)
     })
@@ -239,7 +248,6 @@
         await db.insertFilmes({
             titulo:info.tituloFilme,
             genero:info.categoriaFilme,
-            ano:info.anoDeLancamento,
             preco:info.preco,
             sinopse:info.sinopseFilme,
             fotos:info.fotos,
@@ -290,7 +298,8 @@
         // let infoUrl = req.url
         let qs = url.parse(req.url,true).query
          await db.updatePromo(qs.promo,qs.id)
-         res.send("<h2>Lista de Promoções Atualizada!</h2><a href='./'>Voltar</a>")
+        res.redirect("/upd-promo")
+    
     })
     
     app.get("/loginAdmin",async(req,res) => {
@@ -312,6 +321,3 @@
     app.listen(port,()=> console.log("Servidor rodando com nodemon!"))
     
     })()
-    
-    
-    
