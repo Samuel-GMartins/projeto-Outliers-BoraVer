@@ -7,7 +7,7 @@ const url = require("url")
 const bodyParser = require("body-parser")
 const session = require("express-session")
 
-const port = 8080
+const port = 3030
 
 app.set("view engine","ejs")
 
@@ -70,13 +70,23 @@ app.get("/login",async(req,res) => {
         titulo:"Entrar - xx"
     })
 })
+app.use('/logout', function (req, res) {
+    req.app.locals.info = {}
+    req.session.destroy()
+    res.clearCookie('connect.sid', { path: '/' });
+    res.redirect("/login") 
+ 
+})
 
 app.post("/login",async(req,res)=>{
-    let info = req.body
-    let consultaUsers = await db.selectUsers(info.email,info.senha)
-    consultaUsers == '' ? res.redirect("/mensagemAlert") : res.redirect("/")
-    const s = req.session
-    consultaUsers != '' ? s.nome = info.nome : null
+     const {email,senha} = req.body
+    const logado = await db.selectUsers(email,senha)
+    if(logado != ""){
+        req.session.userInfo = email
+        userInfo = req.session.userInfo
+        req.app.locals.info.user= userInfo
+        res.redirect('/')
+        } else {res.send("<h2>Login ou senha não conferem</h2>")}
 })
 
 app.get("/mensagemAlert",(req,res)=>{
