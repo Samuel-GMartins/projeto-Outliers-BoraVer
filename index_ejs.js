@@ -1,3 +1,4 @@
+
 (async()=>{
     const express =  require('express')
     const app = express()
@@ -12,7 +13,6 @@
     
     const dia = 1000 * 60 * 60 * 24;
     const min15 = 1000 * 60 * 60 / 4;
-    
     
     
     app.use(bodyParser.urlencoded({extended:false}))
@@ -169,8 +169,7 @@
         const consultaSingle = await db.selectSingle(q.id)
         const consultaInit = await db.selectSingle(4)
     
-    
-        res.render(`single-produto`, {
+            res.render(`single-produto`, {
             titulo:"Conheça nossos livros", 
             promo:"Todos os livros com 10%OFF !",
             livro: consulta,
