@@ -64,6 +64,7 @@ const consulta = await db.selectFilmes()
 const selectChamada = await db.selectChamada()
 const naoAtendidas = await db.naoAtendidas()
 const atendidas = await db.atendidas()
+const selectFilmesRelatorio = await db.selectFilmesRelatorio()
 
 app.get("/login",async(req,res) => {
     res.render(`login`, {
@@ -216,6 +217,14 @@ app.get("/relatorio-chamada", (req, res) => {
         atendidas:atendidas,
     })
 })
+
+app.get("/relatorio-produto", (req, res) => {
+    res.render(`admin/relatorio-produto`,{
+        produto:selectFilmesRelatorio
+    })
+})
+
+
 app.get("/relatorioComercial",(req,res)=>{
     res.render(`admin/relatorioComercial`)
 })
@@ -229,7 +238,6 @@ app.post("/cadastroProduto",async(req,res)=>{
     await db.insertFilmes({
         titulo:info.tituloFilme,
         genero:info.categoriaFilme,
-        ano:info.anoDeLancamento,
         preco:info.preco,
         sinopse:info.sinopseFilme,
         fotos:info.fotos,
@@ -280,7 +288,8 @@ app.get("/atualiza-promo",async(req,res)=>{
     // let infoUrl = req.url
     let qs = url.parse(req.url,true).query
      await db.updatePromo(qs.promo,qs.id)
-     res.send("<h2>Lista de Promoções Atualizada!</h2><a href='./'>Voltar</a>")
+    res.redirect("/upd-promo")
+
 })
 
 app.get("/loginAdmin",async(req,res) => {

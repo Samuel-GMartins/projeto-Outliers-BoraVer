@@ -1,76 +1,41 @@
 <%- include('headerAdmin.ejs') %>
 <%- include('navAdmin.ejs') %>
-    <!-- =============== FIM DO MENU =============== -->
-    
-    <!-- =============== Conteúdo ================== -->
-    <div class="container mt-5 pt-5">
-        <header>
-            <h1>Books Online
-                <small>Market Place de filme </small> </h1>
-            <h3 class="font-weight-bold"><%=promo%></h3>
-            <% if(promo) { %>
-            <p>Compre agora o novo filme <b><%=filmes[0].titulo%> - <%=filmes[0].genero%></b></p> 
-                <% } %>
-        </header>
-        <!--===============FORM CONTATOS===============-->
-        <h2 class="alert alert-info">Atualizar promoções</h2>
-        <form action="./atualiza-promo" method="GET" class="mt-5 mb-5">
-          
-            <div class="form-group">
-              <label for="promo">Adicionar a lista de promoções?</label>
-              <input type="radio" class="col-lg-1" value="1" id="promo_sim" name="promo">Sim
-              <input type="radio" class="col-lg-1" value="0" id="promo_nao" name="promo">Não
-            </div>
+<!-- =============== FIM DO MENU =============== -->
 
-            <div class="form-group">
-                <label for="filme">Filme:</label>
-               <select name="id">
-                   <%galeria.forEach((item)=>{ %>
-                   <option value="<%=item.filmes_id%>"><%=item.titulo%></option>
-                <% }) %>
-               </select>
-            <button type="submit" class="btn btn-primary">Confirmar</button>
-        </form>
-        <!-- =============== Produtos ================== -->
-              
-        <!--Fim do bloco da Single-->
+<!-- =============== Conteúdo ================== -->
+<div class="container pt-5">
+
+    <!--===============FORM CONTATOS===============-->
+    <h1 class="">Atualizar promoções</h1>
+    <form action="./atualiza-promo" method="GET" class="mt-5 mb-5 border rounded p-5">
+
+        <div class="form-group">
+            <label for="promo">Adicionar a lista de promoções?</label>
+            <input type="radio" class="col-lg-1" value="1" id="promo_sim" name="promo" checked >Sim
+            <input type="radio" class="col-lg-1" value="0" id="promo_nao" name="promo">Não
         </div>
-        <!-- =============== Fim dos Produtos ================== -->
 
-        <!-- =============== Paginação ================== -->
-        <nav>
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-                <li class="page-item active">
-                    <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- =============== Fim da Paginação ================== -->
+        <div class="form-group">
+            <label for="filme">Filme:</label>
+            <select name="id">
+                <option value="Selecione Um Filme" disabled selected>Selecione Um Filme</option>
+                <%galeria.forEach((item)=>{ %>
+                <option value="<%=item.filmes_id%>"><%=item.titulo%></option>
+                <% }) %>
+
+        </select>
     </div>
-    <!-- =============== Fim do Conteúdo ================== -->
+        <button type="submit" class="btn btn-warning">Confirmar</button>
+    </form>
+
+</div>
+<!-- =============== Fim do Conteúdo ================== -->
 
 <!-- =============== FOOTER ================== -->
 <%- include('footerAdmin.ejs') %>
 
 </body>
-    <script src="js/controle.js"></script>
+<script src="js/controle.js"></script>
+
 </html>
 <!-- =============== Fim FOOTER ================== -->
