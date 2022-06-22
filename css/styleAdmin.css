@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 
@@ -13,20 +12,20 @@
     font-size: 75pt;
 }
 
-.subtituloHeader{
-    color: white ;
+.subtituloHeader {
+    color: white;
     font-family: 'Bebas Neue', cursive;
     font-size: 20pt;
 }
 
 .subtitulo {
-    color: black ;
+    color: black;
     font-family: 'Bebas Neue', cursive;
     font-size: 25pt;
 }
 
 .entrarSair {
-    color:rgb(20, 20, 20);
+    color: rgb(20, 20, 20);
 }
 
 .faixaPrincipal {
@@ -46,7 +45,7 @@
 }
 
 .singleImagem {
-    border: 3px solid white; 
+    border: 3px solid white;
     border-radius: 15px;
 }
 
@@ -54,7 +53,7 @@
     font-size: 50pt;
 }
 
-.precoPromo{
+.precoPromo {
     color: red;
     font-weight: bolder;
     font-size: large;
@@ -101,17 +100,16 @@
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 
 textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover
-textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
 
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    -webkit-text-fill-color:rgb(20, 20, 20) !important;
+    -webkit-text-fill-color: rgb(20, 20, 20) !important;
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -120,15 +118,35 @@ select:-webkit-autofill:focus {
     justify-content: center;
 }
 
-.fa-eye{
+.fa-eye {
     position: absolute;
     top: 20px;
     right: 10px;
     cursor: pointer;
-    color: rgb(20, 20, 20);;
+    color: rgb(20, 20, 20);
+    ;
 }
 
 footer {
-    background-color:rgb(20, 20, 20);
+    background-color: rgb(20, 20, 20);
     padding: 15px;
+}
+
+.indexBox {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.404);
+    border-radius: 10px;
+    padding:10px;
+    margin: 3px 13px;
+    text-align: center;
+    font-size: 15pt;
+    background-color: #ffb300;
+    -webkit-transition: all .2s ease-in;
+
+}
+
+.indexBox:hover {
+    background-color: aliceblue;
+    -webkit-transform: scale(1.1);
+
 }
