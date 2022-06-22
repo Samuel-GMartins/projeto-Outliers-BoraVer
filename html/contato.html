@@ -18,7 +18,7 @@
             <div class="col-sm-3 ml-3">
                 <a href="/"><img src="../imagens/logo.png" width="250px"></a>
             </div>
-            <div class="col-sm-8 text-center mt-5">
+            <div class="col-sm-6 text-center mt-5">
                 <h1 class="titulo">Bora Ver</h1>
                 <p class="subtituloHeader">Filmes, Séries e Documentários</p>
             </div>
@@ -26,16 +26,10 @@
     </header>
 
     <nav class=" faixaPrincipal navbar navbar-expand-lg navbar-light bg-light">
-        <div class=" entrarSair text-left mr-5">
-            <span id="bemVindo"></span>
-            <a href="../html/cadastro.html" id="cadastro" class="mr-2"> Cadastre-se </a>
-            <a href="../html/perfilUsuario.html" id="perfil" class="ml-2"><img src="../imagens/perfil.png" width="30px" alt=""></a>
-            <a href="../html/login.html" id="entrar"> Entrar </a>
-            <a href="../html/index.html" id="sair" class="ml-2"><img src="../imagens/sair.png" width="30px" alt=""></a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+
+       
+
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
@@ -53,15 +47,34 @@
             <li class="nav-item">
                 <a class="nav-link" href="../html/carrinho.html">Carrinho</a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="../html/login.html">Login</a>
+              </li>
+
           </ul>
         </div>
+
+        <div class=" entrarSair text-left mr-5">
+            <span id="bemVindo"></span>
+            <a href="../html/cadastro.html" id="cadastro" class="mr-2"> Cadastre-se </a>
+          
+
+       
+
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+
     </nav>
 
 
 
     <!-- Setor de conteúdo-->
     <section class="container">
-        <h1 class="text-center mt-5 mb-5">Dúvidas, sugestões ou críticas? Entre em contato!</h1>
+        <h1 class="text-center mt-5 mb-5">Sua opinião é muito importante para nós!</h1>
 
         <!--Formulário de contato -->
         <form action="contato.html" method="get" id="formContato" class="w-50 mx-auto p-3 mt-5 mb-5"
@@ -70,20 +83,20 @@
                 <div class="row">
                     <div class="col-sm-12 mt-4">
                       
-                        <legend class="tituloForm text-center">Entre em Contato Conosco</legend>
+                        <legend class="tituloForm text-center">Entre em contato conosco</legend>
                     </div>
                     <div class="form-group col-sm-12 mt-4">
-                        <input type="text" name="nomecontato" id="nomecontato" placeholder="Digite Seu Nome"
+                        <input type="text" name="nomecontato" id="nomecontato" placeholder="Digite seu nome"
                             class="form-control">
                     </div>
 
                     <div class="form-group col-sm-12 mt-4">
-                        <input type="email" name="emailcontato" id="emailcontato" placeholder="Digite seu E-mail"
+                        <input type="email" name="emailcontato" id="emailcontato" placeholder="Digite seu e-mail"
                             class="form-control">
                     </div>
 
                     <div class="form-group col-sm-12 mt-4">
-                        <input type="number" name="telcontato" id="telcontato" placeholder="Digite seu Tel"
+                        <input type="number" name="telcontato" id="telcontato" placeholder="Digite seu tel"
                             class="form-control">
                     </div>
 
@@ -94,14 +107,11 @@
 
                     <div class="form-group col-sm-12 mt-4">
                         <textarea name="mensagemcontato" id="mensagemcontato" cols="40" rows="8"
-                            placeholder=" Faça seu comentário. Em breve faremos contato"
+                            placeholder=" Digite seu comentário. Em breve faremos contato"
                             class="form-control"></textarea>
                     </div>
 
-                    <div class="form-group col-sm-12 text-left">
-                        <input type="checkbox" name="chamado" id="chamado">
-                        <label for="chamado">Abrir um Chamado</label>
-                    </div>
+                 
 
                     <div>
                         <button type="button" class="btn btn-info btn-lg btn-block" id="btContato">Enviar</button>
@@ -117,7 +127,7 @@
     <!--Setor de rodapé-->
     <footer class="text-white text-center mt-5" id="footer">
         <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
-        <a href="/sobreNos" target="_blank"><img src="../imagens/pessoas.png" alt=""></a>
+        <a href="/faq" target="_blank"><img src="../imagens/faq.png" alt=""></a>
     </footer>
 </body>
 <script src="../js/contato.js"></script>
