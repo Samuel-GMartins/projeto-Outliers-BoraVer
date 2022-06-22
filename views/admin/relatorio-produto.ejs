@@ -1,57 +1,43 @@
 <%- include('headerAdmin.ejs') %>
 <%- include('navAdmin.ejs') %>
 
-<div class="row container">
-    <section id="tabs" class="project-tab container mt-5 col-sm-8"
-        style="border: 2px solid rgb(221, 208, 208); border-radius: 10px ;">
-        <h1 class="text-center mb-3 mt-3">Relatório de Produtos</h1>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">
-                        <h4>Título</h4>
-                    </th>
-                    <th scope="col">
-                        <h4>categoria</h4>
-                    </th>
-                    <th scope="col">
-                        <h4>Valor</h4>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <%produto.forEach((item)=> { %>
-                <tr>
-                    <td id="email"><%=item.titulo%></td>
-                    <td id="telefone"><%=item.genero%></td>
-                    <td id="assunto"><%=item.preco%></td>
-
-                </tr>
-                <% }) %>
-
-            </tbody>
-        </table>
-
-    </section>
-    <div class="col-sm-3 mt-5" style="border: 2px solid rgb(221, 208, 208); border-radius: 10px ;">
-        <div class="mt-3">
-            <h4>Total de Filmes Adicionados</h4>
-            <p>Total: <%=produto.length%></p>
-            <div>
-                <h4>Total de Filmes Atuais</h4>
-                <p>Total: <%=produto.length%></p>
-            </div>
-        </div>
-    </div>
-</div>
-
+ <!-- =============== Conteúdo ================== -->
+ <div class="container mt-5 pt-5">
+    <header>
+        <h1>Relatório de Produtos</h1>
+    </header>
+    <% produto.forEach((item)=>{ %>
+      <div class="row mt-1">
+          <div style="border:1px solid #999;" class="w-75"><%=item.titulo%></div>
+          <div><button data-id="<%=item.filmes_id%>" class="btn btn-dark bt-edit">Editar</button></div>
+      </div>
+    <% }) %>
+  </div>
+ <!-- =============== FIM Conteúdo ================== -->
+ <script>
+  $().ready(function(){
+  
+  $('.bt-edit').click(function(){
+  
+  let dataid=$(this).attr('data-id')
+  
+          $.post("/upd-form-produto",
+          {
+          id:dataid
+          },
+          function(data,status)
+          {
+            location.href='./upd-form-produto'
+          })
+      })
+  })  
+  </script>
 
 
 <%- include('footerAdmin.ejs') %>
 
 </body>
-<script src="../../administrador/indexAdmin.html"></script>
-<script src="../../administrador/relatorio-chamada.js"></script>
+
 
 
 </html>
