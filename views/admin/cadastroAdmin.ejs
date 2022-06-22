@@ -4,9 +4,9 @@
 </header>
 <!--FORMULÁRIO-->
 <section class="container">
-    <h1 class="text-center mt-5 mb-5"> Cadastro</h1>
-    <form id="formCadastro" method="post" action="" class="w-50 mx-auto p-3 mt-5 mb-5"
-        style="border:1px solid #ccc; border-radius: 12px;">
+    <h1 class="text-center mt-5 mb-5"> Cadastro de Novos Usuários</h1>
+    <form id="formCadastro" method="post" action="" class="container w-50 p-3 mt-5 mb-5"
+        style="border:1px solid rgba(204, 204, 204, 0.63); border-radius: 12px;">
 
         <fieldset>
             <div class="label-float">
@@ -38,23 +38,24 @@
                 <input name="senha" id="senha" type="password" placeholder="" required>
                 <label id="labelSenha">Senha</label>
                 <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+            </div>
 
-                <div class="label-float">
-                    <input name="senhaC" id="senhaC" type="password" placeholder="" required>
-                    <label id="labelSenha"> Confirmar senha</label>
-                    <i id="verConfirmeSenha" class="fa fa-eye" aria-hidden="true"></i>
-                </div>
+            <div class="label-float">
+                <input name="senhaC" id="senhaC" type="password" placeholder="" required>
+                <label id="labelSenha"> Confirmar senha</label>
+                <i id="verConfirmeSenha" class="fa fa-eye" aria-hidden="true"></i>
+            </div>
 
+            <div class="">
                 <h3>Tipo de Cadastro</h3>
+                <input type="radio" value="1" id="comum" name="tipo_usuario"> Usuário Administrador <br>
+                <input type="radio" value="0" id="admin" name="tipo_usuario"> Usuário Simples
 
-                    <div>
-                        <input type="radio" value="0" id="admin" name="tipo_usuario"> Comum
-                        <input type="radio" value="1" id="comum" name="tipo_usuario"> Admin
-                    </div>
+            </div>
 
-                <div class="justify-center">
-                    <button id="btCadastro" class="btn btn-warning">Confirmar</button>
-                </div>
+            <div class="justify-center mt-5">
+                <button id="btCadastro" class="btn btn-warning">Confirmar</button>
+            </div>
         </fieldset>
     </form>
 </section>
@@ -62,6 +63,5 @@
 <!--Setor de rodapé--->
 <%- include('footerAdmin.ejs') %>
 </body>
-<script src="../administrador/cadastroAdmin.js"></script>
 
 </html>

@@ -1,18 +1,32 @@
 <%- include('headerAdmin.ejs') %>
-<%- include('navAdmin.ejs') %>
 
-    <section class="container">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <p class=" col-sm-12 text-center">No site de vídeos você encontra: ação, comédia,
-                suspense, terror, animação e muito mais, que agrada desde os baixinhos até os velhinhos. Perfeito para
-                assistir seu filme preferido num domingo á tarde em familia, em uma sexta com os amigos ou sabadão com a
-                namorada.</p>
+<section class="container mt-5">
+    <div class="row">
+        <div class="col-sm-4 indexBox">
+            <a class="nav-link" href="/cadastroAdmin">Cadastrar Usuário</a>
         </div>
-       
-    </section>
-    <%- include('footerAdmin.ejs') %>
+        <div class="col-sm-4 indexBox">
+            <a class="nav-link" href="/cadastroProduto">Cadastrar Produto</a>
+        </div>
+        <div class="col-sm-4 indexBox">
+            <a class="nav-link" href="/upd-promo">Atualizar Promoções</a>
+        </div>
+        <div class="col-sm-4 indexBox">
+            <a class="nav-link" href="/relatorio-chamada">Relatório de Chamadas</a>
+        </div>
+        <div class="col-sm-4 indexBox">
+            <a class="nav-link" href="/relatorio-produto">Relatório de Produtos</a>
+        </div>
+        <div class="col-sm-4 indexBox">
+            <a class="nav-link" href="#">Gráficos e Gestão</a>
+        </div>
+    </div>
+</section>
+
+
+<%- include('footerAdmin.ejs') %>
 
 </body>
 <script src="../../administrador/indexAdmin.js"></script>
+
 </html>
