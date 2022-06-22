@@ -266,7 +266,30 @@
     app.get("/cadastroProduto",(req,res)=>{
         res.render(`admin/cadastroProduto`)
     })
-    
+    app.get("/indexAdmin",(req, res) => {    
+        res.render('admin/index-adm',{
+            galeria:consulta
+        })
+    })
+    app.get("/upd-form-produto",async(req, res) => {    ////lu feito
+        const produto = await db.selectSingle(req.app.locals.idProd)  
+        res.render('admin/atualiza-produto',{
+            galeria:consulta,
+            id:req.app.locals.idProd,
+            produtoDaVez:produto
+        })
+    })
+    app.post("/upd-form-produto",(req, res) => {    
+        req.app.locals.idProd= req.body.id
+        res.send('Produto Exibido com Sucesso')
+    })
+
+    app.post("/atualiza_single",async(req, res) => {    
+        
+        const b = req.body
+        await db.updateProduto(b.titulo,b.genero,b.sinopse,b.fotos,b.preco,b.promo,b.trailer,b.id)
+        res.send('Produto Atualizado com Sucesso')
+    })
     app.post("/cadastroProduto",async(req,res)=>{
         const info=req.body
         await db.insertFilmes({
