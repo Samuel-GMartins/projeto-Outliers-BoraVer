@@ -21,5 +21,14 @@
           <li class="nav-item">
             <a class="nav-link" href="/relatorio-produto">Relatório de Produtos</a>
           </li>
+          <% if (info.user){ %>
+            <li class="nav-item">
+                <a class="nav-link" href="/logoutAdmin">Logout</a>
+            </li>
+            <% }else { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/loginAdmin">Login</a>
+          </li>
+          <% } %>
       </div>
   </nav>

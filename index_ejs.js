@@ -71,11 +71,25 @@
         })
     })
 
+    app.get("../loginAdmin",async(req,res) => { //Thais - 22-06-22
+        res.render(`../loginAdmin`, {
+            titulo:"Entrar - xx"
+        })
+    })
+
     app.use('/logout', function (req, res) {
         req.app.locals.info = {}
         req.session.destroy()
         res.clearCookie('connect.sid', { path: '/' });
         res.redirect("/login") 
+     
+    })
+
+    app.use('/logoutAdmin', function (req, res) {  //Thais - 22-06-22
+        req.app.locals.info = {}
+        req.session.destroy()
+        res.clearCookie('connect.sid', { path: '../loginAdmin' });
+        res.redirect("../indexAdmin") 
      
     })
     
@@ -87,6 +101,17 @@
             userInfo = req.session.userInfo
             req.app.locals.info.user= userInfo
             res.redirect('/')
+            } else {res.send("<h2>Login ou senha não conferem</h2>")}
+    })
+
+    app.post("/loginAdmin",async(req,res)=>{  //Thais - 22-06-22
+        const {email,senha} = req.body
+        const logado = await db.selectUsers(email,senha)
+        if(logado != ""){
+            req.session.userInfo = email
+            userInfo = req.session.userInfo
+            req.app.locals.info.user= userInfo
+            res.redirect('/indexAdmin')
             } else {res.send("<h2>Login ou senha não conferem</h2>")}
     })
     
