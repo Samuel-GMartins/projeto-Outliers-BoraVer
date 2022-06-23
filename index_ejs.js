@@ -58,6 +58,8 @@
     app.locals.info = {
     user:userInfo
     }
+    app.locals.titulo="Livraria 2022 - Área Administrativa"
+    app.locals.idProd=5
     
     const consulta = await db.selectFilmes() 
     const selectChamada = await db.selectChamada()
@@ -267,13 +269,13 @@
         res.render(`admin/cadastroProduto`)
     })
     app.get("/indexAdmin",(req, res) => {    
-        res.render('admin/index-adm',{
+        res.render('admin/atualiza-produtos',{
             galeria:consulta
         })
     })
     app.get("/upd-form-produto",async(req, res) => {    ////lu feito
         const produto = await db.selectSingle(req.app.locals.idProd)  
-        res.render('admin/atualiza-produto',{
+        res.render('admin/atualiza-produtos',{
             galeria:consulta,
             id:req.app.locals.idProd,
             produtoDaVez:produto
