@@ -167,3 +167,47 @@ footer {
     background-color: #dbab3c;
     padding: 15px;
 }
+
+/* ==========  STYLE FAQ  ========== */
+
+.prof {
+    padding: 10px 28px; 
+    background: rgb(15, 67, 209); 
+    border-style: solid; 
+    border-radius: 20px; 
+    text-align: center;        
+}
+
+.profImg {
+    border-radius: 50%; 
+    width: 100px; 
+    margin-top: -50px; 
+    border-style: solid; 
+    border-color: #fff;
+}
+
+.profLink {
+    color: #fff;
+    margin: 20px 0 10px;
+}
+
+.dev {
+    padding: 10px 28px; 
+    background: rgb(201, 153, 20); 
+    border-style: solid; 
+    border-radius: 20px; 
+    text-align: center;
+}
+
+.imgDev {
+    border-radius: 50%; 
+    width: 100px; 
+    margin-top: -50px; 
+    border-style: solid; 
+    border-color: #fff;
+}
+
+.linkDev {
+    color: #fff;
+    margin: 20px 0 10px;
+}

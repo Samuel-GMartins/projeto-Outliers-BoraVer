@@ -125,8 +125,12 @@
         res.render(`index`,{filme:consulta})
     })
     
-    app.get("/faq",(req,res)=>{
-        res.render(`faq`,{filme:consulta})
+    app.get("/faq",async(req,res)=>{
+        const consultaDev = await db.selectDev()
+        res.render(`faq`,{
+            filme:consulta,
+            dev:consultaDev,
+        })
     })
     
     app.get("/cadastro",(req,res)=>{
