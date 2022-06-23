@@ -9,11 +9,12 @@
     <% produto.forEach((item)=>{ %>
       <div class="row mt-1">
           <div style="border:1px solid #999;" class="w-75"><%=item.titulo%></div>
-          <div><button data-id="<%=item.filmes_id%>" class="btn btn-dark bt-edit">Editar</button></div>
+          <div><button data-id="<%=item.filmes_id%>" class="btn btn-dark bt-edit"><img src="/imagens/lapis.png " width="20" ></button></div>
       </div>
     <% }) %>
   </div>
  <!-- =============== FIM Conteúdo ================== -->
+ <script src="https://code.jquery.com/jquery-1.9.1.js"> </script>
  <script>
   $().ready(function(){
   
