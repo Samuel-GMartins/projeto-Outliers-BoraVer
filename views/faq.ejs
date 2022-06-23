@@ -15,45 +15,61 @@
         <hr>
     </div>
 
-    <div>
-        <h2 class="subtituloHeader">Quem São Os integrantes desse Projeto?</h2>
-        <ul>
-        <b>Professor orientador:</b>
-        <li>Roque Fernando</li>
+    <div>        
+        <h2 class="subtituloHeader">Quem São Os integrantes desse Projeto?</h2>                    
+        <div class="row">
+            
+            <div class="col-sm-12">
+                <h4 class="mt-3 mb-3">Professor Orientador:</h4>
+            </div>                    
+            <div class="prof mt-5 ml-2 mr-2" >            
+                <div class="col-sm-4 mt-2">             
+                    <a href="https://www.linkedin.com/in/coach-roque-fernando/" target="_blank">
+                        <img src="/imagens/fotoRoque.jpg" class="profImg" />                                                
+                    </a>
+                </div>
+                <div class="col-sm-4 mt-2 text-center" >
+                    <p> 
+                        <a href="https://www.linkedin.com/in/coach-roque-fernando/" target="_blank" class="profLink">Roque Fernando</a> 
+                     </p>  
+                </div>            
+            </div>            
+        </div>
         <hr>
 
-        <b>Desenvolvedores:</b>
-        <li>Cynthia Cavalcanti</li>
-        <li>Eliabe Padilha</li>
-        <li>
-            <a href="https://www.linkedin.com/in/hemylli/" target="_blank">Hemylli Santos</a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/larissa-soares-tech/" target="_blank">Larissa Soares</a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/luciene-bento-de-oliveira-3a6a01198/" target="_blank">Luciene Bento</a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/priscila-almeida-b71b9265/" target="_blank">Priscila Almeida</a>
-        </li>
-        <li>Renata Klausing</li>
-        <li>
-            <a href="https://www.linkedin.com/in/sgmartinss/" target="_blank">Samuel Martins</a>
-        </li>
-        <li>Thais Vicente</li>
-        <li>
-           <a href="https://www.linkedin.com/in/victor-marques-985695237">Víctor Marques</a>
-        </li>
-        
-    </ul>
-
-        <hr>
+        <div class="row ">                   
+            <div class="col-sm-12">
+                <h4 class="mt-3 mb-3">Desenvolvedores:</h4>
+            </div>
+            
+                <%dev.forEach((item)=> { %> 
+            <div class="dev mt-5 ml-2 mr-2" >            
+                <div class="col-sm-4 mt-2">             
+                    <a href="<%=item.link%>" target="_blank">
+                        <img src="imagens/<%=item.foto%>" class="imgDev" />                                                
+                    </a>
+                </div>
+                <div class="col-sm-4 mt-2 text-center" >
+                    <p> 
+                        <a href="<%=item.link%>" target="_blank" class="linkDev">
+                            <%=item.nome%>
+                        </a> 
+                    </p>  
+                </div>                
+            </div>
+            <% }) %> 
+        </div>
     </div>
 
     <div>
-        <h2 class="subtituloHeader">Quais as Tecnologias utilizadas no Projeto?</h2>
-        <p>xx</p>
+        <h2 class="subtituloHeader mt-5">Quais as Tecnologias utilizadas no Projeto?</h2>
+        <div class="row text-center mt-4">            
+            <h4 class="col-sm-3">HTML</h4>
+            <h4 class="col-sm-3">CSS</h4>
+            <h4 class="col-sm-3">JavaScript</h4>
+            <h4 class="col-sm-3">Node.Js</h4>
+        </div>                        
     </div>
+
 </section>
 <%- include('footer.ejs') %>

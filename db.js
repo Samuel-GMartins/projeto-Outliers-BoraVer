@@ -5,8 +5,8 @@ async function conecta(){
     const mysql=require("mysql2/promise")
     const conn= await mysql.createConnection({
         host:"localhost",
-        user:"luBento",
-        password:"Dayra1901*",
+        user:"",
+        password:"",
         database:"projeto_video"
     })
     console.log("mySQL conectado!")
@@ -152,6 +152,12 @@ async function atendidas(){
      return rows
 }
 
+async function selectDev(){
+    const conectado = await conecta()
+    const [rows] = await conectado.query("SELECT * FROM dev")
+     return rows
+}
+
 module.exports ={
     selectFilmes,
     selectSingle,
@@ -171,5 +177,6 @@ module.exports ={
     insertChamada,
     naoAtendidas,
     atendidas,
-    selectFilmesRelatorio
+    selectFilmesRelatorio,
+    selectDev
 }
