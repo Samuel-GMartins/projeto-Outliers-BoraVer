@@ -277,7 +277,10 @@
             galeria:consulta
         })
     })
-    app.get("/upd-form-produto",async(req, res) => {    ////lu feito
+    app.get("/delete_single",(req,res)=>{     ////== lu 23-06  da linha 280 á 307
+        res.destroy(`admin/relatorio-produto`)
+    })
+    app.get("/upd-form-produto",async(req, res) => {    
         const produto = await db.selectSingle(req.app.locals.idProd)  
         res.render('admin/atualiza-produtos',{
             galeria:consulta,
@@ -296,6 +299,12 @@
         await db.updateProduto(b.titulo,b.genero,b.sinopse,b.fotos,b.preco,b.promo,b.trailer,b.id)
         res.send('Produto Atualizado com Sucesso')
     })
+    app.post("/delete_single",async(req, res) => {    
+        
+        const d = req.body
+        await db.deleteSingle(d.titulo,d.genero,d.sinopse,d.fotos,d.preco,d.promo,d.trailer,d.id)
+        res.send('Produto deletado com Sucesso')
+    })                                                //=== fim luciene
     app.post("/cadastroProduto",async(req,res)=>{
         const info=req.body
         await db.insertFilmes({

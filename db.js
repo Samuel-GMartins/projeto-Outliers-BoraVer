@@ -82,7 +82,7 @@ async function updatePromo(promo,id){
     const values = [promo,id]
     return await conectado.query("UPDATE filmes set promo=? WHERE filmes_id=?",values)
 }
-async function updateProduto(titulo,genero,sinopse,fotos,preco,promo,trailer,id){
+async function updateProduto(titulo,genero,sinopse,fotos,preco,promo,trailer,id){  //==Luciene 23-06 
     const conectado = await conecta();
     const values = [titulo,genero,sinopse,fotos,preco,promo,trailer,id]
     return await conectado.query("UPDATE filmes set titulo=?,genero=?,sinopse=?,fotos=?,preco=?,promo=?,trailer=? Where filmes_id=?",values)
@@ -157,6 +157,11 @@ async function selectDev(){
     const [rows] = await conectado.query("SELECT * FROM dev")
      return rows
 }
+async function deleteSingle(titulo,genero,sinopse,fotos,preco,promo,trailer,id){  //== Luciene 23-06 
+    const conectado = await conecta();
+    const values = [titulo,genero,sinopse,fotos,preco,promo,trailer,id]    
+    return await conectado.query("DELETE FROM filmes WHERE filmes_id=?",values)    
+}
 
 module.exports ={
     selectFilmes,
@@ -178,5 +183,6 @@ module.exports ={
     naoAtendidas,
     atendidas,
     selectFilmesRelatorio,
-    selectDev
+    selectDev,
+    deleteSingle
 }

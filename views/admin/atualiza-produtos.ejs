@@ -2,7 +2,7 @@
 <%- include('navAdmin.ejs') %>
 <!-- =============== Conteúdo ================== -->
 <div class="container mt-5 pt-5">
-    <header>
+    
         <h1>Atualizar Produtos</h1>
     </header>
         <!-- =============== ATUALIZA PRODUTO ================== -->
@@ -23,7 +23,7 @@
 
                              <li>
                                  <label>Categoria:</label>
-                     <input class="form-control" name="genero" id="" value="<%=produtoDaVez[0].titulo%>">
+                     <input class="form-control" name="genero" id="" value="<%=produtoDaVez[0].genero%>">
                                 </li>
                                 <li>
                                 <label>Sinopse:</label>
@@ -51,8 +51,9 @@
                                 
                                 <li>    
                                 <li>
-                                <button type="button" class="btn btn-warning mt-5 bt-prod">Confirmar</button>
-                                <button type="button" class="btn btn-dark mt-5 bt-voltar">Voltar</button>
+                                <button type="button" class="btn btn-warning mt-5 bt-prod"><img src="/imagens/confirmar.png" width="20" ></button>
+                                <button type="button" class="btn btn-dark mt-5 bt-voltar"><img src="/imagens/voltar.png " width="20" ></button>
+                                <button type="button" class="btn btn-danger mt-5 bt-excluir"><img src="/imagens/excluir.png" width="20" ></button>
                             </li>
                         </ul>
                         </fieldset>
@@ -69,6 +70,8 @@
     
   </div>
     <!-- =============== FIM Conteúdo ================== -->
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+
     <script>
     $().ready(function(){
     
@@ -91,12 +94,35 @@
         })
     
     
-    $('.bt-voltar').click(function(){
-        location.href='/adm'
+         $('.bt-voltar').click(function(){
+         location.href='/relatorio-produto'
+          })
+          
+          $('.bt-exclui').click(function(){
+            location.href='/relatorio-produto'
+            $.post('./delete_single',
+            
+            {
+             //resumo,imagem,valor,titulo,id
+             id:'<%=id%>',
+             titulo:$('#form-produto input[name=titulo]').val(),
+             genero:$('#form-produto textarea[name=genero]').val(),
+             sinopse:$('#form-produto input[name=sinopse]').val(),
+             fotos:$('#form-produto input[name=fotos]').val(),
+             preco:$('#form-produto input[name=preco]').val(),
+             promo:$('#form-produto input[name=promo]').val(),
+             trailer:$('#form-produto input[name=trailer]').val(),
+
+            }, function(data,status){
+                alert(data)
+            },'json')
         })
+    
     })
     
     </script>
 <%- include('footerAdmin.ejs') %>
+
+</body>
 
 </html>
