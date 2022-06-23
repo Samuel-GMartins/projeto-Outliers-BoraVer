@@ -13,8 +13,8 @@
 </head>
 
 <body>
-       <!--CABEÇALHO-->
-       <header>
+    <!--CABEÇALHO-->
+    <header>
         <div class=" faixaPrincipal row">
             <div class="col-sm-3 ml-3">
                 <a href="/"><img src="../imagens/logo.png" width="250px"></a>
@@ -29,64 +29,75 @@
             <div class=" entrarSair text-left mr-5">
                 <span id="bemVindo"></span>
                 <a href="../html/cadastro.html" id="cadastro" class="mr-2"> Cadastre-se </a>
-                <a href="../html/perfilUsuario.html" id="perfil" class="ml-2"><img src="../imagens/perfil.png" width="30px" alt=""></a>
+                <a href="../html/perfilUsuario.html" id="perfil" class="ml-2"><img src="../imagens/perfil.png"
+                        width="30px" alt=""></a>
                 <a href="../html/login.html" id="entrar"> Entrar </a>
-                <a href="../html/index.html" id="sair" class="ml-2"><img src="../imagens/sair.png" width="30px" alt=""></a>
+                <a href="../html/index.html" id="sair" class="ml-2"><img src="../imagens/sair.png" width="30px"
+                        alt=""></a>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
                 <span class="navbar-toggler-icon"></span>
-              </button>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../html/index.html">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../html/produtos.html">Produtos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../html/promocoes.html">Promoções</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../html/contato.html">Contato</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../html/carrinho.html">Carrinho</a>
-                  </li>
-              </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../html/index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/produtos.html">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/promocoes.html">Promoções</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/carrinho.html">Carrinho</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
 
-<!--CONTEÚDO-->
+    <!--CONTEÚDO-->
 
-        <section class="container">
-            <h2 class="text-center mt-3 mb-3">Informações de Usuário</h2>
-            <article>
-                <form id="formUsuario" method="post" class="w-50 mx-auto p-3 mt-3 mb-5" style="border:1px solid #CCC; border-radius: 12px;">
-                    <fieldset>
-                        <div class="mt-1 mb-1" style="font-size: x-large;">
-                            <span id="nome"></span>
-                            <span id="telefone"></span>
-                            <span id="email"></span>
-                            <a id="idade"></a>
-                            <a id="preferencias"></a>
-                            <a id="data-inicio"></a>
-                            <a id="tipo-de-assinante"></a>
-                            <a id="valor"></a>
-                        </div>
-                    </fieldset> 
-                </form>
+    <section class="container">
+        <h2 class="text-center mt-3 mb-3">Informações de Usuário</h2>
+        <article>
+            <form id="formUsuario" method="post" class="w-50 mx-auto p-3 mt-3 mb-5"
+                style="border:1px solid #CCC; border-radius: 12px;">
+                <fieldset>
+                    <div class="mt-1 mb-1" style="font-size: x-large;">
+                        <span id="nome"></span>
+                        <span id="telefone"></span>
+                        <span id="email"></span>
+                        <a id="idade"></a>
+                        <a id="preferencias"></a>
+                        <a id="data-inicio"></a>
+                        <a id="tipo-de-assinante"></a>
+                        <a id="valor"></a>
+                    </div>
+                </fieldset>
+            </form>
 
-            </article>
-        </section>
-        <footer class="text-white text-center mt-5" id="footer">
-            <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
-            <a href="/sobreNos" target="_blank"><img src="../imagens/pessoas.png" alt=""></a>
-        </footer>
-    </body>
-    <script src="../js/perfilUsuario.js"></script>
-    <script src="../js/index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        </article>
+    </section>
+    
+    <!--FOOTER-->
+    <footer class="text-white text-center mt-5" id="footer">
+        <p class="text-center"> &copy; 2022 - Projeto Videos - Outliers</p>
+        <a href="../html/faq.html" target="_blank"><img src="../imagens/faq.png" alt=""></a>
+    </footer>
+</body>
+<script src="../js/perfilUsuario.js"></script>
+<script src="../js/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+</script>
+
 </html>
