@@ -235,7 +235,6 @@
         nome:info.nome,
         email:info.email,
         data_nascimento: info.data_nascimento,
-        data_cadastro: info.data_cadastro,
         telefone:info.telefone,
         senha:info.senha
     })
@@ -328,7 +327,6 @@
         nome:info.nome,
         email:info.email,
         data_nascimento: info.data_nascimento,
-        data_cadastro: info.data_cadastro,
         telefone:info.telefone,
         senha:info.senha,
         tipo_usuario: info.tipo_usuario

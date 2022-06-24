@@ -5,8 +5,8 @@ async function conecta(){
     const mysql=require("mysql2/promise")
     const conn= await mysql.createConnection({
         host:"localhost",
-        user:"",
-        password:"",
+        user:"r42",
+        password:"R42a123$#@!",
         database:"projeto_video"
     })
     console.log("mySQL conectado!")
@@ -90,17 +90,17 @@ async function updateProduto(titulo,genero,sinopse,fotos,preco,promo,trailer,id)
 
 async function cadastroContato(usuario){
     const conectado = await conecta()
-    const values = [usuario.nome,usuario.email,usuario.data_nascimento,usuario.data_cadastro,usuario.telefone,usuario.senha]
+    const values = [usuario.nome,usuario.email,usuario.data_nascimento,usuario.telefone,usuario.senha]
     const [rows] = 
-    await conectado.query("INSERT INTO usuario(nome,email,data_nascimento,data_cadastro,telefone,senha) VALUES (?,?,?,?,?,?)",values)
+    await conectado.query("INSERT INTO usuario(nome,email,data_nascimento,telefone,senha) VALUES (?,?,?,?,?)",values)
     return rows
 }
 
 async function cadastroAdmin(usuario){
     const conectado = await conecta()
-    const values = [usuario.nome,usuario.email,usuario.data_nascimento,usuario.data_cadastro,usuario.telefone,usuario.senha,usuario.tipo_usuario]
+    const values = [usuario.nome,usuario.email,usuario.data_nascimento,usuario.telefone,usuario.senha,usuario.tipo_usuario]
     const [rows] = 
-    await conectado.query("INSERT INTO usuario(nome,email,data_nascimento,data_cadastro,telefone,senha,tipo_usuario) VALUES (?,?,?,?,?,?,?)",values)
+    await conectado.query("INSERT INTO usuario(nome,email,data_nascimento,telefone,senha,tipo_usuario) VALUES (?,?,?,?,?,?)",values)
     return rows
 }
 
