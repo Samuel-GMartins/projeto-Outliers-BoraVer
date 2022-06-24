@@ -5,75 +5,49 @@
     style="border:3px solid #ccc;border-radius: 12px">
 
     <fieldset class="form">
+
         <div class="form-group">
-            <b>
-                <label>Título:<br /></label>
-            </b>
-            <label for="título"></label>
+            <label for="tituloFilme"><b>Título</b></label>
             <input class="form-control" type="text" id="tituloFilme" name="tituloFilme" placeholder="Título do filme"
                 required>
         </div>
 
         <div class="form-group">
-            <br />
-            <b>
-                <label>Categoria:<br /></label>
-            </b>
-            <label for="categoria"></label>
+            <label for="categoriaFilme"><b>Categoria</b>:</label>
             <input class="form-control" type="text" id="categoriaFilme" name="categoriaFilme"
                 placeholder="Categoria do filme" required>
         </div>
-        
+
         <div>
-            <br />
-            <b>
-                <label>Sinopse:<br /></label>
-            </b>
-            <label for="Sinopse"></label><br>
+            <label for="sinopseFilme"><b>Sinopse</b>:</label>
             <textarea id="sinopseFilme" name="sinopseFilme" style="border:1px solid #ccc;border-radius: 10px" cols="60"
                 rows="8" placeholder="Sinopse filme" required></textarea>
         </div>
 
         <div class="form-group">
-            <br />
-            <b>
-                <label>Preço<br /></label>
-            </b>
-            <label for="Preco"></label>
+            <label for="preco"><b>Preço<b>:</label>
             <input class="form-inline" aria-label="file example" type="number" step="0.01" id="preco" name="preco"
                 required>
         </div>
 
         <div class="form-group">
-            <br />
-            <b>
-                <label>Imagem<br /></label>
-            </b>
-            <label for="Imagem"></label>
+            <label for="fotos"><b>Imagem</b>:</label>
             <input class="form-inline" aria-label="file example" type="file" id="fotos" name="fotos" required>
         </div>
 
         <div class="form-group">
-            <br />
-            <b>
-                <label>Trailer<br /></label>
-            </b>
-            <label for="site"></label>
+                <label for="trailer">Trailer</label>
             <input class="form-inline" aria-label="file example" type="url" id="trailer" name="trailer"
                 placeholder="https://" required>
         </div>
 
-
         <div>
             <button type="submit" id="btCadastroProduto" class="btn btn-danger">Enviar</button>
-
         </div>
     </fieldset>
 </form>
 
-
 <%- include('footerAdmin.ejs') %>
 
 </body>
-
 </html>
