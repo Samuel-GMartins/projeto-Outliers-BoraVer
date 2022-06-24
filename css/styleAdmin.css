@@ -113,6 +113,20 @@ select:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
 }
 
+
+.data:required:invalid::-webkit-datetime-edit{
+	color: transparent;
+}
+.data:focus::-webkit-datetime-edit{
+	color: black !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.8) brightness(0%) sepia(0%) saturate(10000%) hue-rotate(240deg);
+  }
+
+
 .justify-center {
     display: flex;
     justify-content: center;
