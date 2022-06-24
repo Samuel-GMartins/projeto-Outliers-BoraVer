@@ -235,7 +235,6 @@
         nome:info.nome,
         email:info.email,
         data_nascimento: info.data_nascimento,
-        data_cadastro: info.data_cadastro,
         telefone:info.telefone,
         senha:info.senha
     })
@@ -272,12 +271,31 @@
     app.get("/cadastroProduto",(req,res)=>{
         res.render(`admin/cadastroProduto`)
     })
+
+    app.post("/cadastroProduto",async(req,res)=>{
+        const info=req.body
+        await db.insertFilmes({
+            titulo:info.tituloFilme,
+            genero:info.categoriaFilme,
+            preco:info.preco,
+            sinopse:info.sinopseFilme,
+            fotos:info.fotos,
+            promo:info.promo,
+            trailer:info.trailer      
+        })
+        res.redirect("/cadastroProduto")
+    })
+
+
     app.get("/indexAdmin",(req, res) => {    
         res.render('admin/atualiza-produtos',{
             galeria:consulta
         })
     })
-    app.get("/upd-form-produto",async(req, res) => {    ////lu feito
+    app.get("/delete_single",(req,res)=>{     ////== lu 23-06  da linha 280 á 307
+        res.destroy(`admin/relatorio-produto`)
+    })
+    app.get("/upd-form-produto",async(req, res) => {    
         const produto = await db.selectSingle(req.app.locals.idProd)  
         res.render('admin/atualiza-produtos',{
             galeria:consulta,
@@ -296,18 +314,13 @@
         await db.updateProduto(b.titulo,b.genero,b.sinopse,b.fotos,b.preco,b.promo,b.trailer,b.id)
         res.send('Produto Atualizado com Sucesso')
     })
-    app.post("/cadastroProduto",async(req,res)=>{
-        const info=req.body
-        await db.insertFilmes({
-            titulo:info.tituloFilme,
-            genero:info.categoriaFilme,
-            preco:info.preco,
-            sinopse:info.sinopseFilme,
-            fotos:info.fotos,
-            trailer:info.trailer      
-        })
-        res.redirect("/cadastroProduto")
-    })
+    app.post("/delete_single",async(req, res) => {    
+        
+        const d = req.body
+        await db.deleteSingle(d.titulo,d.genero,d.sinopse,d.fotos,d.preco,d.promo,d.trailer,d.id)
+        res.send('Produto deletado com Sucesso')
+    })                                                //=== fim luciene
+
     
     app.get("/cadastroAdmin",async(req,res) => {
         let infoUrl = req.url
@@ -328,7 +341,6 @@
         nome:info.nome,
         email:info.email,
         data_nascimento: info.data_nascimento,
-        data_cadastro: info.data_cadastro,
         telefone:info.telefone,
         senha:info.senha,
         tipo_usuario: info.tipo_usuario

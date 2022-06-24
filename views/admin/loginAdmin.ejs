@@ -5,25 +5,25 @@
         <h1 class="text-center mt-4 mb-4">Login</h1>
         <article>
             <!--Formulário de login-->
-            <form id="formLogin" method="post" action=""
-                class="w-50 mx-auto p-3 mt-4 mb-4" style="border:1px solid #ccc;border-radius: 12px;">
+            <form id="formLogin" method="post" action="" class="w-50 mx-auto p-3 mt-4 mb-4"
+                style="border:1px solid #ccc;border-radius: 12px;">
                 <fieldset>
-                    <legend> Preencha os campos</legend>
-                    <div class="form-group">
-                        <label>E-mail: </label>
-                        <input class="form-control" name="email" id="email" maxlength="50">
+                    <div class="label-float">
+                        <input type="text" name="email" id="nome_login" required>
+                        <label id="labelEmail">E-mail</label>
                     </div>
-                    <div class="form-group">
-                        <label>Senha: </label>
-                        <input class="form-control" name="senha" id="senha" maxlength="8" type="password">
+
+                    <div class="label-float">
+                        <input name="senha" id="senha" type="password" placeholder="" required>
+                        <label id="labelSenha">Senha</label>
+                        <i id="verSenha" class="fa fa-eye " aria-hidden="true"></i>
                     </div>
-                    <button id="btLogin" class="btn btn-warning">Confirmar</button>
-                    </div>
-                    <div>
+                    <div class="justify-center">
+                        <button type="button" id="btLogin" class="btn btn-warning" class="justify-center">Confirmar</button>
                     </div>
                 </fieldset>
             </form>
-        </article>
+    </article>
     </section>
     <!--Setor de rodapé-->
     <%- include('footerAdmin.ejs') %>
