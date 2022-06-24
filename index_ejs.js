@@ -272,6 +272,22 @@
     app.get("/cadastroProduto",(req,res)=>{
         res.render(`admin/cadastroProduto`)
     })
+
+    app.post("/cadastroProduto",async(req,res)=>{
+        const info=req.body
+        await db.insertFilmes({
+            titulo:info.tituloFilme,
+            genero:info.categoriaFilme,
+            preco:info.preco,
+            sinopse:info.sinopseFilme,
+            fotos:info.fotos,
+            promo:info.promo,
+            trailer:info.trailer      
+        })
+        res.redirect("/cadastroProduto")
+    })
+
+
     app.get("/indexAdmin",(req, res) => {    
         res.render('admin/atualiza-produtos',{
             galeria:consulta
@@ -305,18 +321,7 @@
         await db.deleteSingle(d.titulo,d.genero,d.sinopse,d.fotos,d.preco,d.promo,d.trailer,d.id)
         res.send('Produto deletado com Sucesso')
     })                                                //=== fim luciene
-    app.post("/cadastroProduto",async(req,res)=>{
-        const info=req.body
-        await db.insertFilmes({
-            titulo:info.tituloFilme,
-            genero:info.categoriaFilme,
-            preco:info.preco,
-            sinopse:info.sinopseFilme,
-            fotos:info.fotos,
-            trailer:info.trailer      
-        })
-        res.redirect("/cadastroProduto")
-    })
+
     
     app.get("/cadastroAdmin",async(req,res) => {
         let infoUrl = req.url

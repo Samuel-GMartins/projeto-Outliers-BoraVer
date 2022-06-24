@@ -108,7 +108,7 @@ async function insertFilmes(filmes){
     const conectado = await conecta() 
     const values = [filmes.titulo,filmes.genero,filmes.sinopse,filmes.fotos,filmes.preco,filmes.promo,filmes.trailer]
     const [rows] = 
-    await conectado.query("INSERT INTO filmes(titulo,genero,sinopse,fotos,preco,promo,trailer) VALUES (?,?,?,?,?,0,?)",values)      
+    await conectado.query("INSERT INTO filmes(titulo,genero,sinopse,fotos,preco,promo,trailer) VALUES (?,?,?,?,?,?,?)",values)      
     return rows
 }
 
