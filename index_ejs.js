@@ -7,7 +7,7 @@
     const bodyParser = require("body-parser")
     const session = require("express-session")
     
-    const port = 8080
+    const port = 2000
     
     app.set("view engine","ejs")
     
@@ -62,9 +62,7 @@
     app.locals.idProd=5
     
     const consulta = await db.selectFilmes() 
-    const selectChamada = await db.selectChamada()
-    const naoAtendidas = await db.naoAtendidas()
-    const atendidas = await db.atendidas()
+    const selectChamada = await db.selectChamada()    
     const selectFilmesRelatorio = await db.selectFilmesRelatorio()
     
     app.get("/login",async(req,res) => {
@@ -249,13 +247,33 @@
     })
     
     
-    app.get("/relatorio-chamada", (req, res) => {
+    // app.get("/relatorio-chamada", (req, res) => {
+    //     res.render(`admin/relatorio-chamada`,{
+    //         chamado:selectChamada,
+    //         atendimento:naoAtendidas,
+    //         atendidas:atendidas,
+    //     })
+    // })
+
+    app.get("/relatorio-chamada",async(req,res) => {
+        const consultaChamada=await db.selectAtendidas()
+        const naoAtendidas = await db.naoAtendidas()
+        const atendidas = await db.atendidas()
+
         res.render(`admin/relatorio-chamada`,{
-            chamado:selectChamada,
+            chamado:consultaChamada,
             atendimento:naoAtendidas,
-            atendidas:atendidas,
-        })
+            atendidas:atendidas,           
+        })  
+        res.send(req.body)                   
     })
+    
+    app.post("/relatorio-chamada",async(req,res)=>{
+        const info = req.body
+        await db.updateChamada(info.chamada_id)
+        res.send(info)  
+        res.send(req.body)      
+    }) 
     
     app.get("/relatorio-produto", (req, res) => {
         res.render(`admin/relatorio-produto`,{
