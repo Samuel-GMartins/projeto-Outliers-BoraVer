@@ -249,12 +249,16 @@
     })
     
     
-    app.get("/relatorio-chamada", (req, res) => {
+    app.get("/relatorio-chamada",async(req,res) => {
+        const consultaChamada=await db.selectNaoAtendidas()
+        const naoAtendidas = await db.naoAtendidas()
+        const atendidas = await db.atendidas()
+
         res.render(`admin/relatorio-chamada`,{
-            chamado:selectChamada,
+            chamado:consultaChamada,
             atendimento:naoAtendidas,
-            atendidas:atendidas,
-        })
+            atendidas:atendidas,           
+        })                         
     })
     
     app.get("/relatorio-produto", (req, res) => {
