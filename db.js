@@ -142,13 +142,13 @@ async function insertChamada(chamada){
 
 async function naoAtendidas(){
     const conectado = await conecta()
-    const [rows] = await conectado.query("SELECT COUNT(*) AS atendimento FROM chamada WHERE atendimento=0")
+    const [rows] = await conectado.query("SELECT * FROM chamada WHERE atendimento=0")
      return rows
 }
 
 async function atendidas(){
     const conectado = await conecta()
-    const [rows] = await conectado.query("SELECT COUNT(*) AS atendimento FROM chamada WHERE atendimento=1")
+    const [rows] = await conectado.query("SELECT * FROM chamada WHERE atendimento=1")
      return rows
 }
 
