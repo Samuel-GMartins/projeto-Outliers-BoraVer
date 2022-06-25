@@ -244,16 +244,7 @@
     
     app.get("/indexAdmin",(req,res)=>{
         res.render(`admin/indexAdmin`)
-    })
-    
-    
-    // app.get("/relatorio-chamada", (req, res) => {
-    //     res.render(`admin/relatorio-chamada`,{
-    //         chamado:selectChamada,
-    //         atendimento:naoAtendidas,
-    //         atendidas:atendidas,
-    //     })
-    // })
+    })           
 
     app.get("/relatorio-chamada",async(req,res) => {
         const consultaChamada=await db.selectAtendidas()
