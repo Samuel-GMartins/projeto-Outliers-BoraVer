@@ -82,11 +82,7 @@ async function updatePromo(promo,id){
     const values = [promo,id]
     return await conectado.query("UPDATE filmes set promo=? WHERE filmes_id=?",values)
 }
-async function updateProduto(titulo,genero,sinopse,fotos,preco,promo,trailer,id){  //==Luciene 23-06 
-    const conectado = await conecta();
-    const values = [titulo,genero,sinopse,fotos,preco,promo,trailer,id]
-    return await conectado.query("UPDATE filmes set titulo=?,genero=?,sinopse=?,fotos=?,preco=?,promo=?,trailer=? Where filmes_id=?",values)
-}  
+ 
 
 async function cadastroContato(usuario){
     const conectado = await conecta()
@@ -174,7 +170,6 @@ module.exports ={
     selectSingle,
     selectChamada,
     updatePromo,
-    updateProduto,
     selectPromo,
     insertFilmes,
     selectUsers,
