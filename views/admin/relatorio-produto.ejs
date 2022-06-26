@@ -1,38 +1,55 @@
 <%- include('headerAdmin.ejs') %>
 <%- include('navAdmin.ejs') %>
 
- <!-- =============== Conteúdo ================== -->
- <div class="container mt-5 pt-5">
-    <header>
-        <h1>Relatório de Produtos</h1>
-    </header>
-    <% produto.forEach((item)=>{ %>
-      <div class="row mt-1">
-          <div style="border:1px solid #999;" class="w-75"><%=item.titulo%></div>
-          <div><button data-id="<%=item.filmes_id%>" class="btn btn-dark bt-edit"><img src="/imagens/lapis.png " width="20" ></button></div>
-      </div>
-    <% }) %>
-  </div>
- <!-- =============== FIM Conteúdo ================== -->
- <script src="https://code.jquery.com/jquery-1.9.1.js"> </script>
- <script>
-  $().ready(function(){
-  
-  $('.bt-edit').click(function(){
-  
-  let dataid=$(this).attr('data-id')
-  
-          $.post("/upd-form-produto",
-          {
-          id:dataid
-          },
-          function(data,status)
-          {
-            location.href='./upd-form-produto'
-          })
-      })
-  })  
-  </script>
+<div class="row container">
+        <section id="tabs" class="project-tab container mt-5 col-sm-9" style="border: 2px solid rgb(221, 208, 208); border-radius: 10px ;">
+            <h1 class="text-center">Relatório de Produtos</h1>
+            <table class="table  ">
+                <thead>
+                    <tr>
+                        <th scope="col sm-5 mt-5">
+                            <h4>Título</h4>
+                        </th>
+                        <th scope="col">
+                          <h4>Categoria</h4>
+                      </th>
+                        <th scope="col">
+                            <h4>Preço</h4>
+                        </th>
+                        
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <%produto.forEach((item)=> { %>
+                        <tr>
+                        <th scope="row" id="titulo"name="titulo"><%=item.titulo%></th>
+                        <th scope="row" id="categoria"name="categoria"><%=item.genero%></th>
+
+                        <td id="preco" name="preco"><%=item.preco%></td>
+                        
+                        
+                    </tr>
+                    <% }) %>
+
+                </tbody>
+            </table>
+            <div>
+
+    </section>
+    <div class="col-sm-2 mt-5" style="border: 2px solid rgb(221, 208, 208); border-radius: 10px ;">
+        <div class="mt-3">
+            <h4>Total de Filmes</h4>
+            <p><b><%=produto.length%></b> filmes cadastrados</p>
+        </div>
+
+        
+        
+        
+        
+    </div>
+</div>
+
 
 
 <%- include('footerAdmin.ejs') %>
