@@ -1,5 +1,11 @@
 <%- include('headerAdmin.ejs') %>
 
+<section class="container">
+    <div class="row">
+        <span class=" col-sm-12 text-right mt-2" id="" style="color: black ;">Olá novamente, <b><%=info.user.substring(0, info.user.indexOf('@'))%></b></span>
+    </div>
+</section>
+
 <section class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-sm-4 indexBox">
@@ -17,8 +23,8 @@
         <div class="col-sm-4 indexBox">
             <a class="nav-link" href="/relatorio-produto">Relatório de Produtos</a>
         </div>
-        <div class="col-sm-4 indexBox">
-            <a class="nav-link" href="/loginAdmin">Logout</a>
+        <div class="col-sm-4 indexBox logouAdmin">
+            <a class="nav-link " href="/loginAdmin">Logout</a>
         </div>
     </div>
 </section>
