@@ -59,9 +59,6 @@
             <span id="bemVindo"></span>
             <a href="../html/cadastro.html" id="cadastro" class="mr-2"> Cadastre-se </a>
 
-
-
-
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
@@ -71,58 +68,45 @@
 
     </nav>
 
-
-
-    <!-- Setor de conteúdo-->
     <section class="container">
-        <h1 class="text-center mt-5 mb-5">Sua opinião é muito importante para nós!</h1>
+        <h1 class="text-center mt-5">Contato</h1>
+        <p class="text-center mb-5">Sua mensagem é muito importante para nós.</p>
 
         <!--Formulário de contato -->
         <form action="contato.html" method="get" id="formContato" class="w-50 mx-auto p-3 mt-5 mb-5"
             style="border:1px solid #ccc; border-radius: 12px;">
-            <fieldset class="form ml-5 mr-5 text-center">
-                <div class="row">
-                    <div class="col-sm-12 mt-4">
-
-                        <legend class="tituloForm text-center">Entre em contato conosco</legend>
-                    </div>
-                    <div class="form-group col-sm-12 mt-4">
-                        <input type="text" name="nomecontato" id="nomecontato" placeholder="Digite seu nome"
-                            class="form-control">
-                    </div>
-
-                    <div class="form-group col-sm-12 mt-4">
-                        <input type="email" name="emailcontato" id="emailcontato" placeholder="Digite seu e-mail"
-                            class="form-control">
-                    </div>
-
-                    <div class="form-group col-sm-12 mt-4">
-                        <input type="number" name="telcontato" id="telcontato" placeholder="Digite seu tel"
-                            class="form-control">
-                    </div>
-
-                    <div class="form-group col-sm-12 mt-4">
-                        <input type="text" name="assuntocontato" id="assuntocontato" placeholder="Qual é o assunto?"
-                            class="form-control">
+           
+            <fieldset>
+                <div class="label-float">
+                    <input type="text" name="nomecontato" id="nomecontato" maxlength="50" placeholder="" required>
+                    <label id="labelEmail">Nome Completo</label>
+                </div>
+                <div class="label-float">
+                    <input type="text" name="emailcontato" id="emailcontato" maxlength="50" placeholder="" required>
+                    <label id="labelEmail">E-mail</label>
+                </div>
+                <div class="label-float">
+                    <input type="text" name="telcontato" id="telcontato" maxlength="50" placeholder="" required>
+                    <label id="labelEmail">Celular</label>
+                </div>
+                <div class="label-float">
+                    <input name="assuntocontato" id="assuntocontato" type="text" placeholder="" required>
+                    <label id="labelSenha">Assunto</label>
+                </div>
+                    <div class="label-float">
+                        <textarea name="mensagemcontato" id="mensagemcontato" cols="54" rows="8"placeholder="Digite sua mensagem" required></textarea>
                     </div>
 
-                    <div class="form-group col-sm-12 mt-4">
-                        <textarea name="mensagemcontato" id="mensagemcontato" cols="40" rows="8"
-                            placeholder=" Digite seu comentário. Em breve faremos contato"
-                            class="form-control"></textarea>
-                    </div>
-
-                    <div class="form-group col-sm-12 text-left">
+                    <div>
                         <input type="checkbox" name="chamado" id="chamado">
                         <label for="chamado">Abrir um Chamado</label>
                     </div>
-
-
                     <div>
-                        <button type="button" class="btn btn-info btn-lg btn-block" id="btContato">Enviar</button>
+                        <button type="button" class="btn btn-info btn-lg btn-warning" id="btContato">Enviar</button>
                     </div>
             </fieldset>
         </form>
+
 
         <!--Final do Form contato-->
 

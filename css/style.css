@@ -80,6 +80,27 @@ body {
 
 }
 
+.label-float textarea {
+    width: 100%;
+    padding: 6px 6px;
+    display: inline-block;
+    border: 1px solid #fff;
+    background-color:#ffffff10;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    transition: all .2s ease-out;
+    border-radius: 0;  
+}
+
+.label-float textarea:focus {
+    border: 1px solid #e4b954;
+}
+
+textarea::placeholder {
+    color: #e4b95460;
+  }
+
 .label-float input {
     width: 100%;
     padding: 6px 6px;
