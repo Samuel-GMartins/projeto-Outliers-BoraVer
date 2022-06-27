@@ -1,31 +1,20 @@
 trailer0 = [
     'https://www.youtube.com/embed/oQMc7Sq36mI',
     'https://www.youtube.com/embed/SCv70SAhuE4',
-    'https://www.youtube.com/embed/d2M5ObsKw4Y',
-    'https://www.youtube.com/embed/2GwMMUfOF9g',
-    'https://www.youtube.com/embed/Nq5AzqV8iHg',
-    'https://www.youtube.com/embed/pVcMsjyKlaM',
-    'https://www.youtube.com/embed/IHS99AeecB8',
-    'https://www.youtube.com/embed/YeQoQNZq7wg'
+    'https://www.youtube.com/embed/d2M5ObsKw4Y'
     ]
     
     trailer1 = [
     'https://www.youtube.com/embed/XNSqIEctTgc',
     'https://www.youtube.com/embed/cubK6qULkfM',
-    'https://www.youtube.com/embed/IW9V_S-zWRY',
-    'https://www.youtube.com/embed/I3CpaqCK9B0',
-    'https://www.youtube.com/embed/elKdcx9ar3k',
-    'https://www.youtube.com/embed/iRh2kF-1X2E',
+    'https://www.youtube.com/embed/IW9V_S-zWRY'
     ]
     
     trailer2 = [
     'https://www.youtube.com/embed/_TWo_iCrJQ8',
     'https://www.youtube.com/embed/ViyvmZreWyc',
-    'https://www.youtube.com/embed/kULcXm9V7aY',
-    'https://www.youtube.com/embed/AD5cvVk-4Ps',
-    'https://www.youtube.com/embed/TVxfkdI2xzc',
-    'https://www.youtube.com/embed/zwhzHG2RTc8',
-    'https://www.youtube.com/embed/47r8FXYZWNU']
+    'https://www.youtube.com/embed/kULcXm9V7aY'
+    ]
     
     //Exibir trailer aleatório
     function trocaTrailer(){
