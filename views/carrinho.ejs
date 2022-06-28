@@ -2,8 +2,10 @@
 <%- include('nav.ejs') %>
 
 
-    <section class="container">
-        <h1 class="ml-5 mt-5 mb-5" style="color:goldenrod;">Meu Carrinho</h1>
+    <section class="container" id="carrinho">
+        <h1 class="ml-5 mt-4 mb-3" style="color: orange ; font-family: 'Bebas Neue', cursive; font-size: 50pt; text-align: left;">
+            Meu Carrinho
+        </h1>
         
         <!--Informações carrinho-->
         <div class="row">
@@ -47,11 +49,11 @@
     </section>
 
 
-    <section class="container mt-5">
+    <section class="container mt-5" id="carrinho">
         <div class="row">
             <div class="col-sm-5">
                 <!-- área cupom -->
-                <h1 style="color:goldenrod;">Cupom</h1>
+                <h1 style="color: orange ; font-family: 'Bebas Neue', cursive; font-size: 40pt; text-align: left;">Cupom</h1>
                 <div style="border: 2px solid; border-radius: 20px;">
                     <form id="formDesconto" class="text-center mt-3 mb-3 ml-3 mr-3">
                         <h4>Digite o código do cupom:</h4>
@@ -64,14 +66,14 @@
 
             <!--Setor Resumo do pedido-->
             <div class="col-sm-6" id="divResumo">
-                <h1 style="color: goldenrod;">Resumo do pedido</h1>
+                <h1 style="color: orange ; font-family: 'Bebas Neue', cursive; font-size: 40pt; text-align: left;">Resumo do pedido</h1>
                 <div style="border: 2px solid;" id="resumoPedido">
                     <div>
-                        <h3 class="mt-3 ml-3 text-center"><%=totalQtd%> Produtos</h3>
+                        <h4 class="mt-3 ml-3 text-center"><%=totalQtd%> Produtos</h4>
                     </div>
                     <div>
-                        <h5 class="mt-3 ml-3" id="subTotal">Subtotal: R$ <%=total.toFixed(2)%></h5>                        
-                        <h3 class="ml-3 text-center" id="total">Total: R$ <%=total.toFixed(2)%></h3>
+                        <p class="mt-3 ml-3" id="subTotal">Subtotal: R$ <%=total.toFixed(2)%></p>                        
+                        <h4 class="ml-3 text-center" id="total">Total: R$ <%=total.toFixed(2)%></h4>
                     </div>
                     <div class="mt-5 ml-4 mr-4">
                         <button class="btn btn-warning btn-lg btn-block">Continuar</button>
@@ -89,19 +91,19 @@
   
 </body>
 
+
 <script>
     $().ready(function(){
         console.log("Jquery funfando...")
         $('.bt-carrinho').click(function(){
-            let dataid = $(this).attr('data-id')                
-
-            $.post("/delete-carrinho",
-            {
-                id:dataid,                    
-            },
-            function(data,status){
-                location.href='/carrinho'
-            },'json')                
+            let dataid = $(this).attr('data-id')
+            var resultado = confirm("Dejesa excluir um item do seu carrinho?");
+                 if (resultado==true){
+                    $.post("/delete-carrinho",{id:dataid},
+                    function(data,status){
+                        location.href='/carrinho'
+                    },'json')     
+                }else{null}                                                      
         })   
     })
 </script>
