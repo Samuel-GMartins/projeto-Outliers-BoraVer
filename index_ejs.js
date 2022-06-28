@@ -103,7 +103,8 @@
             userInfo = req.session.userInfo
             req.app.locals.info.user= userInfo
             res.redirect('/')
-            } else {res.send("<h2>Login ou senha não conferem</h2>")}
+            } else 
+            {res.redirect("/mensagemAlert")}
     })
 
     app.post("/loginAdmin",async(req,res)=>{  //Thais - 22-06-22
