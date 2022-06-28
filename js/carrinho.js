@@ -103,6 +103,7 @@ let excluir = {
 document.querySelector('#bt_p1').onclick=function(){
     confirm("Tem certeza de que deseja excluir esse produto?")
     excluir.excluirProduto(document.querySelector('#produto1'),'')
+    document.querySelector("#produtos").innerHTML = "3 Produtos"?document.querySelector("#produtos").innerHTML = "2 Produtos":null
     result1 = 0
     calcularCarrinho()
   }
@@ -110,6 +111,7 @@ document.querySelector('#bt_p1').onclick=function(){
 document.querySelector('#bt_p2').onclick=function(){
     confirm("Tem certeza de que deseja excluir esse produto?")
     excluir.excluirProduto(document.querySelector('#produto2'),'')
+    document.querySelector("#produtos").innerHTML = "3 Produtos"?document.querySelector("#produtos").innerHTML = "1 Produtos":null
     result2 = 0
     calcularCarrinho()
   }
