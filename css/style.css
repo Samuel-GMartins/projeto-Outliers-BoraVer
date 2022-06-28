@@ -43,6 +43,13 @@ body {
     text-align: center;
 }
 
+.subtitulo1 {
+    color: rgb(248, 226, 184) ;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40pt;
+
+}
+
 .entrarSair {
     color: black;
 }
@@ -233,27 +240,3 @@ footer {
     margin: 20px 0 10px;
 }
 
-CARRINHO CSS
-
-/* ==========  STYLE CARRINHO  ========== */
-#carrinho h1{
-    color: orange ;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 30pt;
-    text-align: left;
-    margin-top: 20px;
-    margin-bottom: 7px;
-}
-
-#carrinho h4{
-    color: orange ;
-    font-family: 'Bebas Neue', cursive;
-}
-
-#produto1 .imgFilme {
-    border: 3px solid white;
-    width: 60px;
-    border-radius: 15px;        
-    margin-top: 10px;
-    margin-bottom: 10px;
-}

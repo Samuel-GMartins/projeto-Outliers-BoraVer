@@ -2,109 +2,118 @@
 <%- include('nav.ejs') %>
 
 
-    <section class="container" id="carrinho">
-        <h1 class="ml-5 mt-4 mb-3" style="color: orange ; font-family: 'Bebas Neue', cursive; font-size: 50pt; text-align: left;">
-            Meu Carrinho
-        </h1>
-        
-        <!--Informações carrinho-->
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <div class="row text-center">
-                    <h4 class="col-sm-4"><b>Produto</b></h4>
-                    <h4 class="col-sm-1"><b>Telas</b></h4>
-                    <h4 class="col-sm-2"><b>Quantidade</b></h4>
-                    <h4 class="col-sm-2"><b>Preço</b></h4>
-                    <h4 class="col-sm-2 text-right"><b>Excluir<b></b></h4>
-                </div>                
-                <div id="conteudoCarrinho" class="border" style="border: 2px;">
-                    <%
+<section class="container">
+    <h1 class="mt-5 subtitulo1">Meu Carrinho</h1>
+    <div class="row">
+
+        <div class="col-sm-7 mt-3">
+            <div class="row text-center">
+                <h4 class="col-sm-4 ">Produto</h4>
+                <h4 class="col-sm-2">Telas</h4>
+                <h4 class="col-sm-2">Qtd</h4>
+                <h4 class="col-sm-2">Preço</h4>
+                <h4 class="col-sm-2 text-right">Excluir</h4>
+
+            <div class="border p-3 produto">
+                <%
                      total=0
                      totalQtd=0
                      carrinho.forEach((item)=>{
                      total += parseFloat(item.preco)
                      totalQtd += parseFloat(item.qtd)
-                        %>   
+                        %>
 
-                    <div class="row text-center" id="produto1">
-                        <div class="col-sm-2 mt-1 mb-1">  
-                            <img class="w-50 imgFilme" src="imagens/<%=item.fotos%>" alt="Card image cap">                                                                                  
-                        </div>
-                        <div class="col-sm-2 text-left mt-1 ml-1">
-                            <h5> <%=item.produto %> </h5>
-                        </div>
-                        <input id="tela1" class="col-sm-1 mt-2" type="number" value="1" min="1" max="5" style="height: 30px;" />
-                        <div class="col-sm-2 mt-2 text-center"><%=item.qtd %></div>
-                        <div class="col-sm-2 mt-2">R$ <%=item.preco %></div>
-                        <div class="col-sm-2 mt-2">
-                            <button class="btn bt-carrinho ml-5" data-id="<%=item.carrinho_id%>">
-                                <img src="imagens/lixeiraCinza.png" class="w-100"> 
-                            </button>
-                        </div>
+                <div class="row text-center">
+
+                    <div class="col-sm-4 mb-2">
+                        <img class="w-50 imgFilme" src="imagens/<%=item.fotos%>" alt="Card image cap">
                     </div>
-                    <% }) %>  
+
+                    <input id="tela1" class="col-sm-2" type="number" value="1" min="1" max="5"
+                        style="height: 30px;">
+
+                    <div class="col-sm-2 text-center"><%=item.qtd %></div>
+
+                    <div class="col-sm-2">R$ <%=item.preco %></div>
+
+                    <div class="col-sm-2">
+                        <button class="btn bt-carrinho" data-id="<%=item.carrinho_id%>">
+                            <img src="imagens/lixeiraCinza.png" class="w-100">
+                        </button>
+
+                    </div>
+
                 </div>
+                <% }) %>
             </div>
+
         </div>
-    </section>
+        </div>
 
 
-    <section class="container mt-5" id="carrinho">
-        <div class="row">
-            <div class="col-sm-5">
-                <!-- área cupom -->
-                <h1 style="color: orange ; font-family: 'Bebas Neue', cursive; font-size: 40pt; text-align: left;">Cupom</h1>
-                <div style="border: 2px solid; border-radius: 20px;">
-                    <form id="formDesconto" class="text-center mt-3 mb-3 ml-3 mr-3">
-                        <h4>Digite o código do cupom:</h4>
-                        <input type="text" id="cupom" class="form-control w-80 text-center mt-2">
-                        <button type="button" class="btn btn-info btn-lg btn-block mt-3" name="botao"
-                            id="btCupom">Aplicar</button>
-                    </form>
-                </div>
+        <div class="col-sm-4 mt-5 ml-3 produto">
+            <h1 class="mt-3 subtitulo1">Resumo Do Pedido</h1>
+
+            <div class="mt-3">
+                <h1><%=totalQtd%> Produtos</h1>
             </div>
 
-            <!--Setor Resumo do pedido-->
-            <div class="col-sm-6" id="divResumo">
-                <h1 style="color: orange ; font-family: 'Bebas Neue', cursive; font-size: 40pt; text-align: left;">Resumo do pedido</h1>
-                <div style="border: 2px solid;" id="resumoPedido">
-                    <div>
-                        <h4 class="mt-3 ml-3 text-center"><%=totalQtd%> Produtos</h4>
-                    </div>
-                    <div>
-                        <p class="mt-3 ml-3" id="subTotal">Subtotal: R$ <%=total.toFixed(2)%></p>                        
-                        <h4 class="ml-3 text-center" id="total">Total: R$ <%=total.toFixed(2)%></h4>
-                    </div>
-                    <div class="mt-5 ml-4 mr-4">
-                        <button class="btn btn-warning btn-lg btn-block">Continuar</button>
-                    </div>
-                    <div class="mt-3 mb-5 text-center">
-                        <h6><a href="/produtos">Adicionar Mais Produtos</a></h6>
-                    </div>
+            <div class="mt-5">
+                <h4>Possui Cupom de Desconto?</h4>
+                <div class="mb-3">
+                    <input type="text" placeholder="Digite o Código do Cupom" class=""> <br>
+                    <button type="button" class="btn btn-warning mt-3 carrin" name="botao"
+                        id="btCupom">Aplicar</button>
                 </div>
-            </div>
-        </div>     
-    </section>    
+        </div>
 
-    <!--Setor de rodapé-->
-    <%- include('footer.ejs') %>
-  
+                <div class="">
+                    <div class="">
+                        <h5 class="" id="subTotal">Subtotal: R$ <%=total.toFixed(2)%></h5>
+                        <h2 class="" id="total">Total: R$ <%=total.toFixed(2)%></h2>
+                    </div>
+
+                    <div class="mt-5 text-center">
+                        <button class="btn btn-warning carrin">Continuar</button>
+                    </div>
+
+                    <div class="text-center mt-2">
+                        <a href="/produtos">Adicionar Mais Produtos</a>
+                    </div>
+
+                    <button class="btn bt-carrinho">
+                        <img src="imagens/lixeiraCinza.png" width="50px" class="">
+                    </button>
+
+                </div>
+
+        </div>
+    
+    </div>
+</section>
+
+<!--Setor de rodapé-->
+<%- include('footer.ejs') %>
+
+
 </body>
-
-
 <script>
-    $().ready(function(){
+    $().ready(function () {
         console.log("Jquery funfando...")
-        $('.bt-carrinho').click(function(){
+        $('.bt-carrinho').click(function () {
             let dataid = $(this).attr('data-id')
             var resultado = confirm("Dejesa excluir um item do seu carrinho?");
-                 if (resultado==true){
-                    $.post("/delete-carrinho",{id:dataid},
-                    function(data,status){
-                        location.href='/carrinho'
-                    },'json')     
-                }else{null}                                                      
-        })   
+            if (resultado == true) {
+                $.post("/delete-carrinho", {
+                        id: dataid
+                    },
+                    function (data, status) {
+                        location.href = '/carrinho'
+                    }, 'json')
+            } else {
+                null
+            }
+        })
     })
 </script>
 
