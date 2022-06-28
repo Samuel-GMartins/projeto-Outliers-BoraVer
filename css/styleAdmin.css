@@ -114,17 +114,18 @@ select:-webkit-autofill:focus {
 }
 
 
-.data:required:invalid::-webkit-datetime-edit{
-	color: transparent;
+.data:required:invalid::-webkit-datetime-edit {
+    color: transparent;
 }
-.data:focus::-webkit-datetime-edit{
-	color: black !important;
+
+.data:focus::-webkit-datetime-edit {
+    color: black !important;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     filter: invert(0.8) brightness(0%) sepia(0%) saturate(10000%) hue-rotate(240deg);
-  }
+}
 
 
 .justify-center {
@@ -148,9 +149,9 @@ footer {
 
 .indexBox {
     cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.404);
+    border: 1px solid rgba(0, 0, 0, 0.253);
     border-radius: 10px;
-    padding:10px;
+    padding: 10px;
     margin: 3px 13px;
     text-align: center;
     font-size: 15pt;
@@ -162,9 +163,13 @@ footer {
 .indexBox:hover {
     background-color: aliceblue;
     -webkit-transform: scale(1.1);
-
 }
 
 .logouAdmin:hover {
-    background-color: #ff7b00 !important;
+    background-color: #ff0000 !important;
+
+}
+
+.nav-link  {
+    color: black !important;
 }
