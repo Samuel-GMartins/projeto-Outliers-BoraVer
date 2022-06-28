@@ -5,12 +5,13 @@
     <section class="container mt-5">
         <div class="row">
         <%produto.forEach((item)=>{ %>
-            <div class="produto col-sm-2 filmes ml-4 mt-4">
+            <div class="produto col-sm-3 filmes ml-4 mt-4 mb-3">
                     
                         <div class="">
                             <a href="/single-produto?id=<%=item.filmes_id%>">
                             <img class="card-img-top w-100 mt-4 mb-2" src="imagens/<%=item.fotos%>" alt="Card image cap">
                             </a>
+
                             <div class="mt-3">
                                 <h4 class="subtitulo"><%=item.titulo%></h4>
                             </div>
@@ -19,13 +20,18 @@
                     <div class="">
                         <h5>Gênero: <%=item.genero%></h5>
                     </div>
+
                     <div class=""> 
                         <p class="sinopse"><%= item.sinopse.substring(0,90)+"..." %></p>                        
                     </div>
+                    
                     <div>
                         <h4 class="precoPromo">R$ <%=item.preco%></h4>  
-
                     </div>
+
+                    <button data-id="<%=item.filmes_id%>" data-produto="<%=item.titulo%>" data-valor="<%=item.preco%>" data-fotos="<%=item.fotos%>" class="btn btn-dark bt-carrinho mt-2 mb-4">
+                        Adicionar ao carrinho
+                    </button>
                 </div>
         <% }) %>
         </div>          
@@ -72,5 +78,30 @@
   <%- include("footer.ejs")%>
 
 </body>
+<script>
+    $().ready(function(){
+        console.log("Jquery funfando...")
+        $('.bt-carrinho').click(function(){
+            let dataid = $(this).attr('data-id')
+            let dataProduto = $(this).attr('data-produto')
+            let dataValor = $(this).attr('data-valor')
+            let dataFotos = $(this).attr('data-fotos')
+
+            $.post("/carrinho",
+            {
+                filmes_id:dataid,
+                produto:dataProduto,
+                qtd:1,
+                preco:dataValor,
+                fotos:dataFotos,
+            },
+            function(data,status){
+                location.href='/carrinho'
+            },'json')                
+        })        
+    })
+
+</script>
+
 <script src="../js/promocoes_ejs.js"></script>
 </html>
