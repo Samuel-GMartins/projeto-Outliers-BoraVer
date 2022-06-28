@@ -49,7 +49,7 @@
     
     function checkAuth(req, res, next) {
     if (!req.session.userInfo) {
-      res.send('Você não está autorizado para acessar esta página');
+      res.redirect('/mensagemAlert');
     } else {
       next();
     }
@@ -115,7 +115,8 @@
             userInfo = req.session.userInfo
             req.app.locals.info.user= userInfo
             res.redirect('/indexAdmin')
-            } else {res.send("<h2>Login ou senha não conferem</h2>")}
+            } else {
+                res.redirect("<h2>Login ou senha não conferem</h2>")}
     })
     
     app.get("/mensagemAlert",(req,res)=>{
