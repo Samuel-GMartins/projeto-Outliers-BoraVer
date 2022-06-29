@@ -8,25 +8,31 @@
     <!--===============FORM CONTATOS===============-->
     <h1 class="text-center mt-5">Atualizar promoções</h1>
     <form action="./atualiza-promo" method="GET" class="container w-50 p-3 mt-5 mb-5"
-    style="border:1px solid rgba(204, 204, 204, 0.63); border-radius: 12px;">
+        style="border:1px solid rgba(204, 204, 204, 0.63); border-radius: 12px;">
+
+
 
         <div class="form-group">
-            <h3>Adicionar a lista de promoções?</h3>
-            <input type="radio" class="col-lg-1" value="1" id="promo_sim" name="promo" checked >Sim
-            <input type="radio" class="col-lg-1" value="0" id="promo_nao" name="promo">Não
-        </div>
-
-        <div class="form-group">
-            <h3>Filme:</h3>
+            <h3>Selecione um Filme:</h3>
             <select name="id" class="p-2">
-                <option value="Selecione Um Filme" disabled selected>Selecione Um Filme</option>
+                <option value="Selecione Um Filme" disabled selected>Catálogo</option>
                 <%galeria.forEach((item)=>{ %>
                 <option value="<%=item.filmes_id%>"><%=item.titulo%></option>
                 <% }) %>
 
-        </select>
-    </div>
-        <button type="submit" class="btn btn-warning mt-5">Confirmar</button>
+            </select>
+
+
+        </div>
+        <div class="form-group">
+            <h3>Selecione uma Opção:</h3>
+            <input type="radio" class="col-lg-1" value="1" id="promo_sim" name="promo" checked>Adicionar à Lista de
+            Promoções <br>
+            <input type="radio" class="col-lg-1" value="0" id="promo_nao" name="promo">Retirar da Lista de Promoções
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-warning mt-5">Confirmar</button>
+        </div>
     </form>
 
 </section>
